@@ -104,8 +104,7 @@ interface PageDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<PageDocumentDataSlicesSlice>
-  /**
+  slices: prismic.SliceZone<PageDocumentDataSlicesSlice> /**
    * Meta Title field in *Page*
    *
    * - **Field Type**: Text
@@ -187,6 +186,192 @@ export type AllDocumentTypes =
   | NavigationDocument
   | PageDocument
   | SettingsDocument;
+
+/**
+ * Primary content in *CallToActionWithBanner → Primary*
+ */
+export interface CallToActionWithBannerSliceDefaultPrimary {
+  /**
+   * title field in *CallToActionWithBanner → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action_with_banner.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * image_background_desktop field in *CallToActionWithBanner → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action_with_banner.primary.image_background_desktop
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_background_desktop: prismic.ImageField<never>;
+
+  /**
+   * image_background_mobile field in *CallToActionWithBanner → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action_with_banner.primary.image_background_mobile
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_background_mobile: prismic.ImageField<never>;
+
+  /**
+   * button_name field in *CallToActionWithBanner → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action_with_banner.primary.button_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_name: prismic.KeyTextField;
+
+  /**
+   * button_link field in *CallToActionWithBanner → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action_with_banner.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
+}
+
+/**
+ * Default variation for CallToActionWithBanner Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CallToActionWithBannerSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CallToActionWithBannerSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *CallToActionWithBanner*
+ */
+type CallToActionWithBannerSliceVariation = CallToActionWithBannerSliceDefault;
+
+/**
+ * CallToActionWithBanner Shared Slice
+ *
+ * - **API ID**: `call_to_action_with_banner`
+ * - **Description**: CallToActionWithBanner
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CallToActionWithBannerSlice = prismic.SharedSlice<
+  "call_to_action_with_banner",
+  CallToActionWithBannerSliceVariation
+>;
+
+/**
+ * Primary content in *HaveAProblem → Primary*
+ */
+export interface HaveAProblemSliceDefaultPrimary {
+  /**
+   * have_a_problem_title field in *HaveAProblem → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: have_a_problem.primary.have_a_problem_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  have_a_problem_title: prismic.KeyTextField;
+
+  /**
+   * have_a_problem_image_desktop field in *HaveAProblem → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: have_a_problem.primary.have_a_problem_image_desktop
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  have_a_problem_image_desktop: prismic.ImageField<never>;
+
+  /**
+   * have_a_problem_image_mobile field in *HaveAProblem → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: have_a_problem.primary.have_a_problem_image_mobile
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  have_a_problem_image_mobile: prismic.ImageField<never>;
+
+  /**
+   * is_active field in *HaveAProblem → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: have_a_problem.primary.is_active
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  is_active: prismic.BooleanField;
+}
+
+/**
+ * Primary content in *HaveAProblem → Items*
+ */
+export interface HaveAProblemSliceDefaultItem {
+  /**
+   * have_a_problem_image_icon field in *HaveAProblem → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: have_a_problem.items[].have_a_problem_image_icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  have_a_problem_image_icon: prismic.ImageField<never>;
+
+  /**
+   * have_a_problem_description field in *HaveAProblem → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: have_a_problem.items[].have_a_problem_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  have_a_problem_description: prismic.RichTextField;
+}
+
+/**
+ * Default variation for HaveAProblem Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HaveAProblemSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HaveAProblemSliceDefaultPrimary>,
+  Simplify<HaveAProblemSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *HaveAProblem*
+ */
+type HaveAProblemSliceVariation = HaveAProblemSliceDefault;
+
+/**
+ * HaveAProblem Shared Slice
+ *
+ * - **API ID**: `have_a_problem`
+ * - **Description**: HaveAProblem
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HaveAProblemSlice = prismic.SharedSlice<
+  "have_a_problem",
+  HaveAProblemSliceVariation
+>;
 
 /**
  * Primary content in *Hero → Primary*
@@ -418,6 +603,137 @@ type ImageCardsSliceVariation = ImageCardsSliceDefault;
 export type ImageCardsSlice = prismic.SharedSlice<
   "image_cards",
   ImageCardsSliceVariation
+>;
+
+/**
+ * Primary content in *PromotionAndPrivilege → Primary*
+ */
+export interface PromotionAndPrivilegeSliceDefaultPrimary {
+  /**
+   * promotion_and_privilege_title field in *PromotionAndPrivilege → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: promotion_and_privilege.primary.promotion_and_privilege_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  promotion_and_privilege_title: prismic.RichTextField;
+
+  /**
+   * promotion_and_privilege_buttonname1 field in *PromotionAndPrivilege → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: promotion_and_privilege.primary.promotion_and_privilege_buttonname1
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  promotion_and_privilege_buttonname1: prismic.KeyTextField;
+
+  /**
+   * promotion_and_privilege_buttonlink1 field in *PromotionAndPrivilege → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: promotion_and_privilege.primary.promotion_and_privilege_buttonlink1
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  promotion_and_privilege_buttonlink1: prismic.LinkField;
+
+  /**
+   * promotion_and_privilege_buttonname2 field in *PromotionAndPrivilege → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: promotion_and_privilege.primary.promotion_and_privilege_buttonname2
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  promotion_and_privilege_buttonname2: prismic.KeyTextField;
+
+  /**
+   * promotion_and_privilege_buttonlink2 field in *PromotionAndPrivilege → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: promotion_and_privilege.primary.promotion_and_privilege_buttonlink2
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  promotion_and_privilege_buttonlink2: prismic.LinkField;
+
+  /**
+   * is_active field in *PromotionAndPrivilege → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: promotion_and_privilege.primary.is_active
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  is_active: prismic.BooleanField;
+}
+
+/**
+ * Primary content in *PromotionAndPrivilege → Items*
+ */
+export interface PromotionAndPrivilegeSliceDefaultItem {
+  /**
+   * image_icon field in *PromotionAndPrivilege → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: promotion_and_privilege.items[].image_icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_icon: prismic.ImageField<never>;
+
+  /**
+   * promotion_and_privilege_desc field in *PromotionAndPrivilege → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: promotion_and_privilege.items[].promotion_and_privilege_desc
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  promotion_and_privilege_desc: prismic.RichTextField;
+
+  /**
+   * promotion_and_privilege_subdesc field in *PromotionAndPrivilege → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: promotion_and_privilege.items[].promotion_and_privilege_subdesc
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  promotion_and_privilege_subdesc: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for PromotionAndPrivilege Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PromotionAndPrivilegeSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PromotionAndPrivilegeSliceDefaultPrimary>,
+  Simplify<PromotionAndPrivilegeSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *PromotionAndPrivilege*
+ */
+type PromotionAndPrivilegeSliceVariation = PromotionAndPrivilegeSliceDefault;
+
+/**
+ * PromotionAndPrivilege Shared Slice
+ *
+ * - **API ID**: `promotion_and_privilege`
+ * - **Description**: PromotionAndPrivilege
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PromotionAndPrivilegeSlice = prismic.SharedSlice<
+  "promotion_and_privilege",
+  PromotionAndPrivilegeSliceVariation
 >;
 
 /**
@@ -657,11 +973,374 @@ export type TextWithImageSlice = prismic.SharedSlice<
   TextWithImageSliceVariation
 >;
 
+/**
+ * Primary content in *TrainingAward → Primary*
+ */
+export interface TrainingAwardSliceDefaultPrimary {
+  /**
+   * training_award_image_desktop field in *TrainingAward → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: training_award.primary.training_award_image_desktop
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  training_award_image_desktop: prismic.ImageField<never>;
+
+  /**
+   * training_award_image_mobile field in *TrainingAward → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: training_award.primary.training_award_image_mobile
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  training_award_image_mobile: prismic.ImageField<never>;
+
+  /**
+   * training_award_title field in *TrainingAward → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: training_award.primary.training_award_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  training_award_title: prismic.KeyTextField;
+
+  /**
+   * training_award_subtitle field in *TrainingAward → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: training_award.primary.training_award_subtitle
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  training_award_subtitle: prismic.RichTextField;
+
+  /**
+   * is_active field in *TrainingAward → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: training_award.primary.is_active
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  is_active: prismic.BooleanField;
+}
+
+/**
+ * Primary content in *TrainingAward → Items*
+ */
+export interface TrainingAwardSliceDefaultItem {
+  /**
+   * training_award_step field in *TrainingAward → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: training_award.items[].training_award_step
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  training_award_step: prismic.RichTextField;
+}
+
+/**
+ * Default variation for TrainingAward Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TrainingAwardSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TrainingAwardSliceDefaultPrimary>,
+  Simplify<TrainingAwardSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *TrainingAward*
+ */
+type TrainingAwardSliceVariation = TrainingAwardSliceDefault;
+
+/**
+ * TrainingAward Shared Slice
+ *
+ * - **API ID**: `training_award`
+ * - **Description**: TrainingAward
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TrainingAwardSlice = prismic.SharedSlice<
+  "training_award",
+  TrainingAwardSliceVariation
+>;
+
+/**
+ * Primary content in *TraningCourseCard → Primary*
+ */
+export interface TraningCourseSliceDefaultPrimary {
+  /**
+   * title_course field in *TraningCourseCard → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: traning_course.primary.title_course
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title_course: prismic.KeyTextField;
+
+  /**
+   * subtitle_course field in *TraningCourseCard → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: traning_course.primary.subtitle_course
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle_course: prismic.KeyTextField;
+
+  /**
+   * list_all_name_course field in *TraningCourseCard → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: traning_course.primary.list_all_name_course
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  list_all_name_course: prismic.KeyTextField;
+
+  /**
+   * list_alll_link_course field in *TraningCourseCard → Primary*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: traning_course.primary.list_alll_link_course
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  list_alll_link_course: prismic.LinkToMediaField;
+
+  /**
+   * is_active field in *TraningCourseCard → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: traning_course.primary.is_active
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  is_active: prismic.BooleanField;
+}
+
+/**
+ * Primary content in *TraningCourseCard → Items*
+ */
+export interface TraningCourseSliceDefaultItem {
+  /**
+   * course_name field in *TraningCourseCard → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Title Course
+   * - **API ID Path**: traning_course.items[].course_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  course_name: prismic.KeyTextField;
+
+  /**
+   * course_description field in *TraningCourseCard → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Description Course
+   * - **API ID Path**: traning_course.items[].course_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  course_description: prismic.RichTextField;
+
+  /**
+   * course_image_icon field in *TraningCourseCard → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: traning_course.items[].course_image_icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  course_image_icon: prismic.ImageField<never>;
+
+  /**
+   * course_button_name field in *TraningCourseCard → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Button name
+   * - **API ID Path**: traning_course.items[].course_button_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  course_button_name: prismic.KeyTextField;
+
+  /**
+   * course_button_link field in *TraningCourseCard → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Button Link
+   * - **API ID Path**: traning_course.items[].course_button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  course_button_link: prismic.LinkField;
+}
+
+/**
+ * Default variation for TraningCourseCard Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TraningCourseSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TraningCourseSliceDefaultPrimary>,
+  Simplify<TraningCourseSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *TraningCourseCard*
+ */
+type TraningCourseSliceVariation = TraningCourseSliceDefault;
+
+/**
+ * TraningCourseCard Shared Slice
+ *
+ * - **API ID**: `traning_course`
+ * - **Description**: TraningCourse
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TraningCourseSlice = prismic.SharedSlice<
+  "traning_course",
+  TraningCourseSliceVariation
+>;
+
+/**
+ * Primary content in *TraningCourseList → Primary*
+ */
+export interface TraningCourseListSliceDefaultPrimary {
+  /**
+   * title_course field in *TraningCourseList → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: traning_course_list.primary.title_course
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title_course: prismic.KeyTextField;
+
+  /**
+   * subtitle_course field in *TraningCourseList → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: traning_course_list.primary.subtitle_course
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle_course: prismic.KeyTextField;
+
+  /**
+   * is_active field in *TraningCourseList → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: traning_course_list.primary.is_active
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  is_active: prismic.BooleanField;
+}
+
+/**
+ * Primary content in *TraningCourseList → Items*
+ */
+export interface TraningCourseListSliceDefaultItem {
+  /**
+   * course_name field in *TraningCourseList → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: traning_course_list.items[].course_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  course_name: prismic.KeyTextField;
+
+  /**
+   * course_description field in *TraningCourseList → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: traning_course_list.items[].course_description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  course_description: prismic.KeyTextField;
+
+  /**
+   * course_sub_description field in *TraningCourseList → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: traning_course_list.items[].course_sub_description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  course_sub_description: prismic.KeyTextField;
+
+  /**
+   * course_button_name field in *TraningCourseList → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: traning_course_list.items[].course_button_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  course_button_name: prismic.KeyTextField;
+
+  /**
+   * course_button_link field in *TraningCourseList → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: traning_course_list.items[].course_button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  course_button_link: prismic.LinkField;
+}
+
+/**
+ * Default variation for TraningCourseList Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TraningCourseListSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TraningCourseListSliceDefaultPrimary>,
+  Simplify<TraningCourseListSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *TraningCourseList*
+ */
+type TraningCourseListSliceVariation = TraningCourseListSliceDefault;
+
+/**
+ * TraningCourseList Shared Slice
+ *
+ * - **API ID**: `traning_course_list`
+ * - **Description**: TraningCourseList
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TraningCourseListSlice = prismic.SharedSlice<
+  "traning_course_list",
+  TraningCourseListSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
       repositoryNameOrEndpoint: string,
-      options?: prismic.ClientConfig
+      options?: prismic.ClientConfig,
     ): prismic.Client<AllDocumentTypes>;
   }
 
@@ -669,32 +1348,73 @@ declare module "@prismicio/client" {
     export type {
       NavigationDocument,
       NavigationDocumentData,
+      NavigationDocumentDataLinksItem,
       PageDocument,
       PageDocumentData,
+      PageDocumentDataSlicesSlice,
       SettingsDocument,
       SettingsDocumentData,
       AllDocumentTypes,
+      CallToActionWithBannerSlice,
+      CallToActionWithBannerSliceDefaultPrimary,
+      CallToActionWithBannerSliceVariation,
+      CallToActionWithBannerSliceDefault,
+      HaveAProblemSlice,
+      HaveAProblemSliceDefaultPrimary,
+      HaveAProblemSliceDefaultItem,
+      HaveAProblemSliceVariation,
+      HaveAProblemSliceDefault,
       HeroSlice,
+      HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
       ImageSlice,
+      ImageSliceDefaultPrimary,
+      ImageSliceBannerPrimary,
       ImageSliceVariation,
       ImageSliceDefault,
       ImageSliceBanner,
       ImageCardsSlice,
+      ImageCardsSliceDefaultPrimary,
+      ImageCardsSliceDefaultItem,
       ImageCardsSliceVariation,
       ImageCardsSliceDefault,
+      PromotionAndPrivilegeSlice,
+      PromotionAndPrivilegeSliceDefaultPrimary,
+      PromotionAndPrivilegeSliceDefaultItem,
+      PromotionAndPrivilegeSliceVariation,
+      PromotionAndPrivilegeSliceDefault,
       QuoteSlice,
+      QuoteSliceDefaultPrimary,
       QuoteSliceVariation,
       QuoteSliceDefault,
       TextSlice,
+      TextSliceDefaultPrimary,
+      TextSliceTwoColumnsPrimary,
       TextSliceVariation,
       TextSliceDefault,
       TextSliceTwoColumns,
       TextWithImageSlice,
+      TextWithImageSliceDefaultPrimary,
+      TextWithImageSliceWithButtonPrimary,
       TextWithImageSliceVariation,
       TextWithImageSliceDefault,
       TextWithImageSliceWithButton,
+      TrainingAwardSlice,
+      TrainingAwardSliceDefaultPrimary,
+      TrainingAwardSliceDefaultItem,
+      TrainingAwardSliceVariation,
+      TrainingAwardSliceDefault,
+      TraningCourseSlice,
+      TraningCourseSliceDefaultPrimary,
+      TraningCourseSliceDefaultItem,
+      TraningCourseSliceVariation,
+      TraningCourseSliceDefault,
+      TraningCourseListSlice,
+      TraningCourseListSliceDefaultPrimary,
+      TraningCourseListSliceDefaultItem,
+      TraningCourseListSliceVariation,
+      TraningCourseListSliceDefault,
     };
   }
 }

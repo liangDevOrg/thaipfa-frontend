@@ -1,0 +1,71 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title_course": {
+				"__TYPE__": "FieldContent",
+				"value": "happy",
+				"type": "Text"
+			},
+			"subtitle_course": {
+				"__TYPE__": "FieldContent",
+				"value": "taught",
+				"type": "Text"
+			},
+			"is_active": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"course_name",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "forth",
+							"type": "Text"
+						}
+					],
+					[
+						"course_description",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "avoid",
+							"type": "Text"
+						}
+					],
+					[
+						"course_sub_description",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "feature",
+							"type": "Text"
+						}
+					],
+					[
+						"course_button_name",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "bad",
+							"type": "Text"
+						}
+					],
+					[
+						"course_button_link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "http://twitter.com"
+							}
+						}
+					]
+				]
+			}
+		]
+	}
+]

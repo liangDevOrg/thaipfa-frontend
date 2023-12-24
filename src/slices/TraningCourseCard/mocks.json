@@ -1,0 +1,109 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"is_active": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			},
+			"title_course": {
+				"__TYPE__": "FieldContent",
+				"value": "stems",
+				"type": "Text"
+			},
+			"subtitle_course": {
+				"__TYPE__": "FieldContent",
+				"value": "mainly",
+				"type": "Text"
+			},
+			"list_all_name_course": {
+				"__TYPE__": "FieldContent",
+				"value": "fourth",
+				"type": "Text"
+			},
+			"list_alll_link_course": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"id": "mock_Media_link",
+					"kind": "image/jpeg",
+					"name": "mock_name",
+					"url": "https://source.unsplash.com/daily",
+					"size": "0",
+					"__TYPE__": "FileLink"
+				}
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"course_name",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "shallow",
+							"type": "Text"
+						}
+					],
+					[
+						"course_description",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Voluptate et id consectetur et tempor veniam non voluptate quis. Aliquip aute enim est adipisicing nisi sint minim eu culpa sit laborum qui anim."
+									}
+								}
+							]
+						}
+					],
+					[
+						"course_image_icon",
+						{
+							"__TYPE__": "ImageContent",
+							"origin": {
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+								"width": 3882,
+								"height": 2584
+							},
+							"url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+							"width": 3882,
+							"height": 2584,
+							"edit": {
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								},
+								"background": "transparent"
+							},
+							"thumbnails": {}
+						}
+					],
+					[
+						"course_button_name",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "couple",
+							"type": "Text"
+						}
+					],
+					[
+						"course_button_link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "https://prismic.io"
+							}
+						}
+					]
+				]
+			}
+		]
+	}
+]

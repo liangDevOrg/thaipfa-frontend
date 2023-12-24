@@ -1,0 +1,80 @@
+{
+  "id": "traning_course_list",
+  "type": "SharedSlice",
+  "name": "TraningCourseList",
+  "description": "TraningCourseList",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title_course": {
+          "type": "Text",
+          "config": {
+            "label": "title_course",
+            "placeholder": ""
+          }
+        },
+        "subtitle_course": {
+          "type": "Text",
+          "config": {
+            "label": "subtitle_course",
+            "placeholder": ""
+          }
+        },
+        "is_active": {
+          "type": "Boolean",
+          "config": {
+            "label": "is_active",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": true
+          }
+        }
+      },
+      "items": {
+        "course_name": {
+          "type": "Text",
+          "config": {
+            "label": "course_name",
+            "placeholder": ""
+          }
+        },
+        "course_description": {
+          "type": "Text",
+          "config": {
+            "label": "course_description",
+            "placeholder": ""
+          }
+        },
+        "course_sub_description": {
+          "type": "Text",
+          "config": {
+            "label": "course_sub_description",
+            "placeholder": ""
+          }
+        },
+        "course_button_name": {
+          "type": "Text",
+          "config": {
+            "label": "course_button_name",
+            "placeholder": ""
+          }
+        },
+        "course_button_link": {
+          "type": "Link",
+          "config": {
+            "label": "course_button_link",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "select": null
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "id": "have_a_problem",
+  "type": "SharedSlice",
+  "name": "HaveAProblem",
+  "description": "HaveAProblem",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "have_a_problem_title": {
+          "type": "Text",
+          "config": {
+            "label": "have_a_problem_title",
+            "placeholder": ""
+          }
+        },
+        "have_a_problem_image_desktop": {
+          "type": "Image",
+          "config": {
+            "label": "have_a_problem_image_desktop",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "have_a_problem_image_mobile": {
+          "type": "Image",
+          "config": {
+            "label": "have_a_problem_image_mobile",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "is_active": {
+          "type": "Boolean",
+          "config": {
+            "label": "is_active",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        }
+      },
+      "items": {
+        "have_a_problem_image_icon": {
+          "type": "Image",
+          "config": {
+            "label": "have_a_problem_image_icon",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "have_a_problem_description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "have_a_problem_description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      }
+    }
+  ]
+}

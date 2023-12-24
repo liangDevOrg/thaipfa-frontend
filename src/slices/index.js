@@ -3,10 +3,16 @@
 import dynamic from "next/dynamic";
 
 export const components = {
+  call_to_action_with_banner: dynamic(() => import("./CallToActionWithBanner")),
+  have_a_problem: dynamic(() => import("./HaveAProblem")),
   hero: dynamic(() => import("./Hero")),
   image: dynamic(() => import("./Image")),
   image_cards: dynamic(() => import("./ImageCards")),
+  promotion_and_privilege: dynamic(() => import("./PromotionAndPrivilege")),
   quote: dynamic(() => import("./Quote")),
   text: dynamic(() => import("./Text")),
   text_with_image: dynamic(() => import("./TextWithImage")),
+  training_award: dynamic(() => import("./TrainingAward")),
+  traning_course: dynamic(() => import("./TraningCourseCard")),
+  traning_course_list: dynamic(() => import("./TraningCourseList")),
 };

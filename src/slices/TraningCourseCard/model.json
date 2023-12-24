@@ -1,0 +1,98 @@
+{
+  "id": "traning_course",
+  "type": "SharedSlice",
+  "name": "TraningCourseCard",
+  "description": "TraningCourse",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title_course": {
+          "type": "Text",
+          "config": {
+            "label": "title_course",
+            "placeholder": ""
+          }
+        },
+        "subtitle_course": {
+          "type": "Text",
+          "config": {
+            "label": "subtitle_course",
+            "placeholder": ""
+          }
+        },
+        "list_all_name_course": {
+          "type": "Text",
+          "config": {
+            "label": "list_all_name_course",
+            "placeholder": ""
+          }
+        },
+        "list_alll_link_course": {
+          "type": "Link",
+          "config": {
+            "label": "list_alll_link_course",
+            "placeholder": "",
+            "select": "media"
+          }
+        },
+        "is_active": {
+          "type": "Boolean",
+          "config": {
+            "label": "is_active",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        }
+      },
+      "items": {
+        "course_name": {
+          "type": "Text",
+          "config": {
+            "label": "course_name",
+            "placeholder": "Title Course"
+          }
+        },
+        "course_description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "course_description",
+            "placeholder": "Description Course",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "course_image_icon": {
+          "type": "Image",
+          "config": {
+            "label": "course_image_icon",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "course_button_name": {
+          "type": "Text",
+          "config": {
+            "label": "course_button_name",
+            "placeholder": "Button name"
+          }
+        },
+        "course_button_link": {
+          "type": "Link",
+          "config": {
+            "label": "course_button_link",
+            "placeholder": "Button Link",
+            "allowTargetBlank": true,
+            "select": null
+          }
+        }
+      }
+    }
+  ]
+}
