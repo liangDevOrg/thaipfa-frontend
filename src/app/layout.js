@@ -7,6 +7,7 @@ import * as prismic from "@prismicio/client";
 
 import { createClient, repositoryName } from "@/prismicio";
 import { Bounded } from "@/components/Bounded";
+import Footer from "@/components/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -25,6 +26,7 @@ export default async function RootLayout({ children }) {
         <Header />
         {children}
         <PrismicPreview repositoryName={repositoryName} />
+        <Footer />
       </body>
     </html>
   );

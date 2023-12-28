@@ -9,7 +9,7 @@ import { components } from "@/slices";
  */
 export async function generateMetadata() {
   const client = createClient();
-  const page = await client.getByUID("page", "home");
+  const page = await client.getByUID("home", "home");
 
   return {
     title: page.data.title,
@@ -27,7 +27,7 @@ export async function generateMetadata() {
 
 export default async function Page() {
   const client = createClient();
-  const page = await client.getByUID("page", "home").catch(() => notFound());
+  const page = await client.getByUID("home", "home").catch(() => notFound());
 
   return <SliceZone slices={page.data.slices} components={components} />;
 }

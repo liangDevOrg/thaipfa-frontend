@@ -5,6 +5,285 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 /**
+ * Item in *Footer → our_services*
+ */
+export interface FooterDocumentDataOurServicesItem {
+  /**
+   * service_name field in *Footer → our_services*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.our_services[].service_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  service_name: prismic.KeyTextField;
+
+  /**
+   * service_link field in *Footer → our_services*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.our_services[].service_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  service_link: prismic.LinkField;
+}
+
+/**
+ * Item in *Footer → social_media_list*
+ */
+export interface FooterDocumentDataSocialMediaListItem {
+  /**
+   * social_media_logo field in *Footer → social_media_list*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.social_media_list[].social_media_logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  social_media_logo: prismic.ImageField<never>;
+
+  /**
+   * social_media_link field in *Footer → social_media_list*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.social_media_list[].social_media_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  social_media_link: prismic.LinkField;
+}
+
+/**
+ * Content for Footer documents
+ */
+interface FooterDocumentData {
+  /**
+   * contact_title field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.contact_title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  contact_title: prismic.KeyTextField;
+
+  /**
+   * company_name_eng field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.company_name_eng
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  company_name_eng: prismic.KeyTextField;
+
+  /**
+   * company_name_thai field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.company_name_thai
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  company_name_thai: prismic.KeyTextField;
+
+  /**
+   * company_address field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.company_address
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  company_address: prismic.KeyTextField;
+
+  /**
+   * email field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.email
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email: prismic.KeyTextField;
+
+  /**
+   * telephone field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.telephone
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  telephone: prismic.KeyTextField;
+
+  /**
+   * fax field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.fax
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  fax: prismic.KeyTextField;
+
+  /**
+   * our_services field in *Footer*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.our_services[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  our_services: prismic.GroupField<Simplify<FooterDocumentDataOurServicesItem>>;
+
+  /**
+   * subscribe_name field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.subscribe_name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subscribe_name: prismic.KeyTextField;
+
+  /**
+   * subscribe_placeholder field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.subscribe_placeholder
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subscribe_placeholder: prismic.KeyTextField;
+
+  /**
+   * subscribe_button_name field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.subscribe_button_name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subscribe_button_name: prismic.KeyTextField;
+
+  /**
+   * subscribe_button_link field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.subscribe_button_link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subscribe_button_link: prismic.KeyTextField;
+
+  /**
+   * social_media_list field in *Footer*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.social_media_list[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  social_media_list: prismic.GroupField<
+    Simplify<FooterDocumentDataSocialMediaListItem>
+  >;
+}
+
+/**
+ * Footer document from Prismic
+ *
+ * - **API ID**: `footer`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type FooterDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<FooterDocumentData>, "footer", Lang>;
+
+type HomeDocumentDataSlicesSlice =
+  | TraningCourseListSlice
+  | TraningCourseSlice
+  | TrainingAwardSlice
+  | PromotionAndPrivilegeSlice
+  | HaveAProblemSlice
+  | CallToActionWithBannerSlice;
+
+/**
+ * Content for Home Page documents
+ */
+interface HomeDocumentData {
+  /**
+   * Slice Zone field in *Home Page*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<HomeDocumentDataSlicesSlice> /**
+   * Meta Description field in *Home Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: home.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Home Page*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Home Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: home.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Home Page document from Prismic
+ *
+ * - **API ID**: `home`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type HomeDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<HomeDocumentData>, "home", Lang>;
+
+/**
  * Item in *Navigation → Links*
  */
 export interface NavigationDocumentDataLinksItem {
@@ -183,6 +462,8 @@ export type SettingsDocument<Lang extends string = string> =
   >;
 
 export type AllDocumentTypes =
+  | FooterDocument
+  | HomeDocument
   | NavigationDocument
   | PageDocument
   | SettingsDocument;
@@ -1099,24 +1380,24 @@ export interface TraningCourseSliceDefaultPrimary {
   subtitle_course: prismic.KeyTextField;
 
   /**
-   * list_all_name_course field in *TraningCourseCard → Primary*
+   * button_all_name_course field in *TraningCourseCard → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: traning_course.primary.list_all_name_course
+   * - **API ID Path**: traning_course.primary.button_all_name_course
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  list_all_name_course: prismic.KeyTextField;
+  button_all_name_course: prismic.KeyTextField;
 
   /**
-   * list_alll_link_course field in *TraningCourseCard → Primary*
+   * button_all_link_course field in *TraningCourseCard → Primary*
    *
-   * - **Field Type**: Link to Media
+   * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: traning_course.primary.list_alll_link_course
+   * - **API ID Path**: traning_course.primary.button_all_link_course
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  list_alll_link_course: prismic.LinkToMediaField;
+  button_all_link_course: prismic.LinkField;
 
   /**
    * is_active field in *TraningCourseCard → Primary*
@@ -1346,6 +1627,13 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      FooterDocument,
+      FooterDocumentData,
+      FooterDocumentDataOurServicesItem,
+      FooterDocumentDataSocialMediaListItem,
+      HomeDocument,
+      HomeDocumentData,
+      HomeDocumentDataSlicesSlice,
       NavigationDocument,
       NavigationDocumentData,
       NavigationDocumentDataLinksItem,

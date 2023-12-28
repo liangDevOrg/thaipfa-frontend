@@ -26,19 +26,20 @@
             "placeholder": ""
           }
         },
-        "list_all_name_course": {
+        "button_all_name_course": {
           "type": "Text",
           "config": {
-            "label": "list_all_name_course",
+            "label": "button_all_name_course",
             "placeholder": ""
           }
         },
-        "list_alll_link_course": {
+        "button_all_link_course": {
           "type": "Link",
           "config": {
-            "label": "list_alll_link_course",
+            "label": "button_all_link_course",
             "placeholder": "",
-            "select": "media"
+            "allowTargetBlank": true,
+            "select": null
           }
         },
         "is_active": {
