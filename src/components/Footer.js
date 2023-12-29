@@ -1,7 +1,10 @@
-import React from 'react'
+import * as prismic from "@prismicio/client";
+import { PrismicText } from "@prismicio/react";
+import { PrismicNextLink } from "@prismicio/next";
 
-export default function Footer() {
+
+export function Footer({ footer }) {
   return (
     <div>Footer</div>
-  )
+  );
 }

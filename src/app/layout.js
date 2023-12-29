@@ -7,7 +7,6 @@ import * as prismic from "@prismicio/client";
 
 import { createClient, repositoryName } from "@/prismicio";
 import { Bounded } from "@/components/Bounded";
-import Footer from "@/components/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -31,6 +30,16 @@ export default async function RootLayout({ children }) {
     </html>
   );
 }
+
+export const metadata = {
+  metadataBase: new URL("https://thaipfa.com"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    images: "/og-image.png",
+  },
+};
 
 async function Header() {
   const client = createClient();
@@ -62,5 +71,58 @@ async function Header() {
         </nav>
       </div>
     </Bounded>
+  );
+}
+
+async function Footer() {
+  const client = createClient();
+  const footer = await client.getSingle("footer");
+  const data = footer.data;
+
+  const contactTitle = data.contact_title;
+  const companyNameEng = data.company_name_eng;
+  const companyNameThai = data.company_name_thai;
+  const companyAddress = data.company_address;
+  const email = data.email;
+  const telephone = data.telephone;
+  const fax = data.fax;
+  const subscribeName = data.subscribe_name;
+  const subscribePlaceholder = data.subscribe_placeholder;
+  const subscribeButtonName = data.subscribe_button_name;
+  const our_services = data.our_services;
+  
+
+  return (
+    <>
+      <div className="container">{contactTitle}</div>
+      <div className="container">{companyNameEng}</div>
+      <div className="container">{companyNameThai}</div>
+      <div className="container">{companyAddress}</div>
+      <div className="container">{email}</div>
+      <div className="container">{telephone}</div>
+      <div className="container">{email}</div>
+      <div className="container">{fax}</div>
+      <div className="container">{subscribeName}</div>
+      <div className="container">{subscribePlaceholder}</div>
+      <div className="container">{subscribeButtonName}</div>
+      <nav>
+        <ul className="flex flex-wrap gap-6 md:gap-10">
+          {our_services.map((item) => (
+            <li
+              key={prismic.asText(item.label)}
+              className="font-semibold tracking-tight text-slate-800"
+            >
+              <PrismicNextLink
+                key={item}
+                href={item.service_link.url}
+                target={item.service_link.target}
+              >
+                {item.service_name}
+              </PrismicNextLink>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </>
   );
 }

@@ -887,6 +887,170 @@ export type ImageCardsSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *ImageIconWithContentBottom → Primary*
+ */
+export interface ImageIconWithContentBottomSliceDefaultPrimary {
+  /**
+   * is_active field in *ImageIconWithContentBottom → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: image_icon_with_content_bottom.primary.is_active
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  is_active: prismic.BooleanField;
+}
+
+/**
+ * Primary content in *ImageIconWithContentBottom → Items*
+ */
+export interface ImageIconWithContentBottomSliceDefaultItem {
+  /**
+   * image_icon field in *ImageIconWithContentBottom → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_icon_with_content_bottom.items[].image_icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_icon: prismic.ImageField<never>;
+
+  /**
+   * content_subject field in *ImageIconWithContentBottom → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_icon_with_content_bottom.items[].content_subject
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content_subject: prismic.RichTextField;
+}
+
+/**
+ * Default variation for ImageIconWithContentBottom Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageIconWithContentBottomSliceDefault =
+  prismic.SharedSliceVariation<
+    "default",
+    Simplify<ImageIconWithContentBottomSliceDefaultPrimary>,
+    Simplify<ImageIconWithContentBottomSliceDefaultItem>
+  >;
+
+/**
+ * Slice variation for *ImageIconWithContentBottom*
+ */
+type ImageIconWithContentBottomSliceVariation =
+  ImageIconWithContentBottomSliceDefault;
+
+/**
+ * ImageIconWithContentBottom Shared Slice
+ *
+ * - **API ID**: `image_icon_with_content_bottom`
+ * - **Description**: ImageIconWithContentBottom
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageIconWithContentBottomSlice = prismic.SharedSlice<
+  "image_icon_with_content_bottom",
+  ImageIconWithContentBottomSliceVariation
+>;
+
+/**
+ * Primary content in *OpportunityList → Primary*
+ */
+export interface OpportunityListSliceDefaultPrimary {
+  /**
+   * opportunity_image_desktop field in *OpportunityList → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: opportunity_list.primary.opportunity_image_desktop
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  opportunity_image_desktop: prismic.ImageField<never>;
+
+  /**
+   * opportunity_image_mobile field in *OpportunityList → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: opportunity_list.primary.opportunity_image_mobile
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  opportunity_image_mobile: prismic.ImageField<never>;
+
+  /**
+   * oppportunity_title field in *OpportunityList → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: opportunity_list.primary.oppportunity_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  oppportunity_title: prismic.RichTextField;
+
+  /**
+   * is_active field in *OpportunityList → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: opportunity_list.primary.is_active
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  is_active: prismic.BooleanField;
+}
+
+/**
+ * Primary content in *OpportunityList → Items*
+ */
+export interface OpportunityListSliceDefaultItem {
+  /**
+   * opportunity_list_name field in *OpportunityList → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: opportunity_list.items[].opportunity_list_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  opportunity_list_name: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for OpportunityList Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type OpportunityListSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<OpportunityListSliceDefaultPrimary>,
+  Simplify<OpportunityListSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *OpportunityList*
+ */
+type OpportunityListSliceVariation = OpportunityListSliceDefault;
+
+/**
+ * OpportunityList Shared Slice
+ *
+ * - **API ID**: `opportunity_list`
+ * - **Description**: OpportunityList
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type OpportunityListSlice = prismic.SharedSlice<
+  "opportunity_list",
+  OpportunityListSliceVariation
+>;
+
+/**
  * Primary content in *PromotionAndPrivilege → Primary*
  */
 export interface PromotionAndPrivilegeSliceDefaultPrimary {
@@ -1667,6 +1831,16 @@ declare module "@prismicio/client" {
       ImageCardsSliceDefaultItem,
       ImageCardsSliceVariation,
       ImageCardsSliceDefault,
+      ImageIconWithContentBottomSlice,
+      ImageIconWithContentBottomSliceDefaultPrimary,
+      ImageIconWithContentBottomSliceDefaultItem,
+      ImageIconWithContentBottomSliceVariation,
+      ImageIconWithContentBottomSliceDefault,
+      OpportunityListSlice,
+      OpportunityListSliceDefaultPrimary,
+      OpportunityListSliceDefaultItem,
+      OpportunityListSliceVariation,
+      OpportunityListSliceDefault,
       PromotionAndPrivilegeSlice,
       PromotionAndPrivilegeSliceDefaultPrimary,
       PromotionAndPrivilegeSliceDefaultItem,

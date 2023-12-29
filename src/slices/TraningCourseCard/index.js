@@ -8,12 +8,11 @@ import Link from "next/link";
 const TraningCourse = ({ slice }) => {
   const data = slice.primary;
   const items = slice.items;
-  console.log(items);
   const titleCourse = data.title_course;
   const subTitleCourse = data.subtitle_course;
   const buttonAllNameCourse = data.button_all_name_course;
   const buttonAllNameLink = data.button_all_link_course;
-  
+
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -30,7 +29,6 @@ const TraningCourse = ({ slice }) => {
       </Link>
 
       <ul>
-        
         <li></li>
       </ul>
     </section>

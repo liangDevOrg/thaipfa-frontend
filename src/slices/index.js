@@ -8,6 +8,10 @@ export const components = {
   hero: dynamic(() => import("./Hero")),
   image: dynamic(() => import("./Image")),
   image_cards: dynamic(() => import("./ImageCards")),
+  image_icon_with_content_bottom: dynamic(() =>
+    import("./ImageIconWithContentBottom"),
+  ),
+  opportunity_list: dynamic(() => import("./OpportunityList")),
   promotion_and_privilege: dynamic(() => import("./PromotionAndPrivilege")),
   quote: dynamic(() => import("./Quote")),
   text: dynamic(() => import("./Text")),
