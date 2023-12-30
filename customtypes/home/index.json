@@ -18,6 +18,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "image_icon_with_content_bottom": {
+              "type": "SharedSlice"
+            },
+            "opportunity_list": {
+              "type": "SharedSlice"
+            },
             "traning_course_list": {
               "type": "SharedSlice"
             },

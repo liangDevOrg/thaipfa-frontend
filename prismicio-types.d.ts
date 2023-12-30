@@ -217,6 +217,8 @@ export type FooterDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<FooterDocumentData>, "footer", Lang>;
 
 type HomeDocumentDataSlicesSlice =
+  | ImageIconWithContentBottomSlice
+  | OpportunityListSlice
   | TraningCourseListSlice
   | TraningCourseSlice
   | TrainingAwardSlice

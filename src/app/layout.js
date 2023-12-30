@@ -94,6 +94,8 @@ async function Footer() {
 
   return (
     <>
+      <hr />
+      <h1>Footer</h1>
       <div className="container">{contactTitle}</div>
       <div className="container">{companyNameEng}</div>
       <div className="container">{companyNameThai}</div>
