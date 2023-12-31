@@ -12,6 +12,13 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "button_name": {
+          "type": "Text",
+          "config": {
+            "label": "button_name",
+            "placeholder": ""
+          }
+        },
         "is_active": {
           "type": "Boolean",
           "config": {
@@ -19,6 +26,15 @@
             "placeholder_false": "false",
             "placeholder_true": "true",
             "default_value": true
+          }
+        },
+        "button_link": {
+          "type": "Link",
+          "config": {
+            "label": "button_link",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "select": null
           }
         }
       },

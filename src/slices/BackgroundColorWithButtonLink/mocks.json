@@ -1,0 +1,59 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"is_active": {
+				"__TYPE__": "BooleanContent",
+				"value": false
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"button_title",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "sort",
+							"type": "Text"
+						}
+					],
+					[
+						"button_description",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Magna aute reprehenderit anim reprehenderit veniam occaecat labore do ad esse non. Excepteur id reprehenderit ex duis officia laborum sunt."
+									}
+								}
+							]
+						}
+					],
+					[
+						"button_link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "http://google.com"
+							}
+						}
+					],
+					[
+						"button_color",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "#16a564",
+							"type": "Color"
+						}
+					]
+				]
+			}
+		]
+	}
+]

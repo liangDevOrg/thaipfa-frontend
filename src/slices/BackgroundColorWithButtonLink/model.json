@@ -1,0 +1,60 @@
+{
+  "id": "background_color_with_button_link",
+  "type": "SharedSlice",
+  "name": "BackgroundColorWithButtonLink",
+  "description": "BackgroundColorWithButtonLink",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "is_active": {
+          "type": "Boolean",
+          "config": {
+            "label": "is_active",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        }
+      },
+      "items": {
+        "button_title": {
+          "type": "Text",
+          "config": {
+            "label": "button_title",
+            "placeholder": ""
+          }
+        },
+        "button_description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "button_description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "button_link": {
+          "type": "Link",
+          "config": {
+            "label": "button_link",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "button_color": {
+          "type": "Color",
+          "config": {
+            "label": "button_color",
+            "placeholder": ""
+          }
+        }
+      }
+    }
+  ]
+}

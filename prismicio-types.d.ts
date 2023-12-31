@@ -217,6 +217,7 @@ export type FooterDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<FooterDocumentData>, "footer", Lang>;
 
 type HomeDocumentDataSlicesSlice =
+  | BackgroundColorWithButtonLinkSlice
   | ImageIconWithContentBottomSlice
   | OpportunityListSlice
   | TraningCourseListSlice
@@ -469,6 +470,99 @@ export type AllDocumentTypes =
   | NavigationDocument
   | PageDocument
   | SettingsDocument;
+
+/**
+ * Primary content in *BackgroundColorWithButtonLink → Primary*
+ */
+export interface BackgroundColorWithButtonLinkSliceDefaultPrimary {
+  /**
+   * is_active field in *BackgroundColorWithButtonLink → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: background_color_with_button_link.primary.is_active
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  is_active: prismic.BooleanField;
+}
+
+/**
+ * Primary content in *BackgroundColorWithButtonLink → Items*
+ */
+export interface BackgroundColorWithButtonLinkSliceDefaultItem {
+  /**
+   * button_title field in *BackgroundColorWithButtonLink → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: background_color_with_button_link.items[].button_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_title: prismic.KeyTextField;
+
+  /**
+   * button_description field in *BackgroundColorWithButtonLink → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: background_color_with_button_link.items[].button_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  button_description: prismic.RichTextField;
+
+  /**
+   * button_link field in *BackgroundColorWithButtonLink → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: background_color_with_button_link.items[].button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
+
+  /**
+   * button_color field in *BackgroundColorWithButtonLink → Items*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: background_color_with_button_link.items[].button_color
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  button_color: prismic.ColorField;
+}
+
+/**
+ * Default variation for BackgroundColorWithButtonLink Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BackgroundColorWithButtonLinkSliceDefault =
+  prismic.SharedSliceVariation<
+    "default",
+    Simplify<BackgroundColorWithButtonLinkSliceDefaultPrimary>,
+    Simplify<BackgroundColorWithButtonLinkSliceDefaultItem>
+  >;
+
+/**
+ * Slice variation for *BackgroundColorWithButtonLink*
+ */
+type BackgroundColorWithButtonLinkSliceVariation =
+  BackgroundColorWithButtonLinkSliceDefault;
+
+/**
+ * BackgroundColorWithButtonLink Shared Slice
+ *
+ * - **API ID**: `background_color_with_button_link`
+ * - **Description**: BackgroundColorWithButtonLink
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BackgroundColorWithButtonLinkSlice = prismic.SharedSlice<
+  "background_color_with_button_link",
+  BackgroundColorWithButtonLinkSliceVariation
+>;
 
 /**
  * Primary content in *CallToActionWithBanner → Primary*
@@ -893,6 +987,16 @@ export type ImageCardsSlice = prismic.SharedSlice<
  */
 export interface ImageIconWithContentBottomSliceDefaultPrimary {
   /**
+   * button_name field in *ImageIconWithContentBottom → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_icon_with_content_bottom.primary.button_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_name: prismic.KeyTextField;
+
+  /**
    * is_active field in *ImageIconWithContentBottom → Primary*
    *
    * - **Field Type**: Boolean
@@ -902,6 +1006,16 @@ export interface ImageIconWithContentBottomSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#boolean
    */
   is_active: prismic.BooleanField;
+
+  /**
+   * button_link field in *ImageIconWithContentBottom → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_icon_with_content_bottom.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
 }
 
 /**
@@ -1067,46 +1181,6 @@ export interface PromotionAndPrivilegeSliceDefaultPrimary {
   promotion_and_privilege_title: prismic.RichTextField;
 
   /**
-   * promotion_and_privilege_buttonname1 field in *PromotionAndPrivilege → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: promotion_and_privilege.primary.promotion_and_privilege_buttonname1
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  promotion_and_privilege_buttonname1: prismic.KeyTextField;
-
-  /**
-   * promotion_and_privilege_buttonlink1 field in *PromotionAndPrivilege → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: promotion_and_privilege.primary.promotion_and_privilege_buttonlink1
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  promotion_and_privilege_buttonlink1: prismic.LinkField;
-
-  /**
-   * promotion_and_privilege_buttonname2 field in *PromotionAndPrivilege → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: promotion_and_privilege.primary.promotion_and_privilege_buttonname2
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  promotion_and_privilege_buttonname2: prismic.KeyTextField;
-
-  /**
-   * promotion_and_privilege_buttonlink2 field in *PromotionAndPrivilege → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: promotion_and_privilege.primary.promotion_and_privilege_buttonlink2
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  promotion_and_privilege_buttonlink2: prismic.LinkField;
-
-  /**
    * is_active field in *PromotionAndPrivilege → Primary*
    *
    * - **Field Type**: Boolean
@@ -1123,16 +1197,6 @@ export interface PromotionAndPrivilegeSliceDefaultPrimary {
  */
 export interface PromotionAndPrivilegeSliceDefaultItem {
   /**
-   * image_icon field in *PromotionAndPrivilege → Items*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: promotion_and_privilege.items[].image_icon
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image_icon: prismic.ImageField<never>;
-
-  /**
    * promotion_and_privilege_desc field in *PromotionAndPrivilege → Items*
    *
    * - **Field Type**: Rich Text
@@ -1141,16 +1205,6 @@ export interface PromotionAndPrivilegeSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   promotion_and_privilege_desc: prismic.RichTextField;
-
-  /**
-   * promotion_and_privilege_subdesc field in *PromotionAndPrivilege → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: promotion_and_privilege.items[].promotion_and_privilege_subdesc
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  promotion_and_privilege_subdesc: prismic.KeyTextField;
 }
 
 /**
@@ -1809,6 +1863,11 @@ declare module "@prismicio/client" {
       SettingsDocument,
       SettingsDocumentData,
       AllDocumentTypes,
+      BackgroundColorWithButtonLinkSlice,
+      BackgroundColorWithButtonLinkSliceDefaultPrimary,
+      BackgroundColorWithButtonLinkSliceDefaultItem,
+      BackgroundColorWithButtonLinkSliceVariation,
+      BackgroundColorWithButtonLinkSliceDefault,
       CallToActionWithBannerSlice,
       CallToActionWithBannerSliceDefaultPrimary,
       CallToActionWithBannerSliceVariation,

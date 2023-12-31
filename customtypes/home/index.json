@@ -18,6 +18,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "background_color_with_button_link": {
+              "type": "SharedSlice"
+            },
             "image_icon_with_content_bottom": {
               "type": "SharedSlice"
             },

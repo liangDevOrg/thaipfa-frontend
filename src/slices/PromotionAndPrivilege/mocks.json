@@ -14,30 +14,6 @@
 					}
 				]
 			},
-			"promotion_and_privilege_buttonname1": {
-				"__TYPE__": "FieldContent",
-				"value": "recall",
-				"type": "Text"
-			},
-			"promotion_and_privilege_buttonlink1": {
-				"__TYPE__": "LinkContent",
-				"value": {
-					"__TYPE__": "ExternalLink",
-					"url": "http://google.com"
-				}
-			},
-			"promotion_and_privilege_buttonname2": {
-				"__TYPE__": "FieldContent",
-				"value": "quite",
-				"type": "Text"
-			},
-			"promotion_and_privilege_buttonlink2": {
-				"__TYPE__": "LinkContent",
-				"value": {
-					"__TYPE__": "ExternalLink",
-					"url": "https://prismic.io"
-				}
-			},
 			"is_active": {
 				"__TYPE__": "BooleanContent",
 				"value": false
@@ -48,30 +24,6 @@
 				"__TYPE__": "GroupItemContent",
 				"value": [
 					[
-						"image_icon",
-						{
-							"__TYPE__": "ImageContent",
-							"origin": {
-								"id": "main",
-								"url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6",
-								"width": 3212,
-								"height": 3880
-							},
-							"url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6",
-							"width": 3212,
-							"height": 3880,
-							"edit": {
-								"zoom": 1,
-								"crop": {
-									"x": 0,
-									"y": 0
-								},
-								"background": "transparent"
-							},
-							"thumbnails": {}
-						}
-					],
-					[
 						"promotion_and_privilege_desc",
 						{
 							"__TYPE__": "StructuredTextContent",
@@ -79,18 +31,10 @@
 								{
 									"type": "paragraph",
 									"content": {
-										"text": "Culpa eu exercitation ex dolor excepteur do cillum cupidatat deserunt irure incididunt minim consequat."
+										"text": "Reprehenderit sunt nostrud voluptate enim ad commodo exercitation cupidatat dolor cillum aliquip anim velit. Culpa sit officia incididunt sint aliquip cillum dolore non ut. Veniam ex nostrud velit dolore."
 									}
 								}
 							]
-						}
-					],
-					[
-						"promotion_and_privilege_subdesc",
-						{
-							"__TYPE__": "FieldContent",
-							"value": "greatest",
-							"type": "Text"
 						}
 					]
 				]
