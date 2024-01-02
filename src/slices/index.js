@@ -6,6 +6,7 @@ export const components = {
   background_color_with_button_link: dynamic(() =>
     import("./BackgroundColorWithButtonLink"),
   ),
+  banner_section: dynamic(() => import("./BannerSection")),
   call_to_action_with_banner: dynamic(() => import("./CallToActionWithBanner")),
   have_a_problem: dynamic(() => import("./HaveAProblem")),
   hero: dynamic(() => import("./Hero")),

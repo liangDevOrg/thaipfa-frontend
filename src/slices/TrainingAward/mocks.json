@@ -3,52 +3,6 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"training_award_image_desktop": {
-				"origin": {
-					"id": "main",
-					"url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a",
-					"width": 3456,
-					"height": 4320
-				},
-				"url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a",
-				"width": 3456,
-				"height": 4320,
-				"edit": {
-					"zoom": 1,
-					"crop": {
-						"x": 0,
-						"y": 0
-					},
-					"background": "transparent"
-				},
-				"credits": null,
-				"alt": null,
-				"__TYPE__": "ImageContent",
-				"thumbnails": {}
-			},
-			"training_award_image_mobile": {
-				"origin": {
-					"id": "main",
-					"url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117",
-					"width": 3810,
-					"height": 5715
-				},
-				"url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117",
-				"width": 3810,
-				"height": 5715,
-				"edit": {
-					"zoom": 1,
-					"crop": {
-						"x": 0,
-						"y": 0
-					},
-					"background": "transparent"
-				},
-				"credits": null,
-				"alt": null,
-				"__TYPE__": "ImageContent",
-				"thumbnails": {}
-			},
 			"training_award_title": {
 				"__TYPE__": "FieldContent",
 				"value": "equipment",
@@ -77,15 +31,17 @@
 					[
 						"training_award_step",
 						{
-							"__TYPE__": "StructuredTextContent",
-							"value": [
-								{
-									"type": "paragraph",
-									"content": {
-										"text": "Anim do deserunt velit elit do laboris enim id veniam. Est qui est laborum incididunt ex ullamco sit nisi. Ea culpa quis est fugiat exercitation elit amet proident reprehenderit cillum."
-									}
-								}
-							]
+							"__TYPE__": "FieldContent",
+							"value": "path",
+							"type": "Text"
+						}
+					],
+					[
+						"training_award_step_detail",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "shore",
+							"type": "Text"
 						}
 					]
 				]

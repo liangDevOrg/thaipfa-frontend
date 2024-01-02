@@ -1,0 +1,44 @@
+{
+  "id": "banner_section",
+  "type": "SharedSlice",
+  "name": "BannerSection",
+  "description": "BannerSection",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "image_desktop": {
+          "type": "Image",
+          "config": {
+            "label": "image_desktop",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "image_mobile": {
+          "type": "Image",
+          "config": {
+            "label": "image_mobile",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "is_active": {
+          "type": "Boolean",
+          "config": {
+            "label": "is_active",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

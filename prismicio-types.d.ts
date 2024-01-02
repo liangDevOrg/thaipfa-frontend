@@ -217,6 +217,7 @@ export type FooterDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<FooterDocumentData>, "footer", Lang>;
 
 type HomeDocumentDataSlicesSlice =
+  | BannerSectionSlice
   | BackgroundColorWithButtonLinkSlice
   | ImageIconWithContentBottomSlice
   | OpportunityListSlice
@@ -562,6 +563,72 @@ type BackgroundColorWithButtonLinkSliceVariation =
 export type BackgroundColorWithButtonLinkSlice = prismic.SharedSlice<
   "background_color_with_button_link",
   BackgroundColorWithButtonLinkSliceVariation
+>;
+
+/**
+ * Primary content in *BannerSection → Primary*
+ */
+export interface BannerSectionSliceDefaultPrimary {
+  /**
+   * image_desktop field in *BannerSection → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: banner_section.primary.image_desktop
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_desktop: prismic.ImageField<never>;
+
+  /**
+   * image_mobile field in *BannerSection → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: banner_section.primary.image_mobile
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_mobile: prismic.ImageField<never>;
+
+  /**
+   * is_active field in *BannerSection → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: banner_section.primary.is_active
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  is_active: prismic.BooleanField;
+}
+
+/**
+ * Default variation for BannerSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BannerSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BannerSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *BannerSection*
+ */
+type BannerSectionSliceVariation = BannerSectionSliceDefault;
+
+/**
+ * BannerSection Shared Slice
+ *
+ * - **API ID**: `banner_section`
+ * - **Description**: BannerSection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BannerSectionSlice = prismic.SharedSlice<
+  "banner_section",
+  BannerSectionSliceVariation
 >;
 
 /**
@@ -1479,26 +1546,6 @@ export type TextWithImageSlice = prismic.SharedSlice<
  */
 export interface TrainingAwardSliceDefaultPrimary {
   /**
-   * training_award_image_desktop field in *TrainingAward → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: training_award.primary.training_award_image_desktop
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  training_award_image_desktop: prismic.ImageField<never>;
-
-  /**
-   * training_award_image_mobile field in *TrainingAward → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: training_award.primary.training_award_image_mobile
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  training_award_image_mobile: prismic.ImageField<never>;
-
-  /**
    * training_award_title field in *TrainingAward → Primary*
    *
    * - **Field Type**: Text
@@ -1537,12 +1584,22 @@ export interface TrainingAwardSliceDefaultItem {
   /**
    * training_award_step field in *TrainingAward → Items*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: training_award.items[].training_award_step
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  training_award_step: prismic.RichTextField;
+  training_award_step: prismic.KeyTextField;
+
+  /**
+   * training_award_step_detail field in *TrainingAward → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: training_award.items[].training_award_step_detail
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  training_award_step_detail: prismic.KeyTextField;
 }
 
 /**
@@ -1868,6 +1925,10 @@ declare module "@prismicio/client" {
       BackgroundColorWithButtonLinkSliceDefaultItem,
       BackgroundColorWithButtonLinkSliceVariation,
       BackgroundColorWithButtonLinkSliceDefault,
+      BannerSectionSlice,
+      BannerSectionSliceDefaultPrimary,
+      BannerSectionSliceVariation,
+      BannerSectionSliceDefault,
       CallToActionWithBannerSlice,
       CallToActionWithBannerSliceDefaultPrimary,
       CallToActionWithBannerSliceVariation,

@@ -12,22 +12,6 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "training_award_image_desktop": {
-          "type": "Image",
-          "config": {
-            "label": "training_award_image_desktop",
-            "constraint": {},
-            "thumbnails": []
-          }
-        },
-        "training_award_image_mobile": {
-          "type": "Image",
-          "config": {
-            "label": "training_award_image_mobile",
-            "constraint": {},
-            "thumbnails": []
-          }
-        },
         "training_award_title": {
           "type": "Text",
           "config": {
@@ -56,12 +40,17 @@
       },
       "items": {
         "training_award_step": {
-          "type": "StructuredText",
+          "type": "Text",
           "config": {
             "label": "training_award_step",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+            "placeholder": ""
+          }
+        },
+        "training_award_step_detail": {
+          "type": "Text",
+          "config": {
+            "label": "training_award_step_detail",
+            "placeholder": ""
           }
         }
       }
