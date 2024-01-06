@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url(css/header-footer.css);
+@import url(css/button.css);
+@import url(css/frontend.css);
+@import url(css/responsive.css);
+@import url(css/utilities.css);
