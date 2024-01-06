@@ -7,17 +7,22 @@ import { PrismicRichText } from "@/components/PrismicRichText";
  */
 const TrainingAward = ({ slice }) => {
   const data = slice.primary;
+  const trainingAwardHighlight = data.training_award_highlight;
   const trainingAwardTitle = data.training_award_title;
   const trainingAwardSubtitle = data.training_award_subtitle;
   const isActive = data.is_active;
   const items = slice.items;
   return (
-    <div className="container-content timeline py-[50px] lg:py-[100px]"
+    <div
+      className="container-content timeline py-[50px] lg:py-[100px]"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
       <div className="content-timeline">
-        <h2>{trainingAwardTitle}</h2>
+        <h2>
+          {trainingAwardHighlight}
+          {trainingAwardTitle}
+        </h2>
         <h3>
           <PrismicRichText field={trainingAwardSubtitle} />
         </h3>

@@ -1,4 +1,4 @@
-import { PrismicRichText } from "@prismicio/react";
+import { PrismicImage, PrismicRichText } from "@prismicio/react";
 
 /**
  * @typedef {import("@prismicio/client").Content.OpportunityListSlice} OpportunityListSlice
@@ -22,6 +22,7 @@ const OpportunityList = ({ slice }) => {
         {items.map((item) => (
           <li>
             {/* <img alt="" src="../assets/images/icon-check.png"> */}
+            <PrismicImage field={data.oppportunity_icon_list} width={20}/>
             <p key={item.opportunity_list_name}>{item.opportunity_list_name}</p>
           </li>
         ))}     
