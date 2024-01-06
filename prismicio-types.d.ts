@@ -1177,6 +1177,16 @@ export interface OpportunityListSliceDefaultPrimary {
   oppportunity_title: prismic.RichTextField;
 
   /**
+   * oppportunity_icon_list field in *OpportunityList → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: opportunity_list.primary.oppportunity_icon_list
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  oppportunity_icon_list: prismic.ImageField<never>;
+
+  /**
    * is_active field in *OpportunityList → Primary*
    *
    * - **Field Type**: Boolean
@@ -1545,6 +1555,16 @@ export type TextWithImageSlice = prismic.SharedSlice<
  * Primary content in *TrainingAward → Primary*
  */
 export interface TrainingAwardSliceDefaultPrimary {
+  /**
+   * training_award_highlight field in *TrainingAward → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: training_award.primary.training_award_highlight
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  training_award_highlight: prismic.KeyTextField;
+
   /**
    * training_award_title field in *TrainingAward → Primary*
    *

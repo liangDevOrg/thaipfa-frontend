@@ -22,6 +22,11 @@
 			"is_active": {
 				"__TYPE__": "BooleanContent",
 				"value": false
+			},
+			"training_award_highlight": {
+				"__TYPE__": "FieldContent",
+				"value": "step",
+				"type": "Text"
 			}
 		},
 		"items": [

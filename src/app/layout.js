@@ -93,38 +93,56 @@ async function Footer() {
   
 
   return (
-    <>
-      <hr />
-      <h1>Footer</h1>
-      <div className="container">{contactTitle}</div>
-      <div className="container">{companyNameEng}</div>
-      <div className="container">{companyNameThai}</div>
-      <div className="container">{companyAddress}</div>
-      <div className="container">{email}</div>
-      <div className="container">{telephone}</div>
-      <div className="container">{email}</div>
-      <div className="container">{fax}</div>
-      <div className="container">{subscribeName}</div>
-      <div className="container">{subscribePlaceholder}</div>
-      <div className="container">{subscribeButtonName}</div>
-      <nav>
-        <ul className="flex flex-wrap gap-6 md:gap-10">
-          {our_services.map((item) => (
-            <li
-              key={prismic.asText(item.label)}
-              className="font-semibold tracking-tight text-slate-800"
-            >
-              <PrismicNextLink
-                key={item}
-                href={item.service_link.url}
-                target={item.service_link.target}
-              >
-                {item.service_name}
-              </PrismicNextLink>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </>
+    <div className="footer">
+      <div className="background-darkgrey">
+        <div className="container-content py-[35px]">
+          <div className="content">
+            <div className="content-left">
+              <p>
+                {contactTitle}
+                <br />
+                {companyNameEng}
+                <br />
+                {companyNameThai}
+                <br />
+                {companyAddress}
+                <br />
+                {email}
+                <br />
+                {telephone}
+                <br />
+                {email}
+                <br />
+                {fax}
+              </p>
+            </div>
+            <div className="content-center">
+              <h3>Our Services</h3>
+              <ul className="link-service">
+                {our_services.map((item) => (
+                  <li
+                    key={prismic.asText(item.label)}
+                  >
+                    <PrismicNextLink
+                      key={item}
+                      href={item.service_link.url}
+                      target={item.service_link.target}
+                    >
+                      {item.service_name}
+                    </PrismicNextLink>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="content-right">
+              <h3>{subscribeName}</h3>
+              <input type="text" name="" placeholder={subscribePlaceholder} className="input-email" />
+              <button className="block btn-primary mt-[15px]">{subscribeButtonName}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="copy">Copyright &copy; 2024 Thai Professional Finance Academy (ThaiPFA) All Rights Reserved</div>
+    </div>
   );
 }

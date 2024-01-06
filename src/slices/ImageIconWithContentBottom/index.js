@@ -11,20 +11,18 @@ const ImageIconWithContentBottom = ({ slice }) => {
   const items = slice.items;
 
   return (
-    <section
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-    >
-      <hr />
-      <h1>Slicezone ImageIconWithContentBottom</h1>
-      {items.map((item) => (
-        <div key={item.content_subject}>
-          
-          <PrismicImage field={item.image_icon} width={50} height={50}/>
-          <PrismicRichText field={item.content_subject} />
+    <div className="container-content py-[50px] lg:py-[100px]" data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
+      <div className="content-with-icon lesson">
+        <div className="content">
+          {items.map((item) => (
+            <div className="box-item" key={item.content_subject}>
+              <PrismicImage field={item.image_icon} />
+              <PrismicRichText field={item.content_subject} />
+            </div>
+          ))}
         </div>
-      ))}
-    </section>
+      </div>
+    </div>
   );
 };
 

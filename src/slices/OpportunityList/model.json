@@ -37,6 +37,14 @@
             "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
+        "oppportunity_icon_list": {
+          "type": "Image",
+          "config": {
+            "label": "oppportunity_icon_list",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
         "is_active": {
           "type": "Boolean",
           "config": {

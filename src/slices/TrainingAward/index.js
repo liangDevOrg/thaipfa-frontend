@@ -12,22 +12,29 @@ const TrainingAward = ({ slice }) => {
   const isActive = data.is_active;
   const items = slice.items;
   return (
-    <section
+    <div className="container-content timeline py-[50px] lg:py-[100px]"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <hr />
-      <h2>Section TrainingAward</h2>
-      <h4>{trainingAwardTitle}</h4>
-      <PrismicRichText field={trainingAwardSubtitle} />
-
-      {items.map((item) => (
-        <div key={item.training_award_step}>
-          <h5>{item.training_award_step}</h5>
-          <p>{item.training_award_step_detail}</p>
+      <div className="content-timeline">
+        <h2>{trainingAwardTitle}</h2>
+        <h3>
+          <PrismicRichText field={trainingAwardSubtitle} />
+        </h3>
+        <div className="timeline">
+          <div className="outer">
+            {items.map((item) => (
+              <div className="card" key={item.training_award_step}>
+                <div className="info">
+                  <h4 className="title">{item.training_award_step}</h4>
+                  <p>{item.training_award_step_detail}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-      ))}
-    </section>
+      </div>
+    </div>
   );
 };
 

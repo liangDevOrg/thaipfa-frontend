@@ -15,38 +15,33 @@ const TraningCourse = ({ slice }) => {
   const isActive = data.is_active;
 
   return (
-    <>
-      <hr />
-      <h1>Slicezone TrainingCourseCard</h1>
-      <section
-        data-slice-type={slice.slice_type}
-        data-slice-variation={slice.variation}
-      >
-        <h1>{titleCourse}</h1>
-        <p>{subTitleCourse}</p>
-
+    <div className="container-content py-[50px] lg:py-[100px]"
+      data-slice-type={slice.slice_type}
+      data-slice-variation={slice.variation}
+    >
+      <h2>{titleCourse}</h2>
+      <h3>{subTitleCourse}</h3>
+      <div className="course-horizontal">
         {items.map((item) => (
-          <div key={item.course_name}>
-            {item.course_name}
-            <br />
-            <PrismicText field={item.course_description} />
-            <PrismicImage
-              field={item.course_image_icon}
-              width={50}
-              height={50}
-            />
+          <div className="box-course" key={item.course_name}>
+            <PrismicImage field={item.course_image_icon} />
+            <h4>{item.course_name}</h4>
+            <p><PrismicText field={item.course_description} /></p>
+            <a href="#" className="btn-register">สมัครเลย</a>
           </div>
         ))}
-
+      </div>
+      <div className="link-more text-center mt-[80px]">
         <Link
           href={buttonAllNameLink.url}
           rel="noopener noreferrer"
           target="_blank"
         >
-          {buttonAllNameCourse}
+          <span className="font-medium text-[20px]">{buttonAllNameCourse}</span>
         </Link>
-      </section>
-    </>
+        <i className="fa fa-play ml-[10px]" aria-hidden="true"></i>
+      </div>
+    </div>
   );
 };
 

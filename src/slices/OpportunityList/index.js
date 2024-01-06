@@ -11,19 +11,22 @@ const OpportunityList = ({ slice }) => {
   
   const title = data.oppportunity_title;
   return (
-    <section
+    <div className="container-content opportunity"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <hr />
-      <h1>Slicezone OpportunityList</h1>
-      <h1>
+      <h2>
         <PrismicRichText field={title} />
-      </h1>
-      {items.map((item) => (
-        <p key={item.opportunity_list_name}>{item.opportunity_list_name}</p>
-      ))}
-    </section>
+      </h2>
+      <ul className="point-list">
+        {items.map((item) => (
+          <li>
+            {/* <img alt="" src="../assets/images/icon-check.png"> */}
+            <p key={item.opportunity_list_name}>{item.opportunity_list_name}</p>
+          </li>
+        ))}     
+      </ul>
+    </div>
   );
 };
 

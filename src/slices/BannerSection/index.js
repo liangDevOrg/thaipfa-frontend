@@ -12,15 +12,17 @@ const BannerSection = ({ slice }) => {
   const imageMobile = data.image_mobile;
 
   return (
-    <section
+    <div className="content-banner no-text"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <hr />
-      <h2>Banner Section</h2>
-      <PrismicImage field={imageDesktop} />
-      <PrismicImage field={imageMobile} />
-    </section>
+      <div className="hidden md:block">
+        <PrismicImage field={imageDesktop} />
+      </div>
+      <div className="block md:hidden">
+        <PrismicImage field={imageMobile} /> 
+      </div>
+    </div>
   );
 };
 

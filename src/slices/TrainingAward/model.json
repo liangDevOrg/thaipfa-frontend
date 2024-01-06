@@ -12,6 +12,13 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "training_award_highlight": {
+          "type": "Text",
+          "config": {
+            "label": "training_award_highlight",
+            "placeholder": ""
+          }
+        },
         "training_award_title": {
           "type": "Text",
           "config": {
