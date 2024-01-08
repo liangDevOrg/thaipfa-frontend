@@ -1,3 +1,6 @@
+.link-more {
+    text-decoration: none;
+}
 .link-more:hover {
     text-decoration: underline;
 }
