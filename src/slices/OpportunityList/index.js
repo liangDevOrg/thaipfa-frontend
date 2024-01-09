@@ -11,7 +11,8 @@ const OpportunityList = ({ slice }) => {
   
   const title = data.oppportunity_title;
   return (
-    <div className="container-content opportunity"
+    <div
+      className="container-content opportunity"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
@@ -20,12 +21,12 @@ const OpportunityList = ({ slice }) => {
       </h2>
       <ul className="point-list">
         {items.map((item) => (
-          <li>
+          <li key={item.opportunity_list_name}>
             {/* <img alt="" src="../assets/images/icon-check.png"> */}
-            <PrismicImage field={data.oppportunity_icon_list} width={20}/>
-            <p key={item.opportunity_list_name}>{item.opportunity_list_name}</p>
+            <PrismicImage field={data.oppportunity_icon_list} width={20} />
+            <p>{item.opportunity_list_name}</p>
           </li>
-        ))}     
+        ))}
       </ul>
     </div>
   );
