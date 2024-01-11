@@ -1,0 +1,52 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"faq_title": {
+				"__TYPE__": "FieldContent",
+				"value": "aboard",
+				"type": "Text"
+			},
+			"is_active": {
+				"__TYPE__": "BooleanContent",
+				"value": false
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"faq_question",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Tempor commodo commodo cillum anim enim minim. Nulla cillum commodo do."
+									}
+								}
+							]
+						}
+					],
+					[
+						"faq_answer",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Cupidatat sit incididunt occaecat. Ullamco commodo ad culpa nulla id consequat ex quis duis magna non sit. Sunt sit ex exercitation anim sint fugiat velit cupidatat consectetur proident ut quis."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	}
+]

@@ -217,6 +217,7 @@ export type FooterDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<FooterDocumentData>, "footer", Lang>;
 
 type HomeDocumentDataSlicesSlice =
+  | ExperienceSlice
   | HeroSlice
   | BannerSectionSlice
   | BackgroundColorWithButtonLinkSlice
@@ -398,7 +399,7 @@ export type NavigationDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = HeroSlice | TextSlice;
+type PageDocumentDataSlicesSlice = HeroSlice;
 
 /**
  * Content for Page documents
@@ -824,6 +825,164 @@ export type CallToActionWithBannerSlice = prismic.SharedSlice<
   "call_to_action_with_banner",
   CallToActionWithBannerSliceVariation
 >;
+
+/**
+ * Primary content in *Experience → Primary*
+ */
+export interface ExperienceSliceDefaultPrimary {
+  /**
+   * experience_title field in *Experience → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: experience.primary.experience_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  experience_title: prismic.KeyTextField;
+
+  /**
+   * experience_subtitle field in *Experience → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: experience.primary.experience_subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  experience_subtitle: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Experience → Items*
+ */
+export interface ExperienceSliceDefaultItem {
+  /**
+   * experience_image field in *Experience → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: experience.items[].experience_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  experience_image: prismic.ImageField<never>;
+
+  /**
+   * experience_link_youtube field in *Experience → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: experience.items[].experience_link_youtube
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  experience_link_youtube: prismic.LinkField;
+}
+
+/**
+ * Default variation for Experience Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ExperienceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ExperienceSliceDefaultPrimary>,
+  Simplify<ExperienceSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Experience*
+ */
+type ExperienceSliceVariation = ExperienceSliceDefault;
+
+/**
+ * Experience Shared Slice
+ *
+ * - **API ID**: `experience`
+ * - **Description**: Experience
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ExperienceSlice = prismic.SharedSlice<
+  "experience",
+  ExperienceSliceVariation
+>;
+
+/**
+ * Primary content in *Faq → Primary*
+ */
+export interface FaqSliceDefaultPrimary {
+  /**
+   * faq_title field in *Faq → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq.primary.faq_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  faq_title: prismic.KeyTextField;
+
+  /**
+   * is_active field in *Faq → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: faq.primary.is_active
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  is_active: prismic.BooleanField;
+}
+
+/**
+ * Primary content in *Faq → Items*
+ */
+export interface FaqSliceDefaultItem {
+  /**
+   * faq_question field in *Faq → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq.items[].faq_question
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  faq_question: prismic.RichTextField;
+
+  /**
+   * faq_answer field in *Faq → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq.items[].faq_answer
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  faq_answer: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Faq Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FaqSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FaqSliceDefaultPrimary>,
+  Simplify<FaqSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Faq*
+ */
+type FaqSliceVariation = FaqSliceDefault;
+
+/**
+ * Faq Shared Slice
+ *
+ * - **API ID**: `faq`
+ * - **Description**: Faq
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FaqSlice = prismic.SharedSlice<"faq", FaqSliceVariation>;
 
 /**
  * Primary content in *HaveAProblem → Primary*
@@ -1264,76 +1423,6 @@ export type PromotionAndPrivilegeSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *Text → Primary*
- */
-export interface TextSliceDefaultPrimary {
-  /**
-   * Text field in *Text → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: text.primary.text
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  text: prismic.RichTextField;
-}
-
-/**
- * Default variation for Text Slice
- *
- * - **API ID**: `default`
- * - **Description**: Text
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type TextSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<TextSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Primary content in *Text → Primary*
- */
-export interface TextSliceTwoColumnsPrimary {
-  /**
-   * Text field in *Text → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: text.primary.text
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  text: prismic.RichTextField;
-}
-
-/**
- * Two Columns variation for Text Slice
- *
- * - **API ID**: `twoColumns`
- * - **Description**: Text
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type TextSliceTwoColumns = prismic.SharedSliceVariation<
-  "twoColumns",
-  Simplify<TextSliceTwoColumnsPrimary>,
-  never
->;
-
-/**
- * Slice variation for *Text*
- */
-type TextSliceVariation = TextSliceDefault | TextSliceTwoColumns;
-
-/**
- * Text Shared Slice
- *
- * - **API ID**: `text`
- * - **Description**: Text
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type TextSlice = prismic.SharedSlice<"text", TextSliceVariation>;
-
-/**
  * Primary content in *TrainingAward → Primary*
  */
 export interface TrainingAwardSliceDefaultPrimary {
@@ -1741,6 +1830,16 @@ declare module "@prismicio/client" {
       CallToActionWithBannerSliceDefaultPrimary,
       CallToActionWithBannerSliceVariation,
       CallToActionWithBannerSliceDefault,
+      ExperienceSlice,
+      ExperienceSliceDefaultPrimary,
+      ExperienceSliceDefaultItem,
+      ExperienceSliceVariation,
+      ExperienceSliceDefault,
+      FaqSlice,
+      FaqSliceDefaultPrimary,
+      FaqSliceDefaultItem,
+      FaqSliceVariation,
+      FaqSliceDefault,
       HaveAProblemSlice,
       HaveAProblemSliceDefaultPrimary,
       HaveAProblemSliceDefaultItem,
@@ -1765,12 +1864,6 @@ declare module "@prismicio/client" {
       PromotionAndPrivilegeSliceDefaultItem,
       PromotionAndPrivilegeSliceVariation,
       PromotionAndPrivilegeSliceDefault,
-      TextSlice,
-      TextSliceDefaultPrimary,
-      TextSliceTwoColumnsPrimary,
-      TextSliceVariation,
-      TextSliceDefault,
-      TextSliceTwoColumns,
       TrainingAwardSlice,
       TrainingAwardSliceDefaultPrimary,
       TrainingAwardSliceDefaultItem,

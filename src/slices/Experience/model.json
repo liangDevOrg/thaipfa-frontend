@@ -1,0 +1,50 @@
+{
+  "id": "experience",
+  "type": "SharedSlice",
+  "name": "Experience",
+  "description": "Experience",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "experience_title": {
+          "type": "Text",
+          "config": {
+            "label": "experience_title",
+            "placeholder": ""
+          }
+        },
+        "experience_subtitle": {
+          "type": "Text",
+          "config": {
+            "label": "experience_subtitle",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "experience_image": {
+          "type": "Image",
+          "config": {
+            "label": "experience_image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "experience_link_youtube": {
+          "type": "Link",
+          "config": {
+            "label": "experience_link_youtube",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      }
+    }
+  ]
+}
