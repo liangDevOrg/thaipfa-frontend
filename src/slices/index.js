@@ -16,6 +16,7 @@ export const components = {
     import("./ImageIconWithContentBottom"),
   ),
   opportunity_list: dynamic(() => import("./OpportunityList")),
+  portfolio: dynamic(() => import("./Portfolio")),
   promotion_and_privilege: dynamic(() => import("./PromotionAndPrivilege")),
   training_award: dynamic(() => import("./TrainingAward")),
   traning_course: dynamic(() => import("./TraningCourseCard")),

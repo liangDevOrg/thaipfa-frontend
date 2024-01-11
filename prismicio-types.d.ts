@@ -217,6 +217,7 @@ export type FooterDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<FooterDocumentData>, "footer", Lang>;
 
 type HomeDocumentDataSlicesSlice =
+  | FaqSlice
   | ExperienceSlice
   | HeroSlice
   | BannerSectionSlice
@@ -1352,6 +1353,77 @@ export type OpportunityListSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *Portfolio → Primary*
+ */
+export interface PortfolioSliceDefaultPrimary {
+  /**
+   * is_active field in *Portfolio → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: portfolio.primary.is_active
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  is_active: prismic.BooleanField;
+}
+
+/**
+ * Primary content in *Portfolio → Items*
+ */
+export interface PortfolioSliceDefaultItem {
+  /**
+   * portfolio_image_desktop field in *Portfolio → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: portfolio.items[].portfolio_image_desktop
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  portfolio_image_desktop: prismic.ImageField<never>;
+
+  /**
+   * portfolio_image_mobile field in *Portfolio → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: portfolio.items[].portfolio_image_mobile
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  portfolio_image_mobile: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Portfolio Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PortfolioSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PortfolioSliceDefaultPrimary>,
+  Simplify<PortfolioSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Portfolio*
+ */
+type PortfolioSliceVariation = PortfolioSliceDefault;
+
+/**
+ * Portfolio Shared Slice
+ *
+ * - **API ID**: `portfolio`
+ * - **Description**: Portfolio
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PortfolioSlice = prismic.SharedSlice<
+  "portfolio",
+  PortfolioSliceVariation
+>;
+
+/**
  * Primary content in *PromotionAndPrivilege → Primary*
  */
 export interface PromotionAndPrivilegeSliceDefaultPrimary {
@@ -1859,6 +1931,11 @@ declare module "@prismicio/client" {
       OpportunityListSliceDefaultItem,
       OpportunityListSliceVariation,
       OpportunityListSliceDefault,
+      PortfolioSlice,
+      PortfolioSliceDefaultPrimary,
+      PortfolioSliceDefaultItem,
+      PortfolioSliceVariation,
+      PortfolioSliceDefault,
       PromotionAndPrivilegeSlice,
       PromotionAndPrivilegeSliceDefaultPrimary,
       PromotionAndPrivilegeSliceDefaultItem,
