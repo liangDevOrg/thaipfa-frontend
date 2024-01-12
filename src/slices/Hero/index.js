@@ -18,7 +18,7 @@ const components = {
 
 const Hero = ({ slice }) => {
   const items = slice.items;
-  console.log(items);
+  
 
   return (
     <section className="hero-slider">
