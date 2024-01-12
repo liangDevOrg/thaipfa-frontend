@@ -1091,44 +1091,70 @@ export type HaveAProblemSlice = prismic.SharedSlice<
  */
 export interface HeroSliceDefaultPrimary {
   /**
-   * Text field in *Hero → Primary*
+   * is_active field in *Hero → Primary*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Boolean
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.text
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **Default Value**: false
+   * - **API ID Path**: hero.primary.is_active
+   * - **Documentation**: https://prismic.io/docs/field#boolean
    */
-  text: prismic.RichTextField;
+  is_active: prismic.BooleanField;
+}
 
+/**
+ * Primary content in *Hero → Items*
+ */
+export interface HeroSliceDefaultItem {
   /**
-   * Button Link field in *Hero → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.buttonLink
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  buttonLink: prismic.LinkField;
-
-  /**
-   * Button Text field in *Hero → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.buttonText
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  buttonText: prismic.KeyTextField;
-
-  /**
-   * Background Image field in *Hero → Primary*
+   * image_desktop field in *Hero → Items*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.backgroundImage
+   * - **API ID Path**: hero.items[].image_desktop
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  backgroundImage: prismic.ImageField<never>;
+  image_desktop: prismic.ImageField<never>;
+
+  /**
+   * image_mobile field in *Hero → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.items[].image_mobile
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_mobile: prismic.ImageField<never>;
+
+  /**
+   * title field in *Hero → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.items[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * button_name field in *Hero → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.items[].button_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_name: prismic.KeyTextField;
+
+  /**
+   * button_link field in *Hero → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.items[].button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
 }
 
 /**
@@ -1141,7 +1167,7 @@ export interface HeroSliceDefaultPrimary {
 export type HeroSliceDefault = prismic.SharedSliceVariation<
   "default",
   Simplify<HeroSliceDefaultPrimary>,
-  never
+  Simplify<HeroSliceDefaultItem>
 >;
 
 /**
@@ -1919,6 +1945,7 @@ declare module "@prismicio/client" {
       HaveAProblemSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
+      HeroSliceDefaultItem,
       HeroSliceVariation,
       HeroSliceDefault,
       ImageIconWithContentBottomSlice,

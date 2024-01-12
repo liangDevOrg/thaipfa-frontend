@@ -11,16 +11,19 @@
     "start": "next start",
     "lint": "next lint",
     "slicemachine": "start-slicemachine",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "cleanInstall": "rm -fR node_modules && rm -f yarn.lock && rm -f package-lock.json && npm install"
   },
   "dependencies": {
+    "@material-tailwind/react": "^2.1.8",
     "@prismicio/client": "^7.3.1",
     "@prismicio/next": "^1.5.0",
     "@prismicio/react": "^2.7.3",
     "clsx": "^2.0.0",
     "next": "^14.0.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-responsive-carousel": "^3.2.23"
   },
   "devDependencies": {
     "@slicemachine/adapter-next": "^0.3.31",

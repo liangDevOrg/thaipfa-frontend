@@ -22,8 +22,8 @@ const TraningCourse = ({ slice }) => {
       <h2>{titleCourse}</h2>
       <h3>{subTitleCourse}</h3>
       <div className="course-horizontal">
-        {items.map((item) => (
-          <div className="box-course" key={item.course_name}>
+        {items.map((item, index) => (
+          <div className="box-course" key={index}>
             <PrismicImage field={item.course_image_icon} />
             <h4>{item.course_name}</h4>
             <p><PrismicText field={item.course_description} /></p>
