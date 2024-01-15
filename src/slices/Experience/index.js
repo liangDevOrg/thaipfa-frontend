@@ -10,7 +10,6 @@ const Experience = ({ slice }) => {
   const items = slice.items;
   const experienceTitle = data.experience_title;
   const experienceSubtitle = data.experience_subtitle;
-  console.log(slice);
 
   return (
     <section
