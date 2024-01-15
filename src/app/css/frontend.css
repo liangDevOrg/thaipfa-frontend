@@ -101,16 +101,19 @@ body {
 .content-with-icon .content {
     display: flex;
     flex-wrap: wrap;
-    gap: 50px;
+    row-gap: 50px;
+    column-gap: 20px;
 }
 .content-with-icon.lesson .content {
     row-gap: 70px;
-    column-gap: 20px;
+}
+.content-with-icon .box-item {
+    width: calc(50% - 10px);
+    min-height: 210px;
+    text-align: center;
 }
 .content-with-icon.lesson .box-item {
-    width: calc(50% - 10px);
     min-height: 240px;
-    text-align: center;
 }
 .content-with-icon img,
 .content-with-icon img {
@@ -192,6 +195,11 @@ body {
     line-height: 30px;
 }
 
+/* problem */
+.problem h2 {
+    margin-bottom: 0;
+}
+
 /* course */
 .course-horizontal {
     display: flex;
@@ -250,6 +258,7 @@ body {
     line-height: 38px;
 }
 
+/* hero slider */
 .hero-slider {
     position: relative;
     height: 880px;
