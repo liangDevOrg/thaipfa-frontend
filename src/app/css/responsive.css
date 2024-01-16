@@ -29,7 +29,8 @@
     .container-content .card p,
     .container-content.promotion .content .box-promotion p,
     .content-timeline .timeline .card .title,
-    .content-timeline .timeline .card p {
+    .content-timeline .timeline .card p,
+    .faq-content .faq-card .faq-header button {
         font-size: 20px;
         line-height: 28px;
     }
