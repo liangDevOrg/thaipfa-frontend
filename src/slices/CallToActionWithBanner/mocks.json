@@ -9,13 +9,12 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Sunt sunt consectetur ex nisi incididunt officia labore qui. Laboris pariatur anim ullamco eu esse cillum laboris non deserunt ut occaecat elit nulla. Voluptate in exercitation incididunt proident sint eu nisi irure eiusmod Lorem."
+							"text": "Est commodo ut deserunt laboris laboris adipisicing est reprehenderit aute. Sit occaecat reprehenderit quis in mollit anim nisi duis adipisicing aliqua consectetur commodo irure elit. Aliquip culpa elit incididunt eu veniam quis laborum magna amet amet proident culpa deserunt dolore Lorem."
 						}
 					}
 				]
 			},
 			"image_background_desktop": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
@@ -33,10 +32,12 @@
 					},
 					"background": "transparent"
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			},
 			"image_background_mobile": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1587905069134-008460d7a636",
@@ -54,6 +55,9 @@
 					},
 					"background": "transparent"
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			},
 			"button_name": {

@@ -1465,6 +1465,26 @@ export interface PromotionAndPrivilegeSliceDefaultPrimary {
   promotion_and_privilege_title: prismic.RichTextField;
 
   /**
+   * promotion_image_banner_desktop field in *PromotionAndPrivilege → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: promotion_and_privilege.primary.promotion_image_banner_desktop
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  promotion_image_banner_desktop: prismic.ImageField<never>;
+
+  /**
+   * promotion_image_banner_mobile field in *PromotionAndPrivilege → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: promotion_and_privilege.primary.promotion_image_banner_mobile
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  promotion_image_banner_mobile: prismic.ImageField<never>;
+
+  /**
    * is_active field in *PromotionAndPrivilege → Primary*
    *
    * - **Field Type**: Boolean
