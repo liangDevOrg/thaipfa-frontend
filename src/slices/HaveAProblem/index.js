@@ -15,7 +15,7 @@ const HaveAProblem = ({ slice }) => {
 
   return (
     <>
-      <section className="container-divider"></section>
+      <div className="container-divider"></div>
       <div className="container-content problem py-[50px] lg:py-[80px]">
         <h2>{haveAProblemTitle}</h2>
       </div>

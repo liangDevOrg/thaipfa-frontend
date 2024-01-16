@@ -26,7 +26,10 @@
     .container-content h3,
     .container-content h3 p,
     .container-content .card .title,
-    .container-content .card p {
+    .container-content .card p,
+    .container-content.promotion .content .box-promotion p,
+    .content-timeline .timeline .card .title,
+    .content-timeline .timeline .card p {
         font-size: 20px;
         line-height: 28px;
     }
@@ -40,7 +43,7 @@
     /* .opportunity .point-logo {
         margin: 0 auto 30px;
     } */
-    .opportunity .point-list li p {
+    .container-content.opportunity .point-list li p {
         font-size: 20px;
         line-height: 28px;
     }

@@ -10,20 +10,23 @@ const Portfolio = ({ slice }) => {
   // const isActive = data.is_active;
   const items = data.items
   return (
-    <section
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-    >
-      <hr />
-      {items.map((item) => (
-        <div key={item.portfolio_image_desktop}>
-          <PrismicNextImage
-            field={item.portfolio_image_desktop}
-            width={450}
-          />
-        </div>
-      ))}
-    </section>
+    <>
+      <div className="container-divider"></div>
+      <div className="container-content portfolio py-[50px] lg:py-[100px]" 
+        data-slice-type={slice.slice_type}
+        data-slice-variation={slice.variation}
+      >
+        <h2>ผลงานที่ผ่านมา</h2>
+        {items.map((item) => (
+          <div key={item.portfolio_image_desktop}>
+            <PrismicNextImage
+              alt=""
+              field={item.portfolio_image_desktop}
+            />
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 

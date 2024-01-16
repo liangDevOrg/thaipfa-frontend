@@ -1,4 +1,7 @@
+"use client";
+import { useState } from "react";
 import { PrismicRichText } from "@/components/PrismicRichText";
+import { Accordion, AccordionHeader, AccordionBody } from "@material-tailwind/react";
 
 /**
  * @typedef {import("@prismicio/client").Content.FaqSlice} FaqSlice
@@ -9,21 +12,35 @@ const Faq = ({ slice }) => {
   const data = slice.primary;
   const items = slice.items;
   const faqTitle = data.faq_title;
+
+  const [open, setOpen] = useState(null);
+  const handleOpen = (value) => setOpen(open === value ? null : value);
  
   return (
-    <section
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-    >
-      <hr />
-      <h1>{faqTitle}</h1>
-      {items.map((item, index) => (
-        <div key={index}>
-          <PrismicRichText field={item.faq_question} />
-          <PrismicRichText field={item.faq_answer} />
+    <>
+      <div className="container-divider"></div>
+      <div className="container-content faq py-[50px] lg:py-[100px]" 
+        data-slice-type={slice.slice_type}
+        data-slice-variation={slice.variation}
+      >
+        <h2>{faqTitle}</h2>
+        <div className="faq-content">
+          {items.map((item, index) => (
+            <div className="faq-card" key={index}>
+              <Accordion className="faq-header"  open={open === index}>
+                <AccordionHeader onClick={() => handleOpen(index)}>
+                  <PrismicRichText field={item.faq_question} />
+                  <i className="fa fa-plus" aria-hidden="true"></i>
+                </AccordionHeader>
+                <AccordionBody className="faq-body">
+                  <PrismicRichText field={item.faq_answer} />
+                </AccordionBody>
+              </Accordion>
+            </div>
+          ))}
         </div>
-      ))}
-    </section>
+      </div>
+    </>
   );
 };
 

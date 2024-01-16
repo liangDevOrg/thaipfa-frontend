@@ -21,7 +21,7 @@ const Hero = ({ slice }) => {
   
 
   return (
-    <section className="hero-slider">
+    <div className="hero-slider">
       <Carousel className="rounded-xl">
         {items.map((item) => (
           <div key={item.image_desktop.alt}>
@@ -144,7 +144,7 @@ const Hero = ({ slice }) => {
           </div>
         </div>
       </Carousel>
-    </section>
+    </div>
   );
 };
 
