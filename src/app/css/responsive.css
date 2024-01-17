@@ -2,7 +2,10 @@
     .content-banner.no-text {
         height: 350px;
     }
-   .course-horizontal .box-course {
+    .hero-slider {
+        height: 600px;
+    }
+    .course-horizontal .box-course {
         max-width: 280px;
     }
     .course-horizontal .box-course:nth-child(1) {
@@ -41,6 +44,14 @@
     .content-timeline .timeline .card {
         margin: 0 0 30px 40px;
     }
+    .hero-slider {
+        height: 400px;
+    }
+    .hero-slider .hero-caption h2 {
+        font-size: 40px;
+        line-height: 60px;
+    }
+    
     /* .opportunity .point-logo {
         margin: 0 auto 30px;
     } */

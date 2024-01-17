@@ -26,7 +26,7 @@ const Faq = ({ slice }) => {
         <div className="faq-content">
           {items.map((item, index) => (
             <div className="faq-card" key={index}>
-              <Accordion className="faq-header"  open={open === index}>
+              <Accordion className="faq-header" open={open === index}>
                 <AccordionHeader onClick={() => handleOpen(index)}>
                   <PrismicRichText field={item.faq_question} />
                   <i className="fa fa-plus" aria-hidden="true"></i>

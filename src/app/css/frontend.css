@@ -170,6 +170,56 @@ body {
     border-radius: 50%;
 }
 
+/* home hero slider */
+.hero-slider {
+    position: relative;
+    height: 800px;
+}
+.hero-slider .overflow-x-hidden {
+    overflow-y: hidden;
+}
+.hero-slider .hero-image {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+.hero-slider .hero-caption {
+    position: absolute;
+    top: 50%;
+    left: 50% ;
+    width: calc(100% - 130px);
+    text-align: center;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    z-index: 100;
+}
+.hero-slider .hero-caption h2 {
+    margin-bottom: 20px;
+    font-family: 'Anuphan', sans-serif !important;
+    font-size: 60px;
+    font-weight: bold;
+    line-height: 80px;
+}
+.hero-slider .hero-caption button {
+    min-width: 150px;
+    padding: 5px 10px;
+    color: #ffffff;
+    font-family: 'Anuphan', sans-serif !important;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+    background-color: #ff5500;
+    border: 0;
+    border-radius: 20px;
+}
+.hero-slider .hero-caption button:hover {
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
 /* home promotion */
 .container-content.promotion .content {
     display: flex;
@@ -293,71 +343,23 @@ body {
     width: 100%;
 }
 
-/* home portfolio */
-.container-content.portfolio img {
-    display: block;
-    margin: 50px auto 0;
-    max-width: 700px;
-    width: 100%;
-}
-
-/* home hero slider */
-.hero-slider {
-    position: relative;
-    height: 880px;
-}
-.hero-slider .slider-image {
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%,-50%);
-    -webkit-transform: translate(-50%,-50%);
-    -moz-transform: translate(-50%,-50%);
-}
-.hero-slider .hero-backdrop {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 880px;
-    background-image: linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0.75));
-    z-index: 100;
-}
-.hero-slider .hero-caption {
-    position: absolute;
-    top: 50%;
-    left: 50% ;
-    width: 100%;
-    text-align: center;
-    transform: translate(-50%,-50%);
-    -webkit-transform: translate(-50%,-50%);
-    -moz-transform: translate(-50%,-50%);
-    z-index: 200;
-}
-.hero-slider .hero-caption p {
-    margin-bottom: 20px;
-    color: #ffffff;
-    font-size: 60px;
-    font-weight: bold;
-    line-height: 80px;
-}
-
-
-.faq-content {
+/* home faq */
+.container-content.faq .faq-content {
     margin: 50px auto 0;
     max-width: 740px;
     width: 100%;
 }
-.faq-content .faq-card {
+.container-content.faq .faq-content .faq-card {
     margin-bottom: 20px;
     border: 0;
     border-radius: 0;
 }
-.faq-content .faq-card .faq-header {
+.container-content.faq .faq-content .faq-card .faq-header {
     padding: 0;
     background-color: #dddddd;
     border-bottom: 0;
 }
-.faq-content .faq-card .faq-header button {
+.container-content.faq .faq-content .faq-card .faq-header button {
     position: relative;
     padding: 20px 40px 20px 20px;
     color: #000000;
@@ -367,10 +369,10 @@ body {
     line-height: 30px;
     text-decoration: none;
 }
-.faq-content .faq-card .faq-header button p {
+.container-content.faq .faq-content .faq-card .faq-header button p {
     margin: 0 !important;
 }
-.faq-content .faq-card .faq-header button i {
+.container-content.faq .faq-content .faq-card .faq-header button i {
     position: absolute;
     top: 50%;
     right: 20px;
@@ -378,15 +380,23 @@ body {
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
 }
-.faq-content .faq-card .faq-header button:hover {
+.container-content.faq .faq-content .faq-card .faq-header button:hover {
     color: #ffffff;
     background-color: #ff5500;
     text-decoration: none;
 }
-.faq-content .faq-card .faq-body {
+.container-content.faq .faq-content .faq-card .faq-body {
     padding: 20px;
     font-family: 'Anuphan', sans-serif !important;
     font-size: 18px;
     line-height: 26px;
     background-color: #ffffff;
+}
+
+/* home portfolio */
+.container-content.portfolio img {
+    display: block;
+    margin: 50px auto 0;
+    max-width: 700px;
+    width: 100%;
 }
