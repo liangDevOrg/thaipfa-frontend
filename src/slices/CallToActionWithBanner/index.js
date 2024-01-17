@@ -1,7 +1,7 @@
 import { PrismicRichText } from "@/components/PrismicRichText";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicLink } from "@prismicio/react";
-
+import PropTypes from "prop-types";
 /**
  * @typedef {import("@prismicio/client").Content.CallToActionWithBannerSlice} CallToActionWithBannerSlice
  * @typedef {import("@prismicio/react").SliceComponentProps<CallToActionWithBannerSlice>} CallToActionWithBannerProps
@@ -15,7 +15,6 @@ const CallToActionWithBanner = ({ slice }) => {
   const buttonName = data.button_name;
   const buttonLink = data.button_link;
 
-  
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -25,11 +24,15 @@ const CallToActionWithBanner = ({ slice }) => {
       <h1>
         <PrismicRichText field={title} />
       </h1>
-      <PrismicNextImage field={imageBackgroundDesktop} />
-      <PrismicNextImage field={imageBackgroundMobile} />
+      <PrismicNextImage field={imageBackgroundDesktop} alt="" />
+      <PrismicNextImage field={imageBackgroundMobile} alt="" />
       <PrismicLink field={buttonLink}>{buttonName}</PrismicLink>
     </section>
   );
+};
+
+CallToActionWithBanner.propTypes = {
+  slice: PropTypes.string,
 };
 
 export default CallToActionWithBanner;

@@ -1,6 +1,6 @@
 import { PrismicRichText } from "@/components/PrismicRichText";
 import { PrismicImage } from "@prismicio/react";
-
+import PropTypes from "prop-types";
 /**
  * @typedef {import("@prismicio/client").Content.PromotionAndPrivilegeSlice} PromotionAndPrivilegeSlice
  * @typedef {import("@prismicio/react").SliceComponentProps<PromotionAndPrivilegeSlice>} PromotionAndPrivilegeProps
@@ -9,7 +9,7 @@ import { PrismicImage } from "@prismicio/react";
 const PromotionAndPrivilege = ({ slice }) => {
   const data = slice.primary;
   const bannerDesktop = data.promotion_image_banner_desktop;
-  const bannerMobile  = data.promotion_image_banner_mobile;
+  const bannerMobile = data.promotion_image_banner_mobile;
   const items = slice.items;
 
   return (
@@ -39,5 +39,8 @@ const PromotionAndPrivilege = ({ slice }) => {
   );
 };
 
+PromotionAndPrivilege.propTypes = {
+  slice: PropTypes.string,
+};
 
 export default PromotionAndPrivilege;

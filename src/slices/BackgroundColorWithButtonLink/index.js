@@ -1,15 +1,12 @@
 import { PrismicRichText, PrismicLink } from "@prismicio/react";
-
+import PropTypes from "prop-types";
 /**
  * @typedef {import("@prismicio/client").Content.BackgroundColorWithButtonLinkSlice} BackgroundColorWithButtonLinkSlice
  * @typedef {import("@prismicio/react").SliceComponentProps<BackgroundColorWithButtonLinkSlice>} BackgroundColorWithButtonLinkProps
  * @param {BackgroundColorWithButtonLinkProps}
  */
 const BackgroundColorWithButtonLink = ({ slice }) => {
-  const data = slice.primary;
-
-  const isActive = data.is_active;
-
+  
   const items = slice.items;
 
   return (
@@ -28,6 +25,10 @@ const BackgroundColorWithButtonLink = ({ slice }) => {
       ))}
     </section>
   );
+};
+
+BackgroundColorWithButtonLink.propTypes = {
+  slice: PropTypes.string,
 };
 
 export default BackgroundColorWithButtonLink;

@@ -1,5 +1,5 @@
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
-
+import PropTypes from "prop-types";
 /**
  * @typedef {import("@prismicio/client").Content.ExperienceSlice} ExperienceSlice
  * @typedef {import("@prismicio/react").SliceComponentProps<ExperienceSlice>} ExperienceProps
@@ -12,7 +12,8 @@ const Experience = ({ slice }) => {
   const experienceSubtitle = data.experience_subtitle;
 
   return (
-    <div className="container-content experience py-[50px] lg:py-[100px]"
+    <div
+      className="container-content experience py-[50px] lg:py-[100px]"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
@@ -29,6 +30,10 @@ const Experience = ({ slice }) => {
       </div>
     </div>
   );
+};
+
+Experience.propTypes = {
+  slice: PropTypes.string,
 };
 
 export default Experience;

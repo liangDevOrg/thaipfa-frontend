@@ -1,5 +1,5 @@
 import { PrismicRichText } from "@/components/PrismicRichText";
-
+import PropTypes from "prop-types";
 /**
  * @typedef {import("@prismicio/client").Content.TrainingAwardSlice} TrainingAwardSlice
  * @typedef {import("@prismicio/react").SliceComponentProps<TrainingAwardSlice>} TrainingAwardProps
@@ -10,7 +10,6 @@ const TrainingAward = ({ slice }) => {
   const trainingAwardHighlight = data.training_award_highlight;
   const trainingAwardTitle = data.training_award_title;
   const trainingAwardSubtitle = data.training_award_subtitle;
-  const isActive = data.is_active;
   const items = slice.items;
   return (
     <div
@@ -28,8 +27,8 @@ const TrainingAward = ({ slice }) => {
         </h3>
         <div className="timeline">
           <div className="outer">
-            {items.map((item) => (
-              <div className="card" key={item.training_award_step}>
+            {items.map((item, index) => (
+              <div className="card" key={index}>
                 <div className="info">
                   <h4 className="title">{item.training_award_step}</h4>
                   <p>{item.training_award_step_detail}</p>
@@ -41,6 +40,10 @@ const TrainingAward = ({ slice }) => {
       </div>
     </div>
   );
+};
+
+TrainingAward.propTypes = {
+  slice: PropTypes.string,
 };
 
 export default TrainingAward;

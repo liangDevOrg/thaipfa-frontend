@@ -1,5 +1,5 @@
 import { PrismicImage, PrismicRichText } from "@prismicio/react";
-
+import PropTypes from "prop-types";
 /**
  * @typedef {import("@prismicio/client").Content.OpportunityListSlice} OpportunityListSlice
  * @typedef {import("@prismicio/react").SliceComponentProps<OpportunityListSlice>} OpportunityListProps
@@ -8,7 +8,6 @@ import { PrismicImage, PrismicRichText } from "@prismicio/react";
 const OpportunityList = ({ slice }) => {
   const data = slice.primary;
   const items = slice.items;
-  
   const title = data.oppportunity_title;
   return (
     <div
@@ -20,8 +19,8 @@ const OpportunityList = ({ slice }) => {
         <PrismicRichText field={title} />
       </h2>
       <ul className="point-list">
-        {items.map((item) => (
-          <li key={item.opportunity_list_name}>
+        {items.map((item, index) => (
+          <li key={index}>
             {/* <img alt="" src="../assets/images/icon-check.png"> */}
             <PrismicImage field={data.oppportunity_icon_list} width={20} />
             <p>{item.opportunity_list_name}</p>
@@ -30,6 +29,10 @@ const OpportunityList = ({ slice }) => {
       </ul>
     </div>
   );
+};
+
+OpportunityList.propTypes = {
+  slice: PropTypes.string,
 };
 
 export default OpportunityList;

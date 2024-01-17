@@ -1,24 +1,12 @@
 "use client";
-import * as prismic from "@prismicio/client";
-import { PrismicNextLink, PrismicNextImage } from "@prismicio/next";
+
+import { PrismicNextImage } from "@prismicio/next";
 import { Carousel, Typography, Button } from "@material-tailwind/react";
-
-import { Bounded } from "@/components/Bounded";
-import { Heading } from "@/components/Heading";
+import PropTypes from "prop-types";
 import { PrismicRichText } from "@/components/PrismicRichText";
-
-/** @type {import("@prismicio/react").PrismicRichTextProps['components']} */
-const components = {
-  heading1: ({ children }) => (
-    <Heading as="h2" size="xl" className="mb-4 mt-12 first:mt-0 last:mb-0">
-      {children}
-    </Heading>
-  ),
-};
 
 const Hero = ({ slice }) => {
   const items = slice.items;
-  
 
   return (
     <div className="hero-slider">
@@ -34,7 +22,7 @@ const Hero = ({ slice }) => {
           </div>
         ))}
       </Carousel>
-      <Carousel className="rounded-xl">
+      {/* <Carousel className="rounded-xl">
         <div className="relative h-full w-full">
           <img
             src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
@@ -143,9 +131,14 @@ const Hero = ({ slice }) => {
             </div>
           </div>
         </div>
-      </Carousel>
+      </Carousel> */}
     </div>
   );
 };
+
+Hero.propTypes = {
+  slice: PropTypes.string,
+};
+
 
 export default Hero;

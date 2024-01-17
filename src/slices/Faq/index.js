@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { PrismicRichText } from "@/components/PrismicRichText";
 import { Accordion, AccordionHeader, AccordionBody } from "@material-tailwind/react";
-
+import PropTypes from "prop-types";
 /**
  * @typedef {import("@prismicio/client").Content.FaqSlice} FaqSlice
  * @typedef {import("@prismicio/react").SliceComponentProps<FaqSlice>} FaqProps
@@ -12,7 +12,6 @@ const Faq = ({ slice }) => {
   const data = slice.primary;
   const items = slice.items;
   const faqTitle = data.faq_title;
-
   const [open, setOpen] = useState(null);
   const handleOpen = (value) => setOpen(open === value ? null : value);
  
@@ -42,6 +41,10 @@ const Faq = ({ slice }) => {
       </div>
     </>
   );
+};
+
+Faq.propTypes = {
+  slice: PropTypes.string,
 };
 
 export default Faq;
