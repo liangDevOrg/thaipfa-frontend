@@ -3,8 +3,8 @@
 import dynamic from "next/dynamic";
 
 export const components = {
-  background_color_with_button_link: dynamic(() =>
-    import("./BackgroundColorWithButtonLink"),
+  background_color_with_button_link: dynamic(
+    () => import("./BackgroundColorWithButtonLink"),
   ),
   banner_section: dynamic(() => import("./BannerSection")),
   call_to_action_with_banner: dynamic(() => import("./CallToActionWithBanner")),
@@ -12,12 +12,17 @@ export const components = {
   faq: dynamic(() => import("./Faq")),
   have_a_problem: dynamic(() => import("./HaveAProblem")),
   hero: dynamic(() => import("./Hero")),
-  image_icon_with_content_bottom: dynamic(() =>
-    import("./ImageIconWithContentBottom"),
+  image_and_content_side_by_side: dynamic(
+    () => import("./ImageAndContentSideBySide"),
   ),
+  image_icon_with_content_bottom: dynamic(
+    () => import("./ImageIconWithContentBottom"),
+  ),
+  introduction: dynamic(() => import("./Introduction")),
   opportunity_list: dynamic(() => import("./OpportunityList")),
   portfolio: dynamic(() => import("./Portfolio")),
   promotion_and_privilege: dynamic(() => import("./PromotionAndPrivilege")),
+  speaker: dynamic(() => import("./Speaker")),
   training_award: dynamic(() => import("./TrainingAward")),
   traning_course: dynamic(() => import("./TraningCourseCard")),
   traning_course_list: dynamic(() => import("./TraningCourseList")),

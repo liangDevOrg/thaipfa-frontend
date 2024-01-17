@@ -1,0 +1,60 @@
+{
+  "id": "image_and_content_side_by_side",
+  "type": "SharedSlice",
+  "name": "ImageAndContentSideBySide",
+  "description": "ImageAndContentSideBySide",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "theme_background": {
+          "type": "Color",
+          "config": {
+            "label": "theme_background",
+            "placeholder": ""
+          }
+        },
+        "image_desktop": {
+          "type": "Image",
+          "config": {
+            "label": "image_desktop",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "image_mobile": {
+          "type": "Image",
+          "config": {
+            "label": "image_mobile",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "content": {
+          "type": "StructuredText",
+          "config": {
+            "label": "content",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "is_active": {
+          "type": "Boolean",
+          "config": {
+            "label": "is_active",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": true
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

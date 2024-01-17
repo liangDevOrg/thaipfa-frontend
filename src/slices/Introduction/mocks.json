@@ -1,0 +1,37 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "sell",
+				"type": "Text"
+			},
+			"theme_background": {
+				"__TYPE__": "FieldContent",
+				"value": "#479847",
+				"type": "Color"
+			},
+			"is_active": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"subject",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "remove",
+							"type": "Text"
+						}
+					]
+				]
+			}
+		]
+	}
+]

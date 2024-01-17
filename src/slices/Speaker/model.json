@@ -1,0 +1,68 @@
+{
+  "id": "speaker",
+  "type": "SharedSlice",
+  "name": "Speaker",
+  "description": "Speaker",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "title",
+            "placeholder": ""
+          }
+        },
+        "is_active": {
+          "type": "Boolean",
+          "config": {
+            "label": "is_active",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        }
+      },
+      "items": {
+        "image_desktop": {
+          "type": "Image",
+          "config": {
+            "label": "image_desktop",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "image_mobile": {
+          "type": "Image",
+          "config": {
+            "label": "image_mobile",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "speaker_name": {
+          "type": "Text",
+          "config": {
+            "label": "speaker_name",
+            "placeholder": ""
+          }
+        },
+        "speaker_description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "speaker_description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      }
+    }
+  ]
+}

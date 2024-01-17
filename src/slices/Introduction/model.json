@@ -1,0 +1,50 @@
+{
+  "id": "introduction",
+  "type": "SharedSlice",
+  "name": "Introduction",
+  "description": "Introduction",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "title",
+            "placeholder": ""
+          }
+        },
+        "theme_background": {
+          "type": "Color",
+          "config": {
+            "label": "theme_background",
+            "placeholder": ""
+          }
+        },
+        "is_active": {
+          "type": "Boolean",
+          "config": {
+            "label": "is_active",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        }
+      },
+      "items": {
+        "subject": {
+          "type": "Text",
+          "config": {
+            "label": "subject",
+            "placeholder": ""
+          }
+        }
+      }
+    }
+  ]
+}
