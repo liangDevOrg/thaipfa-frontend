@@ -16,18 +16,27 @@ const CallToActionWithBanner = ({ slice }) => {
   const buttonLink = data.button_link;
 
   return (
-    <section
+    <div
+      className="content-banner"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <hr />
-      <h1>
-        <PrismicRichText field={title} />
-      </h1>
-      <PrismicNextImage field={imageBackgroundDesktop} alt="" />
-      <PrismicNextImage field={imageBackgroundMobile} alt="" />
-      <PrismicLink field={buttonLink}>{buttonName}</PrismicLink>
-    </section>
+      <div className="background-overlay"></div>
+      <div className="hidden md:block">
+        <PrismicNextImage field={imageBackgroundDesktop} alt="" />
+      </div>
+      <div className="block md:hidden">
+        <PrismicNextImage field={imageBackgroundMobile} alt="" />
+      </div>
+      <div className="container-content py-[50px]">
+        <div className="banner-content">
+          <PrismicRichText field={title} />
+          <div className="text-center">
+            <PrismicLink field={buttonLink} className="inline-block btn-primary btn-large">{buttonName}</PrismicLink>
+          </div>
+        </div>
+      </div> 
+    </div>
   );
 };
 

@@ -12,27 +12,31 @@ const TraningCourseList = ({ slice }) => {
   const subtitle = data.subtitle_course;
 
   return (
-    <section
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-    >
-      <hr />
-      <h1>{title}</h1>
-      <h5>{subtitle}</h5>
-
-      {items.map((item, index) => (
-        <div key={index}>
-          <h5>{item.course_name}</h5>
-          <PrismicNextLink
-            href={item.course_button_link}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <h5>{item.course_button_name}</h5>
-          </PrismicNextLink>
+    <>
+      <div className="container-divider"></div>
+      <div className="container-content py-[50px] lg:py-[100px]"
+        data-slice-type={slice.slice_type}
+        data-slice-variation={slice.variation}
+      >
+        <h2>{title}</h2>
+        <h3>{subtitle}</h3>
+        <div className="course-vertical">
+          {items.map((item, index) => (
+            <div className="box-course" key={index}>
+              <PrismicNextLink
+                href={item.course_button_link}
+                rel="noopener noreferrer"
+                target="_blank"
+                className="btn-register"
+              >
+                {item.course_button_name}
+              </PrismicNextLink>
+              <p>{item.course_name}</p>
+            </div>
+          ))}
         </div>
-      ))}
-    </section>
+      </div>
+    </>
   );
 };
 
