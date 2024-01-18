@@ -6,10 +6,174 @@
   "status": true,
   "json": {
     "Main": {
-      "menu_list": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "uid",
+          "placeholder": ""
+        }
+      },
+      "menu_title1": {
+        "type": "Text",
+        "config": {
+          "label": "menu_title1",
+          "placeholder": ""
+        }
+      },
+      "group_menu1": {
         "type": "Group",
         "config": {
-          "label": "menu_list",
+          "label": "group_menu1",
+          "fields": {
+            "menu_name": {
+              "type": "Text",
+              "config": {
+                "label": "menu_name",
+                "placeholder": ""
+              }
+            },
+            "menu_link": {
+              "type": "Link",
+              "config": {
+                "label": "menu_link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      },
+      "menu_title2": {
+        "type": "Text",
+        "config": {
+          "label": "menu_title2",
+          "placeholder": ""
+        }
+      },
+      "group_menu2": {
+        "type": "Group",
+        "config": {
+          "label": "group_menu2",
+          "fields": {
+            "menu_name": {
+              "type": "Text",
+              "config": {
+                "label": "menu_name",
+                "placeholder": ""
+              }
+            },
+            "menu_link": {
+              "type": "Link",
+              "config": {
+                "label": "menu_link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      },
+      "menu_title3": {
+        "type": "Text",
+        "config": {
+          "label": "menu_title3",
+          "placeholder": ""
+        }
+      },
+      "group_menu3": {
+        "type": "Group",
+        "config": {
+          "label": "group_menu3",
+          "fields": {
+            "menu_name": {
+              "type": "Text",
+              "config": {
+                "label": "menu_name",
+                "placeholder": ""
+              }
+            },
+            "menu_link": {
+              "type": "Link",
+              "config": {
+                "label": "menu_link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      },
+      "menu_title4": {
+        "type": "Text",
+        "config": {
+          "label": "menu_title4",
+          "placeholder": ""
+        }
+      },
+      "group_menu4": {
+        "type": "Group",
+        "config": {
+          "label": "group_menu4",
+          "fields": {
+            "menu_name": {
+              "type": "Text",
+              "config": {
+                "label": "menu_name",
+                "placeholder": ""
+              }
+            },
+            "menu_link": {
+              "type": "Link",
+              "config": {
+                "label": "menu_link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      },
+      "menu_title5": {
+        "type": "Text",
+        "config": {
+          "label": "menu_title5",
+          "placeholder": ""
+        }
+      },
+      "group_menu5": {
+        "type": "Group",
+        "config": {
+          "label": "group_menu5",
+          "fields": {
+            "menu_name": {
+              "type": "Text",
+              "config": {
+                "label": "menu_name",
+                "placeholder": ""
+              }
+            },
+            "menu_link": {
+              "type": "Link",
+              "config": {
+                "label": "menu_link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      },
+      "menu_title6": {
+        "type": "Text",
+        "config": {
+          "label": "menu_title6",
+          "placeholder": ""
+        }
+      },
+      "group_menu6": {
+        "type": "Group",
+        "config": {
+          "label": "group_menu6",
           "fields": {
             "menu_name": {
               "type": "Text",
