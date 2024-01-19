@@ -18,9 +18,8 @@ const OpportunityList = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <PrismicImage field={imageDesktop} />
+      <PrismicImage field={imageDesktop} className="opportunity-logo" />
       <h2>
-        
         <PrismicRichText field={title} />
       </h2>
       <ul className="point-list">

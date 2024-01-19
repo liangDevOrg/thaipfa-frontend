@@ -19,6 +19,9 @@ body {
 .container-content.full {
     max-width: 100%;
 }
+.container-content.header {
+    padding: 0 40px;
+}
 .container-content.opportunity {
     padding: 100px 25px 50px;
     max-width: 740px;
@@ -358,12 +361,12 @@ body {
 }
 
 /* home opportunity */
-/* .opportunity .point-logo {
+.container-content.opportunity .opportunity-logo {
     display: block;
     margin: 0 auto 50px;
     max-width: 300px;
     width: 100%;
-} */
+}
 .container-content.opportunity .point-list {
     display: flex;
     flex-direction: column;

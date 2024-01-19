@@ -20,6 +20,9 @@
         font-size: 24px;
         line-height: 32px;
     }
+    .container-content.header {
+        padding: 0 25px;
+    }
     .container-content.opportunity {
         padding: 50px 25px;
     }
@@ -69,9 +72,9 @@
         font-size: 18px;
         line-height: 26px;
     }
-    /* .container-content.opportunity .point-logo {
+    .container-content.opportunity .opportunity-logo {
         margin: 0 auto 30px;
-    } */
+    }
     .container-content.opportunity .point-list li p {
         font-size: 20px;
         line-height: 28px;
