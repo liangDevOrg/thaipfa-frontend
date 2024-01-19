@@ -1,10 +1,9 @@
 import "./globals.css";
 
 import { Inter } from "next/font/google";
-import { PrismicLink, PrismicText, SliceZone } from "@prismicio/react";
+import { PrismicLink, PrismicText } from "@prismicio/react";
 import { PrismicNextLink, PrismicPreview } from "@prismicio/next";
 import * as prismic from "@prismicio/client";
-import { components } from "@/slices";
 import { createClient, repositoryName } from "@/prismicio";
 import { Bounded } from "@/components/Bounded";
 
@@ -45,8 +44,6 @@ async function Header() {
   const client = createClient();
   const settings = await client.getSingle("settings");
   const menu = await client.getSingle("menu");
-  console.log(menu);
-  
   
 
   return (
@@ -60,7 +57,7 @@ async function Header() {
         </PrismicNextLink>
         <nav>
           <ul>
-            {menu.data.menu_name}
+            <h4>{menu.data.menu_name}</h4>
             {menu.data.group_menu.map((item, index) => (
               <li key={index}>
                 <PrismicLink field={item.submenu_link}>
@@ -71,7 +68,7 @@ async function Header() {
           </ul>
 
           <ul>
-            {menu.data.menu_name2}
+            <h4>{menu.data.menu_name2}</h4>
             {menu.data.group_menu2.map((item, index) => (
               <li key={index}>
                 <PrismicLink field={item.submenu_link}>
@@ -82,8 +79,41 @@ async function Header() {
           </ul>
 
           <ul>
-            {menu.data.menu_name3}
+            <h4>{menu.data.menu_name3}</h4>
             {menu.data.group_menu3.map((item, index) => (
+              <li key={index}>
+                <PrismicLink field={item.submenu_link}>
+                  {item.submenu_name}
+                </PrismicLink>
+              </li>
+            ))}
+          </ul>
+
+          <ul>
+            <h4>{menu.data.menu_name4}</h4>
+            {menu.data.group_menu4.map((item, index) => (
+              <li key={index}>
+                <PrismicLink field={item.submenu_link}>
+                  {item.submenu_name}
+                </PrismicLink>
+              </li>
+            ))}
+          </ul>
+
+          <ul>
+            <h4>{menu.data.menu_name5}</h4>
+            {menu.data.group_menu5.map((item, index) => (
+              <li key={index}>
+                <PrismicLink field={item.submenu_link}>
+                  {item.submenu_name}
+                </PrismicLink>
+              </li>
+            ))}
+          </ul>
+
+          <ul>
+            <h4>{menu.data.menu_name6}</h4>
+            {menu.data.group_menu6.map((item, index) => (
               <li key={index}>
                 <PrismicLink field={item.submenu_link}>
                   {item.submenu_name}
