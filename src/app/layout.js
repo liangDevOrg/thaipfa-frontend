@@ -1,12 +1,9 @@
-"use client";
 import "./globals.css";
 import { Inter } from "next/font/google";
-import { PrismicLink, PrismicText } from "@prismicio/react";
 import { PrismicNextLink, PrismicPreview } from "@prismicio/next";
 import * as prismic from "@prismicio/client";
 import { createClient, repositoryName } from "@/prismicio";
-import { Bounded } from "@/components/Bounded";
-import { Menu, MenuHandler, MenuList, MenuItem, Button } from "@material-tailwind/react";
+import { Header } from "@/components/Header";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,7 +19,7 @@ export default async function RootLayout({ children }) {
     <html lang="en" className={inter.variable}>
       <body className="overflow-x-hidden antialiased">
         {/* @ts-expect-error Async Server Component */}
-        <Header />
+        <HeaderLayout />
         {children}
         <PrismicPreview repositoryName={repositoryName} />
         <Footer />
@@ -31,119 +28,22 @@ export default async function RootLayout({ children }) {
   );
 }
 
-// export const metadata = {
-//   metadataBase: new URL("https://thaipfa.com"),
-//   alternates: {
-//     canonical: "/",
-//   },
-//   openGraph: {
-//     images: "/og-image.png",
-//   },
-// };
+export const metadata = {
+  metadataBase: new URL("https://thaipfa.com"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    images: "/og-image.png",
+  },
+};
 
-async function Header() {
+async function HeaderLayout() {
   const client = createClient();
   const settings = await client.getSingle("settings");
   const menu = await client.getSingle("menu");
-  
 
-  return (
-    <Bounded as="header">
-      <div className="container-content full header">
-        <div className="content">
-          <PrismicNextLink href="/" className="logo-text">
-            <PrismicText field={settings.data.siteTitle} />
-          </PrismicNextLink>
-          <div>
-            <Menu>
-              <MenuHandler>
-                <Button className="menu-button">{menu.data.menu_name} <i className="fa fa-caret-down"></i></Button>
-              </MenuHandler>
-              <MenuList className="menu-list">
-                {menu.data.group_menu.map((item, index) => (
-                  <MenuItem className="menu-item" key={index}>
-                    <PrismicLink field={item.submenu_link}>
-                      {item.submenu_name}
-                    </PrismicLink>
-                  </MenuItem>
-                ))}
-              </MenuList>
-            </Menu>
-            <Menu>
-              <MenuHandler>
-                <Button className="menu-button">{menu.data.menu_name2} <i className="fa fa-caret-down"></i></Button>
-              </MenuHandler>
-              <MenuList className="menu-list">
-                {menu.data.group_menu2.map((item, index) => (
-                  <MenuItem className="menu-item" key={index}>
-                    <PrismicLink field={item.submenu_link}>
-                      {item.submenu_name}
-                    </PrismicLink>
-                  </MenuItem>
-                ))}
-              </MenuList>
-            </Menu>
-            <Menu>
-              <MenuHandler>
-                <Button className="menu-button">{menu.data.menu_name3} <i className="fa fa-caret-down"></i></Button>
-              </MenuHandler>
-              <MenuList className="menu-list">
-                {menu.data.group_menu3.map((item, index) => (
-                  <MenuItem className="menu-item" key={index}>
-                    <PrismicLink field={item.submenu_link}>
-                      {item.submenu_name}
-                    </PrismicLink>
-                  </MenuItem>
-                ))}
-              </MenuList>
-            </Menu>
-            <Menu>
-              <MenuHandler>
-                <Button className="menu-button">{menu.data.menu_name4} <i className="fa fa-caret-down"></i></Button>
-              </MenuHandler>
-              <MenuList className="menu-list">
-                {menu.data.group_menu4.map((item, index) => (
-                  <MenuItem className="menu-item" key={index}>
-                    <PrismicLink field={item.submenu_link}>
-                      {item.submenu_name}
-                    </PrismicLink>
-                  </MenuItem>
-                ))}
-              </MenuList>
-            </Menu>
-            <Menu>
-              <MenuHandler>
-                <Button className="menu-button">{menu.data.menu_name5} <i className="fa fa-caret-down"></i></Button>
-              </MenuHandler>
-              <MenuList className="menu-list">
-                {menu.data.group_menu5.map((item, index) => (
-                  <MenuItem className="menu-item" key={index}>
-                    <PrismicLink field={item.submenu_link}>
-                      {item.submenu_name}
-                    </PrismicLink>
-                  </MenuItem>
-                ))}
-              </MenuList>
-            </Menu>
-            <Menu>
-              <MenuHandler>
-                <Button className="menu-button">{menu.data.menu_name6} <i className="fa fa-caret-down"></i></Button>
-              </MenuHandler>
-              <MenuList className="menu-list">
-                {menu.data.group_menu6.map((item, index) => (
-                  <MenuItem className="menu-item" key={index}>
-                    <PrismicLink field={item.submenu_link}>
-                      {item.submenu_name}
-                    </PrismicLink>
-                  </MenuItem>
-                ))}
-              </MenuList>
-            </Menu>
-          </div>
-        </div>
-      </div>
-    </Bounded>
-  );
+  return <Header menu={menu} settings={settings} />;
 }
 
 async function Footer() {
