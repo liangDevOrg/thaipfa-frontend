@@ -5,48 +5,50 @@
   "repeatable": false,
   "status": true,
   "json": {
-    "Main": {
+    "Menu1": {
       "uid": {
         "type": "UID",
         "config": {
-          "label": "uid",
+          "label": "menu",
           "placeholder": ""
         }
       },
-      "menu_title1": {
+      "menu_name": {
         "type": "Text",
         "config": {
-          "label": "menu_title1",
+          "label": "menu_name",
           "placeholder": ""
         }
       },
-      "group_menu1": {
+      "group_menu": {
         "type": "Group",
         "config": {
-          "label": "group_menu1",
+          "label": "group_menu",
           "fields": {
-            "menu_name": {
+            "submenu_name": {
               "type": "Text",
               "config": {
-                "label": "menu_name",
+                "label": "submenu_name",
                 "placeholder": ""
               }
             },
-            "menu_link": {
+            "submenu_link": {
               "type": "Link",
               "config": {
-                "label": "menu_link",
+                "label": "submenu_link",
                 "placeholder": "",
                 "select": null
               }
             }
           }
         }
-      },
-      "menu_title2": {
+      }
+    },
+    "Menu2": {
+      "menu_name2": {
         "type": "Text",
         "config": {
-          "label": "menu_title2",
+          "label": "menu_name2",
           "placeholder": ""
         }
       },
@@ -55,28 +57,30 @@
         "config": {
           "label": "group_menu2",
           "fields": {
-            "menu_name": {
+            "submenu_name": {
               "type": "Text",
               "config": {
-                "label": "menu_name",
+                "label": "submenu_name",
                 "placeholder": ""
               }
             },
-            "menu_link": {
+            "submenu_link": {
               "type": "Link",
               "config": {
-                "label": "menu_link",
+                "label": "submenu_link",
                 "placeholder": "",
                 "select": null
               }
             }
           }
         }
-      },
-      "menu_title3": {
+      }
+    },
+    "Menu3": {
+      "menu_name3": {
         "type": "Text",
         "config": {
-          "label": "menu_title3",
+          "label": "menu_name3",
           "placeholder": ""
         }
       },
@@ -85,28 +89,30 @@
         "config": {
           "label": "group_menu3",
           "fields": {
-            "menu_name": {
+            "submenu_name": {
               "type": "Text",
               "config": {
-                "label": "menu_name",
+                "label": "submenu_name",
                 "placeholder": ""
               }
             },
-            "menu_link": {
+            "submenu_link": {
               "type": "Link",
               "config": {
-                "label": "menu_link",
+                "label": "submenu_link",
                 "placeholder": "",
                 "select": null
               }
             }
           }
         }
-      },
-      "menu_title4": {
+      }
+    },
+    "Menu4": {
+      "menu_name4": {
         "type": "Text",
         "config": {
-          "label": "menu_title4",
+          "label": "menu_name4",
           "placeholder": ""
         }
       },
@@ -115,28 +121,30 @@
         "config": {
           "label": "group_menu4",
           "fields": {
-            "menu_name": {
+            "submenu_name": {
               "type": "Text",
               "config": {
-                "label": "menu_name",
+                "label": "submenu_name",
                 "placeholder": ""
               }
             },
-            "menu_link": {
+            "submenu_link": {
               "type": "Link",
               "config": {
-                "label": "menu_link",
+                "label": "submenu_link",
                 "placeholder": "",
                 "select": null
               }
             }
           }
         }
-      },
-      "menu_title5": {
+      }
+    },
+    "Menu5": {
+      "menu_name5": {
         "type": "Text",
         "config": {
-          "label": "menu_title5",
+          "label": "menu_name5",
           "placeholder": ""
         }
       },
@@ -145,28 +153,30 @@
         "config": {
           "label": "group_menu5",
           "fields": {
-            "menu_name": {
+            "submenu_name": {
               "type": "Text",
               "config": {
-                "label": "menu_name",
+                "label": "submenu_name",
                 "placeholder": ""
               }
             },
-            "menu_link": {
+            "submenu_link": {
               "type": "Link",
               "config": {
-                "label": "menu_link",
+                "label": "submenu_link",
                 "placeholder": "",
                 "select": null
               }
             }
           }
         }
-      },
-      "menu_title6": {
+      }
+    },
+    "Menu6": {
+      "menu_name6": {
         "type": "Text",
         "config": {
-          "label": "menu_title6",
+          "label": "menu_name6",
           "placeholder": ""
         }
       },
@@ -175,17 +185,17 @@
         "config": {
           "label": "group_menu6",
           "fields": {
-            "menu_name": {
+            "submenu_name": {
               "type": "Text",
               "config": {
-                "label": "menu_name",
+                "label": "submenu_name",
                 "placeholder": ""
               }
             },
-            "menu_link": {
+            "submenu_link": {
               "type": "Link",
               "config": {
-                "label": "menu_link",
+                "label": "submenu_link",
                 "placeholder": "",
                 "select": null
               }

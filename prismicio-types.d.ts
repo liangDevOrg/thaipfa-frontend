@@ -393,28 +393,28 @@ export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<HomeDocumentData>, "home", Lang>;
 
 /**
- * Item in *Menu → group_menu1*
+ * Item in *Menu → group_menu*
  */
-export interface MenuDocumentDataGroupMenu1Item {
+export interface MenuDocumentDataGroupMenuItem {
   /**
-   * menu_name field in *Menu → group_menu1*
+   * submenu_name field in *Menu → group_menu*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: menu.group_menu1[].menu_name
+   * - **API ID Path**: menu.group_menu[].submenu_name
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  menu_name: prismic.KeyTextField;
+  submenu_name: prismic.KeyTextField;
 
   /**
-   * menu_link field in *Menu → group_menu1*
+   * submenu_link field in *Menu → group_menu*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: menu.group_menu1[].menu_link
+   * - **API ID Path**: menu.group_menu[].submenu_link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  menu_link: prismic.LinkField;
+  submenu_link: prismic.LinkField;
 }
 
 /**
@@ -422,24 +422,24 @@ export interface MenuDocumentDataGroupMenu1Item {
  */
 export interface MenuDocumentDataGroupMenu2Item {
   /**
-   * menu_name field in *Menu → group_menu2*
+   * submenu_name field in *Menu → group_menu2*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: menu.group_menu2[].menu_name
+   * - **API ID Path**: menu.group_menu2[].submenu_name
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  menu_name: prismic.KeyTextField;
+  submenu_name: prismic.KeyTextField;
 
   /**
-   * menu_link field in *Menu → group_menu2*
+   * submenu_link field in *Menu → group_menu2*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: menu.group_menu2[].menu_link
+   * - **API ID Path**: menu.group_menu2[].submenu_link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  menu_link: prismic.LinkField;
+  submenu_link: prismic.LinkField;
 }
 
 /**
@@ -447,24 +447,24 @@ export interface MenuDocumentDataGroupMenu2Item {
  */
 export interface MenuDocumentDataGroupMenu3Item {
   /**
-   * menu_name field in *Menu → group_menu3*
+   * submenu_name field in *Menu → group_menu3*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: menu.group_menu3[].menu_name
+   * - **API ID Path**: menu.group_menu3[].submenu_name
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  menu_name: prismic.KeyTextField;
+  submenu_name: prismic.KeyTextField;
 
   /**
-   * menu_link field in *Menu → group_menu3*
+   * submenu_link field in *Menu → group_menu3*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: menu.group_menu3[].menu_link
+   * - **API ID Path**: menu.group_menu3[].submenu_link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  menu_link: prismic.LinkField;
+  submenu_link: prismic.LinkField;
 }
 
 /**
@@ -472,24 +472,24 @@ export interface MenuDocumentDataGroupMenu3Item {
  */
 export interface MenuDocumentDataGroupMenu4Item {
   /**
-   * menu_name field in *Menu → group_menu4*
+   * submenu_name field in *Menu → group_menu4*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: menu.group_menu4[].menu_name
+   * - **API ID Path**: menu.group_menu4[].submenu_name
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  menu_name: prismic.KeyTextField;
+  submenu_name: prismic.KeyTextField;
 
   /**
-   * menu_link field in *Menu → group_menu4*
+   * submenu_link field in *Menu → group_menu4*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: menu.group_menu4[].menu_link
+   * - **API ID Path**: menu.group_menu4[].submenu_link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  menu_link: prismic.LinkField;
+  submenu_link: prismic.LinkField;
 }
 
 /**
@@ -497,24 +497,24 @@ export interface MenuDocumentDataGroupMenu4Item {
  */
 export interface MenuDocumentDataGroupMenu5Item {
   /**
-   * menu_name field in *Menu → group_menu5*
+   * submenu_name field in *Menu → group_menu5*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: menu.group_menu5[].menu_name
+   * - **API ID Path**: menu.group_menu5[].submenu_name
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  menu_name: prismic.KeyTextField;
+  submenu_name: prismic.KeyTextField;
 
   /**
-   * menu_link field in *Menu → group_menu5*
+   * submenu_link field in *Menu → group_menu5*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: menu.group_menu5[].menu_link
+   * - **API ID Path**: menu.group_menu5[].submenu_link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  menu_link: prismic.LinkField;
+  submenu_link: prismic.LinkField;
 }
 
 /**
@@ -522,24 +522,24 @@ export interface MenuDocumentDataGroupMenu5Item {
  */
 export interface MenuDocumentDataGroupMenu6Item {
   /**
-   * menu_name field in *Menu → group_menu6*
+   * submenu_name field in *Menu → group_menu6*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: menu.group_menu6[].menu_name
+   * - **API ID Path**: menu.group_menu6[].submenu_name
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  menu_name: prismic.KeyTextField;
+  submenu_name: prismic.KeyTextField;
 
   /**
-   * menu_link field in *Menu → group_menu6*
+   * submenu_link field in *Menu → group_menu6*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: menu.group_menu6[].menu_link
+   * - **API ID Path**: menu.group_menu6[].submenu_link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  menu_link: prismic.LinkField;
+  submenu_link: prismic.LinkField;
 }
 
 /**
@@ -547,37 +547,35 @@ export interface MenuDocumentDataGroupMenu6Item {
  */
 interface MenuDocumentData {
   /**
-   * menu_title1 field in *Menu*
+   * menu_name field in *Menu*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: menu.menu_title1
-   * - **Tab**: Main
+   * - **API ID Path**: menu.menu_name
+   * - **Tab**: Menu1
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  menu_title1: prismic.KeyTextField;
+  menu_name: prismic.KeyTextField;
 
   /**
-   * group_menu1 field in *Menu*
+   * group_menu field in *Menu*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: menu.group_menu1[]
-   * - **Tab**: Main
+   * - **API ID Path**: menu.group_menu[]
+   * - **Tab**: Menu1
    * - **Documentation**: https://prismic.io/docs/field#group
    */
-  group_menu1: prismic.GroupField<Simplify<MenuDocumentDataGroupMenu1Item>>;
-
-  /**
-   * menu_title2 field in *Menu*
+  group_menu: prismic.GroupField<Simplify<MenuDocumentDataGroupMenuItem>> /**
+   * menu_name2 field in *Menu*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: menu.menu_title2
-   * - **Tab**: Main
+   * - **API ID Path**: menu.menu_name2
+   * - **Tab**: Menu2
    * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  menu_title2: prismic.KeyTextField;
+   */;
+  menu_name2: prismic.KeyTextField;
 
   /**
    * group_menu2 field in *Menu*
@@ -585,21 +583,19 @@ interface MenuDocumentData {
    * - **Field Type**: Group
    * - **Placeholder**: *None*
    * - **API ID Path**: menu.group_menu2[]
-   * - **Tab**: Main
+   * - **Tab**: Menu2
    * - **Documentation**: https://prismic.io/docs/field#group
    */
-  group_menu2: prismic.GroupField<Simplify<MenuDocumentDataGroupMenu2Item>>;
-
-  /**
-   * menu_title3 field in *Menu*
+  group_menu2: prismic.GroupField<Simplify<MenuDocumentDataGroupMenu2Item>> /**
+   * menu_name3 field in *Menu*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: menu.menu_title3
-   * - **Tab**: Main
+   * - **API ID Path**: menu.menu_name3
+   * - **Tab**: Menu3
    * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  menu_title3: prismic.KeyTextField;
+   */;
+  menu_name3: prismic.KeyTextField;
 
   /**
    * group_menu3 field in *Menu*
@@ -607,21 +603,19 @@ interface MenuDocumentData {
    * - **Field Type**: Group
    * - **Placeholder**: *None*
    * - **API ID Path**: menu.group_menu3[]
-   * - **Tab**: Main
+   * - **Tab**: Menu3
    * - **Documentation**: https://prismic.io/docs/field#group
    */
-  group_menu3: prismic.GroupField<Simplify<MenuDocumentDataGroupMenu3Item>>;
-
-  /**
-   * menu_title4 field in *Menu*
+  group_menu3: prismic.GroupField<Simplify<MenuDocumentDataGroupMenu3Item>> /**
+   * menu_name4 field in *Menu*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: menu.menu_title4
-   * - **Tab**: Main
+   * - **API ID Path**: menu.menu_name4
+   * - **Tab**: Menu4
    * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  menu_title4: prismic.KeyTextField;
+   */;
+  menu_name4: prismic.KeyTextField;
 
   /**
    * group_menu4 field in *Menu*
@@ -629,21 +623,19 @@ interface MenuDocumentData {
    * - **Field Type**: Group
    * - **Placeholder**: *None*
    * - **API ID Path**: menu.group_menu4[]
-   * - **Tab**: Main
+   * - **Tab**: Menu4
    * - **Documentation**: https://prismic.io/docs/field#group
    */
-  group_menu4: prismic.GroupField<Simplify<MenuDocumentDataGroupMenu4Item>>;
-
-  /**
-   * menu_title5 field in *Menu*
+  group_menu4: prismic.GroupField<Simplify<MenuDocumentDataGroupMenu4Item>> /**
+   * menu_name5 field in *Menu*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: menu.menu_title5
-   * - **Tab**: Main
+   * - **API ID Path**: menu.menu_name5
+   * - **Tab**: Menu5
    * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  menu_title5: prismic.KeyTextField;
+   */;
+  menu_name5: prismic.KeyTextField;
 
   /**
    * group_menu5 field in *Menu*
@@ -651,21 +643,19 @@ interface MenuDocumentData {
    * - **Field Type**: Group
    * - **Placeholder**: *None*
    * - **API ID Path**: menu.group_menu5[]
-   * - **Tab**: Main
+   * - **Tab**: Menu5
    * - **Documentation**: https://prismic.io/docs/field#group
    */
-  group_menu5: prismic.GroupField<Simplify<MenuDocumentDataGroupMenu5Item>>;
-
-  /**
-   * menu_title6 field in *Menu*
+  group_menu5: prismic.GroupField<Simplify<MenuDocumentDataGroupMenu5Item>> /**
+   * menu_name6 field in *Menu*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: menu.menu_title6
-   * - **Tab**: Main
+   * - **API ID Path**: menu.menu_name6
+   * - **Tab**: Menu6
    * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  menu_title6: prismic.KeyTextField;
+   */;
+  menu_name6: prismic.KeyTextField;
 
   /**
    * group_menu6 field in *Menu*
@@ -673,7 +663,7 @@ interface MenuDocumentData {
    * - **Field Type**: Group
    * - **Placeholder**: *None*
    * - **API ID Path**: menu.group_menu6[]
-   * - **Tab**: Main
+   * - **Tab**: Menu6
    * - **Documentation**: https://prismic.io/docs/field#group
    */
   group_menu6: prismic.GroupField<Simplify<MenuDocumentDataGroupMenu6Item>>;
@@ -2484,7 +2474,7 @@ declare module "@prismicio/client" {
       HomeDocumentDataSlicesSlice,
       MenuDocument,
       MenuDocumentData,
-      MenuDocumentDataGroupMenu1Item,
+      MenuDocumentDataGroupMenuItem,
       MenuDocumentDataGroupMenu2Item,
       MenuDocumentDataGroupMenu3Item,
       MenuDocumentDataGroupMenu4Item,

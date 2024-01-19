@@ -1,10 +1,10 @@
 import "./globals.css";
 
 import { Inter } from "next/font/google";
-import { PrismicText } from "@prismicio/react";
+import { PrismicLink, PrismicText, SliceZone } from "@prismicio/react";
 import { PrismicNextLink, PrismicPreview } from "@prismicio/next";
 import * as prismic from "@prismicio/client";
-
+import { components } from "@/slices";
 import { createClient, repositoryName } from "@/prismicio";
 import { Bounded } from "@/components/Bounded";
 
@@ -44,7 +44,10 @@ export const metadata = {
 async function Header() {
   const client = createClient();
   const settings = await client.getSingle("settings");
-  const navigation = await client.getSingle("navigation");
+  const menu = await client.getSingle("menu");
+  console.log(menu);
+  
+  
 
   return (
     <Bounded as="header" yPadding="sm">
@@ -56,15 +59,35 @@ async function Header() {
           <PrismicText field={settings.data.siteTitle} />
         </PrismicNextLink>
         <nav>
-          <ul className="flex flex-wrap gap-6 md:gap-10">
-            {navigation.data?.links.map((item) => (
-              <li
-                key={prismic.asText(item.label)}
-                className="font-semibold tracking-tight text-slate-800"
-              >
-                <PrismicNextLink field={item.link}>
-                  <PrismicText field={item.label} />
-                </PrismicNextLink>
+          <ul>
+            {menu.data.menu_name}
+            {menu.data.group_menu.map((item, index) => (
+              <li key={index}>
+                <PrismicLink field={item.submenu_link}>
+                  {item.submenu_name}
+                </PrismicLink>
+              </li>
+            ))}
+          </ul>
+
+          <ul>
+            {menu.data.menu_name2}
+            {menu.data.group_menu2.map((item, index) => (
+              <li key={index}>
+                <PrismicLink field={item.submenu_link}>
+                  {item.submenu_name}
+                </PrismicLink>
+              </li>
+            ))}
+          </ul>
+
+          <ul>
+            {menu.data.menu_name3}
+            {menu.data.group_menu3.map((item, index) => (
+              <li key={index}>
+                <PrismicLink field={item.submenu_link}>
+                  {item.submenu_name}
+                </PrismicLink>
               </li>
             ))}
           </ul>
@@ -90,7 +113,6 @@ async function Footer() {
   const subscribePlaceholder = data.subscribe_placeholder;
   const subscribeButtonName = data.subscribe_button_name;
   const our_services = data.our_services;
-  
 
   return (
     <div className="footer">
@@ -120,9 +142,7 @@ async function Footer() {
               <h3>Our Services</h3>
               <ul className="link-service">
                 {our_services.map((item) => (
-                  <li
-                    key={prismic.asText(item.label)}
-                  >
+                  <li key={prismic.asText(item.label)}>
                     <PrismicNextLink
                       key={item}
                       href={item.service_link.url}
@@ -136,13 +156,23 @@ async function Footer() {
             </div>
             <div className="content-right">
               <h3>{subscribeName}</h3>
-              <input type="text" name="" placeholder={subscribePlaceholder} className="input-email" />
-              <button className="block btn-primary mt-[15px]">{subscribeButtonName}</button>
+              <input
+                type="text"
+                name=""
+                placeholder={subscribePlaceholder}
+                className="input-email"
+              />
+              <button className="block btn-primary mt-[15px]">
+                {subscribeButtonName}
+              </button>
             </div>
           </div>
         </div>
       </div>
-      <div className="copy">Copyright &copy; 2024 Thai Professional Finance Academy (ThaiPFA) All Rights Reserved</div>
+      <div className="copy">
+        Copyright &copy; 2024 Thai Professional Finance Academy (ThaiPFA) All
+        Rights Reserved
+      </div>
     </div>
   );
 }
