@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
-import { PrismicImage, PrismicLink, PrismicText } from "@prismicio/react";
+import { PrismicLink, PrismicText } from "@prismicio/react";
+import { PrismicNextImage } from "@prismicio/next";
 /**
  * @typedef {import("@prismicio/client").Content.TraningCourseSlice} TraningCourseSlice
  * @typedef {import("@prismicio/react").SliceComponentProps<TraningCourseSlice>} TraningCourseProps
@@ -25,7 +26,7 @@ const TraningCourse = ({ slice }) => {
         {items.map((item, index) => (
           <div className="box-course" key={index}>
             <PrismicLink field={item.course_button_link}>
-              <PrismicImage field={item.course_image_icon} />
+              <PrismicNextImage field={item.course_image_icon} alt=""/>
               <h4>{item.course_name}</h4>
               <p>
                 <PrismicText field={item.course_description} />

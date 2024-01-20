@@ -1,5 +1,5 @@
-import { PrismicRichText } from "@/components/PrismicRichText";
-import { PrismicImage } from "@prismicio/react";
+import { PrismicRichText } from "@prismicio/react";
+import { PrismicNextImage } from "@prismicio/next";
 import PropTypes from "prop-types";
 /**
  * @typedef {import("@prismicio/client").Content.ImageIconWithContentBottomSlice} ImageIconWithContentBottomSlice
@@ -19,7 +19,7 @@ const ImageIconWithContentBottom = ({ slice }) => {
         <div className="content">
           {items.map((item, index) => (
             <div className="box-item" key={index}>
-              <PrismicImage field={item.image_icon} />
+              <PrismicNextImage field={item.image_icon} alt=""/>
               <PrismicRichText field={item.content_subject} />
             </div>
           ))}

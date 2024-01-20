@@ -1,4 +1,4 @@
-import { PrismicImage } from "@prismicio/react";
+import { PrismicNextImage } from "@prismicio/next";
 import PropTypes from "prop-types";
 /**
  * @typedef {import("@prismicio/client").Content.BannerSectionSlice} BannerSectionSlice
@@ -18,10 +18,10 @@ const BannerSection = ({ slice }) => {
       data-slice-variation={slice.variation}
     >
       <div className="hidden md:block">
-        <PrismicImage field={imageDesktop} alt="" />
+        <PrismicNextImage field={imageDesktop} alt="" />
       </div>
       <div className="block md:hidden">
-        <PrismicImage field={imageMobile} alt="" />
+        <PrismicNextImage field={imageMobile} alt="" />
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
-import { PrismicImage, PrismicRichText } from "@prismicio/react";
+import { PrismicRichText } from "@prismicio/react";
+import { PrismicNextImage } from "@prismicio/next";
 import PropTypes from "prop-types";
 /**
  * @typedef {import("@prismicio/client").Content.OpportunityListSlice} OpportunityListSlice
@@ -18,7 +19,7 @@ const OpportunityList = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <PrismicImage field={imageDesktop} className="opportunity-logo" />
+      <PrismicNextImage field={imageDesktop} className="opportunity-logo" alt=""/>
       <h2>
         <PrismicRichText field={title} />
       </h2>
@@ -26,7 +27,7 @@ const OpportunityList = ({ slice }) => {
         {items.map((item, index) => (
           <li key={index}>
             {/* <img alt="" src="../assets/images/icon-check.png"> */}
-            <PrismicImage field={imageIcon} width={20} />
+            <PrismicNextImage field={imageIcon} width={20} alt=""/>
             <p>{item.opportunity_list_name}</p>
           </li>
         ))}

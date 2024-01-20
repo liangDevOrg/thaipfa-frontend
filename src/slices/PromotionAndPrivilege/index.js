@@ -1,5 +1,5 @@
-import { PrismicRichText } from "@/components/PrismicRichText";
-import { PrismicImage } from "@prismicio/react";
+import { PrismicRichText } from "@prismicio/react";
+import { PrismicNextImage } from "@prismicio/next";
 import PropTypes from "prop-types";
 /**
  * @typedef {import("@prismicio/client").Content.PromotionAndPrivilegeSlice} PromotionAndPrivilegeSlice
@@ -17,10 +17,10 @@ const PromotionAndPrivilege = ({ slice }) => {
       <div className="content-banner">
         <div className="background-overlay"></div>
         <div className="hidden md:block">
-          <PrismicImage field={bannerDesktop} alt="" />
+          <PrismicNextImage field={bannerDesktop} alt="" />
         </div>
         <div className="block md:hidden">
-          <PrismicImage field={bannerMobile} alt="" />
+          <PrismicNextImage field={bannerMobile} alt="" />
         </div>
         <div className="container-content py-[80px] py-[50px]">
           <div className="banner-content">

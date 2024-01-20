@@ -1,4 +1,5 @@
-import { PrismicImage, PrismicRichText } from "@prismicio/react";
+import { PrismicRichText } from "@prismicio/react";
+import { PrismicNextImage } from "@prismicio/next";
 import PropTypes from "prop-types";
 /**
  * @typedef {import("@prismicio/client").Content.HaveAProblemSlice} HaveAProblemSlice
@@ -25,10 +26,10 @@ const HaveAProblem = ({ slice }) => {
         data-slice-variation={slice.variation}
       >
         <div className="hidden md:block">
-          <PrismicImage field={haveAProblemDesktop} />
+          <PrismicNextImage field={haveAProblemDesktop} alt=""/>
         </div>
         <div className="block md:hidden">
-          <PrismicImage field={haveAProblemMobile} />
+          <PrismicNextImage field={haveAProblemMobile} alt=""/>
         </div>
       </div>
       <div className="container-content py-[50px] lg:py-[100px]">
@@ -36,8 +37,8 @@ const HaveAProblem = ({ slice }) => {
           <div className="content">
             {items.map((item, index) => (
               <div className="box-item" key={index}>
-                <PrismicImage field={item.have_a_problem_image_icon} />
-                <PrismicRichText field={item.have_a_problem_description} />
+                <PrismicNextImage alt="" field={item.have_a_problem_image_icon} />
+                <PrismicRichText alt="" field={item.have_a_problem_description} />
               </div>
             ))}
           </div>
