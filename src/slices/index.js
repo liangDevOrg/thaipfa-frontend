@@ -15,6 +15,7 @@ export const components = {
   image_and_content_side_by_side: dynamic(
     () => import("./ImageAndContentSideBySide"),
   ),
+  image_content: dynamic(() => import("./ImageContent")),
   image_icon_with_content_bottom: dynamic(
     () => import("./ImageIconWithContentBottom"),
   ),

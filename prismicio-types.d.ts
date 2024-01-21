@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type CurriculumDocumentDataSlicesSlice =
+  | ImageContentSlice
   | IntroductionSlice
   | ImageAndContentSideBySideSlice
   | SpeakerSlice;
@@ -318,6 +319,7 @@ export type FooterDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<FooterDocumentData>, "footer", Lang>;
 
 type HomeDocumentDataSlicesSlice =
+  | ImageContentSlice
   | PortfolioSlice
   | FaqSlice
   | ExperienceSlice
@@ -1552,6 +1554,82 @@ export type ImageAndContentSideBySideSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *ImageContent → Primary*
+ */
+export interface ImageContentSliceDefaultPrimary {
+  /**
+   * image_desktop field in *ImageContent → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_content.primary.image_desktop
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_desktop: prismic.ImageField<never>;
+
+  /**
+   * image_mobile field in *ImageContent → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_content.primary.image_mobile
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_mobile: prismic.ImageField<never>;
+
+  /**
+   * is_active field in *ImageContent → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: image_content.primary.is_active
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  is_active: prismic.BooleanField;
+
+  /**
+   * image_link field in *ImageContent → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_content.primary.image_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  image_link: prismic.LinkField;
+}
+
+/**
+ * Default variation for ImageContent Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageContentSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ImageContentSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ImageContent*
+ */
+type ImageContentSliceVariation = ImageContentSliceDefault;
+
+/**
+ * ImageContent Shared Slice
+ *
+ * - **API ID**: `image_content`
+ * - **Description**: ImageContent
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageContentSlice = prismic.SharedSlice<
+  "image_content",
+  ImageContentSliceVariation
+>;
+
+/**
  * Primary content in *ImageIconWithContentBottom → Primary*
  */
 export interface ImageIconWithContentBottomSliceDefaultPrimary {
@@ -2526,6 +2604,10 @@ declare module "@prismicio/client" {
       ImageAndContentSideBySideSliceDefaultPrimary,
       ImageAndContentSideBySideSliceVariation,
       ImageAndContentSideBySideSliceDefault,
+      ImageContentSlice,
+      ImageContentSliceDefaultPrimary,
+      ImageContentSliceVariation,
+      ImageContentSliceDefault,
       ImageIconWithContentBottomSlice,
       ImageIconWithContentBottomSliceDefaultPrimary,
       ImageIconWithContentBottomSliceDefaultItem,
