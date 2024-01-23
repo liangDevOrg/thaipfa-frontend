@@ -4,12 +4,21 @@ import { PrismicText } from "@prismicio/react";
 import { PrismicNextLink } from "@prismicio/next";
 import PropTypes from "prop-types";
 import { Bounded } from "./Bounded";
-import { Menu, MenuHandler, MenuList, MenuItem, Button } from "@material-tailwind/react";
-import { Accordion, AccordionHeader, AccordionBody } from "@material-tailwind/react";
+import {
+  Menu,
+  MenuHandler,
+  MenuList,
+  MenuItem,
+  Button,
+  Accordion,
+  AccordionHeader,
+  AccordionBody,
+} from "@material-tailwind/react";
+
+import { hrefResolver } from "@Prismic-configuration";
 
 export function Header({ menu, settings }) {
-
-  const [openMobileMenu,setOpenMobileMenu] = useState(false);
+  const [openMobileMenu, setOpenMobileMenu] = useState(false);
   const [screenSize, setScreenSize] = useState(getCurrentDimension());
   const [open, setOpen] = useState(null);
 
@@ -17,28 +26,28 @@ export function Header({ menu, settings }) {
 
   useEffect(() => {
     const updateDimension = () => {
-      setScreenSize(getCurrentDimension())
+      setScreenSize(getCurrentDimension());
       if (screenSize.width > 1199) {
         setOpenMobileMenu(false);
       }
-    }
-    window.addEventListener('resize', updateDimension);
-    return(() => {
-      window.removeEventListener('resize', updateDimension);
-    })
-  }, [screenSize])
+    };
+    window.addEventListener("resize", updateDimension);
+    return () => {
+      window.removeEventListener("resize", updateDimension);
+    };
+  }, [screenSize]);
 
-  function getCurrentDimension(){
+  function getCurrentDimension() {
     if (typeof window === "undefined") {
       return {
         width: 0,
-        height: 0
-      } 
+        height: 0,
+      };
     }
     return {
       width: window.innerWidth,
-      height: window.innerHeight
-    }
+      height: window.innerHeight,
+    };
   }
 
   function handleOpenMobileMenu() {
@@ -51,7 +60,7 @@ export function Header({ menu, settings }) {
 
   return (
     <>
-      <div className={`menu-mobile ${openMobileMenu ? 'open' : ''}`}>
+      <div className={`menu-mobile ${openMobileMenu ? "open" : ""}`}>
         <div className="menu-close">
           <button onClick={handleCloseMobileMenu}>
             <i className="fa fa-times" aria-hidden="true"></i>
@@ -130,7 +139,7 @@ export function Header({ menu, settings }) {
           </AccordionBody>
         </Accordion>
       </div>
-      <div className={`menu-backdrop ${openMobileMenu ? 'open' : ''}`}></div>
+      <div className={`menu-backdrop ${openMobileMenu ? "open" : ""}`}></div>
       <Bounded as="header">
         <div className="container-content full header">
           <div className="content">
@@ -161,23 +170,32 @@ export function Header({ menu, settings }) {
                 <Menu>
                   <MenuHandler>
                     <Button className="menu-button">
-                      {menu.data.menu_name2} <i className="fa fa-caret-down"></i>
+                      {menu.data.menu_name2}{" "}
+                      <i className="fa fa-caret-down"></i>
                     </Button>
                   </MenuHandler>
                   <MenuList className="menu-list">
-                    {menu.data.group_menu2.map((item, index) => (
-                      <MenuItem className="menu-item" key={index}>
-                        <PrismicNextLink field={item.submenu_link}>
-                          {item.submenu_name}
-                        </PrismicNextLink>
-                      </MenuItem>
-                    ))}
+                    {menu.data.group_menu2.map((item, index) => {
+                      console.log("Item:", item); // Log the item
+                      console.log("Index:", index); // Log the index
+
+                      return (
+                        <MenuItem className="menu-item" key={index}>
+                          <PrismicNextLink
+                            field={(item.submenu_link)}
+                          >
+                            {item.submenu_name}
+                          </PrismicNextLink>
+                        </MenuItem>
+                      );
+                    })}
                   </MenuList>
                 </Menu>
                 <Menu>
                   <MenuHandler>
                     <Button className="menu-button">
-                      {menu.data.menu_name3} <i className="fa fa-caret-down"></i>
+                      {menu.data.menu_name3}{" "}
+                      <i className="fa fa-caret-down"></i>
                     </Button>
                   </MenuHandler>
                   <MenuList className="menu-list">
@@ -193,7 +211,8 @@ export function Header({ menu, settings }) {
                 <Menu>
                   <MenuHandler>
                     <Button className="menu-button">
-                      {menu.data.menu_name4} <i className="fa fa-caret-down"></i>
+                      {menu.data.menu_name4}{" "}
+                      <i className="fa fa-caret-down"></i>
                     </Button>
                   </MenuHandler>
                   <MenuList className="menu-list">
@@ -209,7 +228,8 @@ export function Header({ menu, settings }) {
                 <Menu>
                   <MenuHandler>
                     <Button className="menu-button">
-                      {menu.data.menu_name5} <i className="fa fa-caret-down"></i>
+                      {menu.data.menu_name5}{" "}
+                      <i className="fa fa-caret-down"></i>
                     </Button>
                   </MenuHandler>
                   <MenuList className="menu-list">
@@ -225,7 +245,8 @@ export function Header({ menu, settings }) {
                 <Menu>
                   <MenuHandler>
                     <Button className="menu-button">
-                      {menu.data.menu_name6} <i className="fa fa-caret-down"></i>
+                      {menu.data.menu_name6}{" "}
+                      <i className="fa fa-caret-down"></i>
                     </Button>
                   </MenuHandler>
                   <MenuList className="menu-list">
@@ -239,7 +260,7 @@ export function Header({ menu, settings }) {
                   </MenuList>
                 </Menu>
               </div>
-            </div> 
+            </div>
           </div>
         </div>
       </Bounded>

@@ -1,6 +1,10 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
-import { PrismicNextLink, PrismicPreview } from "@prismicio/next";
+import {
+  PrismicNextImage,
+  PrismicNextLink,
+  PrismicPreview,
+} from "@prismicio/next";
 import * as prismic from "@prismicio/client";
 import { createClient, repositoryName } from "@/prismicio";
 import { Header } from "@/components/Header";
@@ -62,6 +66,7 @@ async function Footer() {
   const subscribePlaceholder = data.subscribe_placeholder;
   const subscribeButtonName = data.subscribe_button_name;
   const our_services = data.our_services;
+  const socialMediaList = data.social_media_list;
 
   return (
     <div className="footer">
@@ -94,8 +99,8 @@ async function Footer() {
                   <li key={prismic.asText(item.label)}>
                     <PrismicNextLink
                       key={item}
-                      href={item.service_link.url}
-                      target={item.service_link.target}
+                      field={item.service_link}
+                      target={item.service_link}
                     >
                       {item.service_name}
                     </PrismicNextLink>
@@ -117,6 +122,14 @@ async function Footer() {
             </div>
           </div>
         </div>
+
+        {socialMediaList.map((item, index) => (
+          <div className="faq-card" key={index}>
+            <PrismicNextLink field={item.social_media_link}>
+              <PrismicNextImage field={item.social_media_logo} width={25} />
+            </PrismicNextLink>
+          </div>
+        ))}
       </div>
       <div className="copy">
         Copyright &copy; 2024 Thai Professional Finance Academy (ThaiPFA) All
