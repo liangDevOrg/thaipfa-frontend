@@ -74,7 +74,13 @@ export function Header({ menu, settings }) {
           <AccordionBody className="menu-body">
             {menu.data.group_menu.map((item, index) => (
               <div className="menu-item" key={index}>
-                <a href="#">{item.submenu_name}</a>
+                <Link
+                  href={hrefResolver(item.submenu_link)}
+                  passHref
+                  scroll={false}
+                >
+                  {item.submenu_name}
+                </Link>
               </div>
             ))}
           </AccordionBody>
@@ -86,7 +92,13 @@ export function Header({ menu, settings }) {
           <AccordionBody className="menu-body">
             {menu.data.group_menu2.map((item, index) => (
               <div className="menu-item" key={index}>
-                <a href="#">{item.submenu_name}</a>
+                <Link
+                  href={hrefResolver(item.submenu_link)}
+                  passHref
+                  scroll={false}
+                >
+                  {item.submenu_name}
+                </Link>
               </div>
             ))}
           </AccordionBody>
@@ -98,7 +110,13 @@ export function Header({ menu, settings }) {
           <AccordionBody className="menu-body">
             {menu.data.group_menu3.map((item, index) => (
               <div className="menu-item" key={index}>
-                <a href="#">{item.submenu_name}</a>
+                <Link
+                  href={hrefResolver(item.submenu_link)}
+                  passHref
+                  scroll={false}
+                >
+                  {item.submenu_name}
+                </Link>
               </div>
             ))}
           </AccordionBody>
@@ -110,7 +128,13 @@ export function Header({ menu, settings }) {
           <AccordionBody className="menu-body">
             {menu.data.group_menu4.map((item, index) => (
               <div className="menu-item" key={index}>
-                <a href="#">{item.submenu_name}</a>
+                <Link
+                  href={hrefResolver(item.submenu_link)}
+                  passHref
+                  scroll={false}
+                >
+                  {item.submenu_name}
+                </Link>
               </div>
             ))}
           </AccordionBody>
@@ -122,7 +146,13 @@ export function Header({ menu, settings }) {
           <AccordionBody className="menu-body">
             {menu.data.group_menu5.map((item, index) => (
               <div className="menu-item" key={index}>
-                <a href="#">{item.submenu_name}</a>
+                <Link
+                  href={hrefResolver(item.submenu_link)}
+                  passHref
+                  scroll={false}
+                >
+                  {item.submenu_name}
+                </Link>
               </div>
             ))}
           </AccordionBody>
@@ -134,7 +164,13 @@ export function Header({ menu, settings }) {
           <AccordionBody className="menu-body">
             {menu.data.group_menu6.map((item, index) => (
               <div className="menu-item" key={index}>
-                <a href="#">{item.submenu_name}</a>
+                <Link
+                  href={hrefResolver(item.submenu_link)}
+                  passHref
+                  scroll={false}
+                >
+                  {item.submenu_name}
+                </Link>
               </div>
             ))}
           </AccordionBody>
@@ -161,9 +197,13 @@ export function Header({ menu, settings }) {
                   <MenuList className="menu-list">
                     {menu.data.group_menu.map((item, index) => (
                       <MenuItem className="menu-item" key={index}>
-                        <PrismicNextLink field={item.submenu_link}>
+                        <Link
+                          href={hrefResolver(item.submenu_link)}
+                          passHref
+                          scroll={false}
+                        >
                           {item.submenu_name}
-                        </PrismicNextLink>
+                        </Link>
                       </MenuItem>
                     ))}
                   </MenuList>
