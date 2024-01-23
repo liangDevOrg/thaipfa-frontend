@@ -25,6 +25,7 @@ export const components = {
   portfolio: dynamic(() => import("./Portfolio")),
   promotion_and_privilege: dynamic(() => import("./PromotionAndPrivilege")),
   speaker: dynamic(() => import("./Speaker")),
+  speaker_with_content: dynamic(() => import("./SpeakerWithContent")),
   training_award: dynamic(() => import("./TrainingAward")),
   traning_course: dynamic(() => import("./TraningCourseCard")),
   traning_course_list: dynamic(() => import("./TraningCourseList")),

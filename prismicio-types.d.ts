@@ -4,6 +4,88 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+type AboutUsDocumentDataSlicesSlice =
+  | HeroSlice
+  | FeeSlice
+  | ExperienceSlice
+  | TraningCourseListSlice
+  | TraningCourseSlice
+  | PortfolioSlice
+  | PromotionAndPrivilegeSlice
+  | TrainingAwardSlice
+  | SpeakerWithContentSlice
+  | OpportunityListSlice
+  | IntroductionSlice
+  | ImageIconWithContentBottomSlice
+  | ImageContentSlice
+  | ImageAndContentSideBySideSlice
+  | CallToActionWithBannerSlice
+  | BannerSectionSlice
+  | BackgroundColorWithButtonLinkSlice;
+
+/**
+ * Content for About us documents
+ */
+interface AboutUsDocumentData {
+  /**
+   * Slice Zone field in *About us*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_us.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<AboutUsDocumentDataSlicesSlice> /**
+   * Meta Description field in *About us*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: about_us.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *About us*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_us.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *About us*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: about_us.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * About us document from Prismic
+ *
+ * - **API ID**: `about_us`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type AboutUsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<AboutUsDocumentData>,
+    "about_us",
+    Lang
+  >;
+
 type CurriculumDocumentDataSlicesSlice =
   | FeeSlice
   | ImageContentSlice
@@ -829,6 +911,17 @@ export type PageDocument<Lang extends string = string> =
  */
 interface SettingsDocumentData {
   /**
+   * image_logo field in *Settings*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.image_logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_logo: prismic.ImageField<never>;
+
+  /**
    * Site Title field in *Settings*
    *
    * - **Field Type**: Title
@@ -857,6 +950,7 @@ export type SettingsDocument<Lang extends string = string> =
   >;
 
 export type AllDocumentTypes =
+  | AboutUsDocument
   | CurriculumDocument
   | FooterDocument
   | HomeDocument
@@ -2272,6 +2366,127 @@ export type SpeakerSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *SpeakerWithContent → Primary*
+ */
+export interface SpeakerWithContentSliceDefaultPrimary {
+  /**
+   * image_logo field in *SpeakerWithContent → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: speaker_with_content.primary.image_logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_logo: prismic.ImageField<never>;
+
+  /**
+   * title field in *SpeakerWithContent → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: speaker_with_content.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * subtitle field in *SpeakerWithContent → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: speaker_with_content.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subtitle: prismic.RichTextField;
+
+  /**
+   * is_active field in *SpeakerWithContent → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: speaker_with_content.primary.is_active
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  is_active: prismic.BooleanField;
+}
+
+/**
+ * Primary content in *SpeakerWithContent → Items*
+ */
+export interface SpeakerWithContentSliceDefaultItem {
+  /**
+   * speaker_image_desktop field in *SpeakerWithContent → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: speaker_with_content.items[].speaker_image_desktop
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  speaker_image_desktop: prismic.ImageField<never>;
+
+  /**
+   * speaker_image_mobile field in *SpeakerWithContent → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: speaker_with_content.items[].speaker_image_mobile
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  speaker_image_mobile: prismic.ImageField<never>;
+
+  /**
+   * speaker_name field in *SpeakerWithContent → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: speaker_with_content.items[].speaker_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  speaker_name: prismic.KeyTextField;
+
+  /**
+   * speaker_detail field in *SpeakerWithContent → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: speaker_with_content.items[].speaker_detail
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  speaker_detail: prismic.RichTextField;
+}
+
+/**
+ * Default variation for SpeakerWithContent Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SpeakerWithContentSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SpeakerWithContentSliceDefaultPrimary>,
+  Simplify<SpeakerWithContentSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *SpeakerWithContent*
+ */
+type SpeakerWithContentSliceVariation = SpeakerWithContentSliceDefault;
+
+/**
+ * SpeakerWithContent Shared Slice
+ *
+ * - **API ID**: `speaker_with_content`
+ * - **Description**: SpeakerWithContent
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SpeakerWithContentSlice = prismic.SharedSlice<
+  "speaker_with_content",
+  SpeakerWithContentSliceVariation
+>;
+
+/**
  * Primary content in *TrainingAward → Primary*
  */
 export interface TrainingAwardSliceDefaultPrimary {
@@ -2644,6 +2859,9 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      AboutUsDocument,
+      AboutUsDocumentData,
+      AboutUsDocumentDataSlicesSlice,
       CurriculumDocument,
       CurriculumDocumentData,
       CurriculumDocumentDataSlicesSlice,
@@ -2746,6 +2964,11 @@ declare module "@prismicio/client" {
       SpeakerSliceDefaultItem,
       SpeakerSliceVariation,
       SpeakerSliceDefault,
+      SpeakerWithContentSlice,
+      SpeakerWithContentSliceDefaultPrimary,
+      SpeakerWithContentSliceDefaultItem,
+      SpeakerWithContentSliceVariation,
+      SpeakerWithContentSliceDefault,
       TrainingAwardSlice,
       TrainingAwardSliceDefaultPrimary,
       TrainingAwardSliceDefaultItem,

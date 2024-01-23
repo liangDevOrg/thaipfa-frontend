@@ -3,6 +3,7 @@
     "paths": {
       "@/*": ["./src/*"],
       "@Components/*": ["./src/components/*"],
+      "@Prismic-configuration": ["./prismic.config"],
     }
   }
 }

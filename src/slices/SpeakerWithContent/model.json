@@ -1,0 +1,85 @@
+{
+  "id": "speaker_with_content",
+  "type": "SharedSlice",
+  "name": "SpeakerWithContent",
+  "description": "SpeakerWithContent",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "image_logo": {
+          "type": "Image",
+          "config": {
+            "label": "image_logo",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "title",
+            "placeholder": ""
+          }
+        },
+        "subtitle": {
+          "type": "StructuredText",
+          "config": {
+            "label": "subtitle",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "is_active": {
+          "type": "Boolean",
+          "config": {
+            "label": "is_active",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        }
+      },
+      "items": {
+        "speaker_image_desktop": {
+          "type": "Image",
+          "config": {
+            "label": "speaker_image_desktop",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "speaker_image_mobile": {
+          "type": "Image",
+          "config": {
+            "label": "speaker_image_mobile",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "speaker_name": {
+          "type": "Text",
+          "config": {
+            "label": "speaker_name",
+            "placeholder": ""
+          }
+        },
+        "speaker_detail": {
+          "type": "StructuredText",
+          "config": {
+            "label": "speaker_detail",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      }
+    }
+  ]
+}
