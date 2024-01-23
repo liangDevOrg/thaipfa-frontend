@@ -33,4 +33,8 @@ const Fee = ({ slice }) => {
   );
 };
 
+Fee.propTypes = {
+  slice: PropTypes.string,
+};
+
 export default Fee;
