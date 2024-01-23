@@ -126,7 +126,7 @@ async function Footer() {
         {socialMediaList.map((item, index) => (
           <div className="faq-card" key={index}>
             <PrismicNextLink field={item.social_media_link}>
-              <PrismicNextImage field={item.social_media_logo} width={25} />
+              <PrismicNextImage field={item.social_media_logo} width={25} alt="" />
             </PrismicNextLink>
           </div>
         ))}

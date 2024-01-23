@@ -11,22 +11,29 @@ const Speaker = ({ slice }) => {
   const items = slice.items;
 
   return (
-    <section
+    <div className="container-content py-[50px] lg:py-[100px]"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <hr />
-      {data.title}
-      {items.map((item, index) => (
-          <div key={index}>
-            {/* <img alt="" src="../assets/images/icon-check.png"> */}
-            <PrismicNextImage field={item.image_desktop}  alt=""/>
-            <PrismicNextImage field={item.image_mobile} alt="" />
-            <p>{item.speaker_name}</p>
-            <PrismicRichText field={item.speaker_description} />
-          </div>
-        ))}
-    </section>
+      <h2 style={{marginBottom: 0}}>{data.title}</h2>
+      <div className="content-with-image speaker mt-[50px]">
+        <div className="content">
+          {items.map((item, index) => (
+              <div className="box-item" key={index}>
+                {/* <img alt="" src="../assets/images/icon-check.png"> */}
+                <div className="hidden md:block">
+                  <PrismicNextImage field={item.image_desktop} alt=""/>
+                </div>
+                <div className="block md:hidden">
+                  <PrismicNextImage field={item.image_mobile} alt="" />
+                </div>
+                <h3>{item.speaker_name}</h3>
+                <PrismicRichText field={item.speaker_description} />
+              </div>
+            ))}
+        </div>
+      </div>
+    </div>
   );
 };
 

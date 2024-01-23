@@ -10,14 +10,17 @@ const ImageContent = ({ slice }) => {
   const imageDesktop = data.image_desktop;
   const imageMobile = data.image_mobile;
   return (
-    <section
+    <div className="content-image"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <hr />
-      <PrismicNextImage field={imageDesktop} alt="" />
-      <PrismicNextImage field={imageMobile} alt="" />
-    </section>
+      <div className="hidden md:block">
+        <PrismicNextImage field={imageDesktop} alt="" />
+      </div>
+      <div className="block md:hidden">
+        <PrismicNextImage field={imageMobile} alt="" />
+      </div>
+    </div>
   );
 };
 

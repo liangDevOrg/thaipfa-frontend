@@ -19,10 +19,13 @@ const ImageAndContentSideBySide = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <hr />
-      <PrismicNextImage field={imageDesktop} alt=""/>
-      <PrismicNextImage field={imageMobile} alt=""/>
       {themeBackground}
+      <div className="hidden md:block">
+        <PrismicNextImage field={imageDesktop} alt=""/>
+      </div>
+      <div className="block md:hidden">
+        <PrismicNextImage field={imageMobile} alt=""/>
+      </div>
       <div><PrismicRichText field={content} /></div>
     </section>
   );

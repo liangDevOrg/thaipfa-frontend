@@ -128,7 +128,6 @@ body {
 .content-with-icon.lesson .box-item {
     min-height: 240px;
 }
-.content-with-icon img,
 .content-with-icon img {
     display: block;
     margin: 0 auto;
@@ -141,6 +140,52 @@ body {
     font-size: 20px;
     font-weight: 500;
     line-height: 34px;
+}
+
+/* content with image */
+.content-with-image {
+    margin: 0 auto 0;
+    max-width: 980px;
+    width: 100%;
+}
+.content-with-image .content {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 70px;
+    column-gap: 20px;
+}
+.content-with-image .box-item {
+    width: calc(50% - 10px);
+    min-height: 210px;
+    text-align: center;
+}
+/* .content-with-image.lesson .box-item {
+    min-height: 240px;
+} */
+.content-with-image img {
+    display: block;
+    margin: 0 auto;
+    width: auto;
+    height: 400px;
+}
+.content-with-image h3 {
+    margin-top: 30px;
+    margin-bottom: 0;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 30px;
+}
+.content-with-image p {
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 26px;
+}
+
+/* content image */
+.content-image img {
+    width: 100%;
 }
 
 /* content timeline */
