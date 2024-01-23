@@ -19,6 +19,7 @@ const ImageAndContentSideBySide = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
+      <hr></hr>
       {themeBackground}
       <div className="hidden md:block">
         <PrismicNextImage field={imageDesktop} alt=""/>

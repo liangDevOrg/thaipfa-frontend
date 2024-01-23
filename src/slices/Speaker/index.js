@@ -9,13 +9,16 @@ import PropTypes from "prop-types";
 const Speaker = ({ slice }) => {
   const data = slice.primary;
   const items = slice.items;
+  const themeColor = data.theme_color;
+
+  console.log(themeColor);
 
   return (
     <div className="container-content py-[50px] lg:py-[100px]"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <h2 style={{marginBottom: 0}}>{data.title}</h2>
+      <h2 style={{marginBottom: 0, color: themeColor}}>{data.title}</h2>
       <div className="content-with-image speaker mt-[50px]">
         <div className="content">
           {items.map((item, index) => (
