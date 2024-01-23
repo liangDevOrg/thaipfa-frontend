@@ -78,6 +78,7 @@ export function Header({ menu, settings }) {
                   href={hrefResolver(item.submenu_link)}
                   passHref
                   scroll={false}
+                  onClick={handleCloseMobileMenu}
                 >
                   {item.submenu_name}
                 </Link>
@@ -96,6 +97,7 @@ export function Header({ menu, settings }) {
                   href={hrefResolver(item.submenu_link)}
                   passHref
                   scroll={false}
+                  onClick={handleCloseMobileMenu}
                 >
                   {item.submenu_name}
                 </Link>
@@ -114,6 +116,7 @@ export function Header({ menu, settings }) {
                   href={hrefResolver(item.submenu_link)}
                   passHref
                   scroll={false}
+                  onClick={handleCloseMobileMenu}
                 >
                   {item.submenu_name}
                 </Link>
@@ -132,6 +135,7 @@ export function Header({ menu, settings }) {
                   href={hrefResolver(item.submenu_link)}
                   passHref
                   scroll={false}
+                  onClick={handleCloseMobileMenu}
                 >
                   {item.submenu_name}
                 </Link>
@@ -150,6 +154,7 @@ export function Header({ menu, settings }) {
                   href={hrefResolver(item.submenu_link)}
                   passHref
                   scroll={false}
+                  onClick={handleCloseMobileMenu}
                 >
                   {item.submenu_name}
                 </Link>
@@ -168,6 +173,7 @@ export function Header({ menu, settings }) {
                   href={hrefResolver(item.submenu_link)}
                   passHref
                   scroll={false}
+                  onClick={handleCloseMobileMenu}
                 >
                   {item.submenu_name}
                 </Link>
