@@ -167,9 +167,6 @@ body {
     min-height: 210px;
     text-align: center;
 }
-/* .content-with-image.lesson .box-item {
-    min-height: 240px;
-} */
 .content-with-image img {
     display: block;
     margin: 0 auto;
@@ -630,4 +627,25 @@ body {
     margin: 50px auto 0;
     max-width: 700px;
     width: 100%;
+}
+
+/* home opportunity */
+.container-content.introduction .introduction-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.container-content.introduction .introduction-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+.container-content.introduction .introduction-list li img {
+    width: 50px;
+}
+.container-content.introduction .introduction-list li p {
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 34px;
 }

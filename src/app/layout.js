@@ -119,17 +119,18 @@ async function Footer() {
               <button className="block btn-primary mt-[15px]">
                 {subscribeButtonName}
               </button>
+              <div className="link-social">
+                {socialMediaList.map((item, index) => (
+                  <div className="social-item" key={index}>
+                    <PrismicNextLink field={item.social_media_link}>
+                      <PrismicNextImage field={item.social_media_logo} width={25} alt="" />
+                    </PrismicNextLink>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-
-        {socialMediaList.map((item, index) => (
-          <div className="faq-card" key={index}>
-            <PrismicNextLink field={item.social_media_link}>
-              <PrismicNextImage field={item.social_media_logo} width={25} alt="" />
-            </PrismicNextLink>
-          </div>
-        ))}
       </div>
       <div className="copy">
         Copyright &copy; 2024 Thai Professional Finance Academy (ThaiPFA) All

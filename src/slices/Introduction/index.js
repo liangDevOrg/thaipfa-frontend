@@ -11,18 +11,28 @@ const Introduction = ({ slice }) => {
   const themeBackground = data.theme_background;
   
   return (
-    <section
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-    >
-      <h1>{title}</h1>
-      <p>{themeBackground}</p>
-      {items.map((item, index) => (
-        <li key={index}>
-          <p>{item.subject}</p>
-        </li>
-      ))}
-    </section>
+    <>
+      <div className="container-divider"></div>
+      <div className="container-content faq py-[50px] lg:py-[100px]">
+        <h2 style={{color: themeBackground, marginBottom:0}}>{title}</h2>
+      </div>
+      <div className="container-content full py-[50px]" style={{backgroundColor: themeBackground}}
+        data-slice-type={slice.slice_type}
+        data-slice-variation={slice.variation}
+      >
+        <div className="container-content introduction p-0">
+          <ul className="introduction-list">
+            {items.map((item, index) => (
+              <li key={index}>
+                {/* ใส่รูปตรงนี้ */}
+                <p>{item.subject}</p>
+              </li>
+            ))}
+          </ul> 
+        </div>
+      </div>
+    </>
+    
   );
 };
 

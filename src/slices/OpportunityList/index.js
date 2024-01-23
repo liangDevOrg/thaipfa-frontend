@@ -27,7 +27,7 @@ const OpportunityList = ({ slice }) => {
         {items.map((item, index) => (
           <li key={index}>
             {/* <img alt="" src="../assets/images/icon-check.png"> */}
-            <PrismicNextImage field={imageIcon} width={20} alt=""/>
+            <PrismicNextImage field={imageIcon} alt=""/>
             <p>{item.opportunity_list_name}</p>
           </li>
         ))}

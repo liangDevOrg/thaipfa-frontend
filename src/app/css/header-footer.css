@@ -184,12 +184,12 @@ header .menu-button i {
     border: 0;
     border-radius: 5px;
 }
-/* .footer .content-right .link-social {
+.footer .content-right .link-social {
     display: flex;
     margin-top: 25px;
     gap: 10px;
 }
-.footer .content-right .link-social a {
+.footer .content-right .link-social .social-item a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -197,14 +197,14 @@ header .menu-button i {
     height: 32px;
     border-radius: 50%;
 }
-.footer .content-right .link-social a:hover {
+.footer .content-right .link-social .social-item a:hover {
     opacity: 0.8;
 }
 .footer .content-right .link-social img {
     width: 32px;
     height: 32px;
     border-radius: 50%;
-} */
+}
 .footer .copy {
     padding: 20px 25px;
     width: 100%;

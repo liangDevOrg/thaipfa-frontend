@@ -24,10 +24,10 @@ const Fee = ({ slice }) => {
       <h3>
         <PrismicRichText field={subtitle} />
       </h3>
-      <div className="mt-[70px]">
-        <p className="font-bold text-[26px]">{smallCourseName}</p>
-        <p className="font-bold text-[50px]">{smallCoursePrice}</p>
-        <p className="font-bold text-[26px]">{smallCourseCondition}</p>
+      <div className="mt-[50px] md:mt-[70px]">
+        <p className="font-bold text-[20px] md:text-[26px]">{smallCourseName}</p>
+        <p className="font-bold text-[30px] md:text-[50px]">{smallCoursePrice}</p>
+        <p className="font-bold text-[20px] md:text-[26px]">{smallCourseCondition}</p>
       </div>
     </div>
   );
