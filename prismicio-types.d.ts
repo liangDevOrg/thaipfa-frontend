@@ -1954,6 +1954,16 @@ export interface IntroductionSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#boolean
    */
   is_active: prismic.BooleanField;
+
+  /**
+   * image_icon field in *Introduction → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: introduction.primary.image_icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_icon: prismic.ImageField<never>;
 }
 
 /**
