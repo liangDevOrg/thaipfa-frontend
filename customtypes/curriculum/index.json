@@ -38,6 +38,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "fee": {
+              "type": "SharedSlice"
+            },
             "image_content": {
               "type": "SharedSlice"
             },

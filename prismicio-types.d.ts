@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type CurriculumDocumentDataSlicesSlice =
+  | FeeSlice
   | ImageContentSlice
   | IntroductionSlice
   | ImageAndContentSideBySideSlice
@@ -1265,6 +1266,109 @@ type FaqSliceVariation = FaqSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type FaqSlice = prismic.SharedSlice<"faq", FaqSliceVariation>;
+
+/**
+ * Primary content in *Fee → Primary*
+ */
+export interface FeeSliceDefaultPrimary {
+  /**
+   * title field in *Fee → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: fee.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * theme_background field in *Fee → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: fee.primary.theme_background
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  theme_background: prismic.ColorField;
+
+  /**
+   * subtitle field in *Fee → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: fee.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subtitle: prismic.RichTextField;
+
+  /**
+   * small_course_name field in *Fee → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: fee.primary.small_course_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  small_course_name: prismic.KeyTextField;
+
+  /**
+   * small_course_price field in *Fee → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: fee.primary.small_course_price
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  small_course_price: prismic.KeyTextField;
+
+  /**
+   * small_course_condition field in *Fee → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: fee.primary.small_course_condition
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  small_course_condition: prismic.KeyTextField;
+
+  /**
+   * is_active field in *Fee → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: fee.primary.is_active
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  is_active: prismic.BooleanField;
+}
+
+/**
+ * Default variation for Fee Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeeSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FeeSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Fee*
+ */
+type FeeSliceVariation = FeeSliceDefault;
+
+/**
+ * Fee Shared Slice
+ *
+ * - **API ID**: `fee`
+ * - **Description**: Fee
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeeSlice = prismic.SharedSlice<"fee", FeeSliceVariation>;
 
 /**
  * Primary content in *HaveAProblem → Primary*
@@ -2590,6 +2694,10 @@ declare module "@prismicio/client" {
       FaqSliceDefaultItem,
       FaqSliceVariation,
       FaqSliceDefault,
+      FeeSlice,
+      FeeSliceDefaultPrimary,
+      FeeSliceVariation,
+      FeeSliceDefault,
       HaveAProblemSlice,
       HaveAProblemSliceDefaultPrimary,
       HaveAProblemSliceDefaultItem,
