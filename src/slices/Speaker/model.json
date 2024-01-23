@@ -27,6 +27,13 @@
             "placeholder_true": "true",
             "placeholder_false": "false"
           }
+        },
+        "theme_color": {
+          "type": "Color",
+          "config": {
+            "label": "theme_color",
+            "placeholder": ""
+          }
         }
       },
       "items": {

@@ -9,8 +9,7 @@ const Introduction = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      Placeholder component for introduction (variation: {slice.variation})
-      Slices
+      
     </section>
   );
 };

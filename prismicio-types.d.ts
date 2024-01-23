@@ -2288,6 +2288,16 @@ export interface SpeakerSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#boolean
    */
   is_active: prismic.BooleanField;
+
+  /**
+   * theme_color field in *Speaker → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: speaker.primary.theme_color
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  theme_color: prismic.ColorField;
 }
 
 /**
