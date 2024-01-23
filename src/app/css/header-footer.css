@@ -54,6 +54,7 @@ header .menu-button i {
     font-size: 14px !important;
     font-weight: 500 !important;
 }
+.menu-list .menu-item:focus,
 .menu-list .menu-item a:hover,
 .menu-list .menu-item a:focus {
     background-color: #ff5500 !important;
