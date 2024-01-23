@@ -45,10 +45,13 @@ export default async function Curriculum({ params }) {
 
   return (
     <>
-    <TitleAndSubTitle title={curriculum.data.title} subtitle={curriculum.data.subtitle} />
-    <SliceZone slices={curriculum.data.slices} components={components} />
+      <TitleAndSubTitle
+        title={curriculum.data.title}
+        subtitle={curriculum.data.subtitle}
+        themePage={curriculum.data.theme_page}
+      />
+      <SliceZone slices={curriculum.data.slices} components={components} />
     </>
-    
   );
 }
 

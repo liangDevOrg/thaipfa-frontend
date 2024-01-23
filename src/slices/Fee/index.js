@@ -1,5 +1,5 @@
 import { PrismicRichText } from "@/components/PrismicRichText";
-
+import PropTypes from "prop-types";
 /**
  * @typedef {import("@prismicio/client").Content.FeeSlice} FeeSlice
  * @typedef {import("@prismicio/react").SliceComponentProps<FeeSlice>} FeeProps
