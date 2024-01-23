@@ -1,0 +1,49 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "habit",
+				"type": "Text"
+			},
+			"subtitle": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Consequat qui elit mollit."
+						}
+					}
+				]
+			},
+			"small_course_name": {
+				"__TYPE__": "FieldContent",
+				"value": "planned",
+				"type": "Text"
+			},
+			"small_course_price": {
+				"__TYPE__": "FieldContent",
+				"value": "principle",
+				"type": "Text"
+			},
+			"small_course_condition": {
+				"__TYPE__": "FieldContent",
+				"value": "torn",
+				"type": "Text"
+			},
+			"is_active": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			},
+			"theme_background": {
+				"__TYPE__": "FieldContent",
+				"value": "#406abb",
+				"type": "Color"
+			}
+		},
+		"items": []
+	}
+]

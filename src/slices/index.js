@@ -10,6 +10,7 @@ export const components = {
   call_to_action_with_banner: dynamic(() => import("./CallToActionWithBanner")),
   experience: dynamic(() => import("./Experience")),
   faq: dynamic(() => import("./Faq")),
+  fee: dynamic(() => import("./Fee")),
   have_a_problem: dynamic(() => import("./HaveAProblem")),
   hero: dynamic(() => import("./Hero")),
   image_and_content_side_by_side: dynamic(

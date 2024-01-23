@@ -1,0 +1,72 @@
+{
+  "id": "fee",
+  "type": "SharedSlice",
+  "name": "Fee",
+  "description": "Fee",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "title",
+            "placeholder": ""
+          }
+        },
+        "theme_background": {
+          "type": "Color",
+          "config": {
+            "label": "theme_background",
+            "placeholder": ""
+          }
+        },
+        "subtitle": {
+          "type": "StructuredText",
+          "config": {
+            "label": "subtitle",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "small_course_name": {
+          "type": "Text",
+          "config": {
+            "label": "small_course_name",
+            "placeholder": ""
+          }
+        },
+        "small_course_price": {
+          "type": "Text",
+          "config": {
+            "label": "small_course_price",
+            "placeholder": ""
+          }
+        },
+        "small_course_condition": {
+          "type": "Text",
+          "config": {
+            "label": "small_course_condition",
+            "placeholder": ""
+          }
+        },
+        "is_active": {
+          "type": "Boolean",
+          "config": {
+            "label": "is_active",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
