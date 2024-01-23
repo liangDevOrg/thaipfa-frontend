@@ -6,19 +6,27 @@ module.exports = {
 
   apiEndpoint: "https://thaipfa-frontend.cdn.prismic.io/api/v2",
 
+  accessToken: process.env.NEXT_PUBLIC_PRISMIC_TOKEN,
+
   // -- Link resolution rules
   // Manages links to internal Prismic documents
   // Additional helper function for Next/Link component
   hrefResolver: function (doc) {
-    console.log("Document Function >>", doc);
     switch (doc?.type) {
-      // หน้าแรก
-      case "v2-home":
-        return `/${lang}`;
-      // การบริการลูกค้า
+      // หลักสูตร
       case "curriculum":
-        console.log("OK");
         return `/curriculum/${doc?.uid}`;
+      case "about_us":
+        return `/about-us/${doc?.uid}`;
+
+      default:
+        if (doc?.link_type === "Web") {
+          return doc?.url;
+        }
+        if (doc?.link_type === "Media") {
+          return doc?.url;
+        }
+        return "/";
     }
   },
 };

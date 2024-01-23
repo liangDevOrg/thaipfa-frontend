@@ -911,6 +911,17 @@ export type PageDocument<Lang extends string = string> =
  */
 interface SettingsDocumentData {
   /**
+   * image_logo field in *Settings*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.image_logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_logo: prismic.ImageField<never>;
+
+  /**
    * Site Title field in *Settings*
    *
    * - **Field Type**: Title

@@ -6,6 +6,14 @@
   "status": true,
   "json": {
     "Main": {
+      "image_logo": {
+        "type": "Image",
+        "config": {
+          "label": "image_logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
       "siteTitle": {
         "type": "StructuredText",
         "config": {
