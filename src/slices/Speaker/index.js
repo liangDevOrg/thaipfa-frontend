@@ -11,8 +11,6 @@ const Speaker = ({ slice }) => {
   const items = slice.items;
   const themeColor = data.theme_color;
 
-  console.log(themeColor);
-
   return (
     <div className="container-content py-[50px] lg:py-[100px]"
       data-slice-type={slice.slice_type}

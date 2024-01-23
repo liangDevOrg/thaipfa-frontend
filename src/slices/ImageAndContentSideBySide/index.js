@@ -15,20 +15,24 @@ const ImageAndContentSideBySide = ({ slice }) => {
 
   const content = data.content;
   return (
-    <section
+    <div className="container-content full p-0" style={{backgroundColor: themeBackground}}
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <hr></hr>
-      {themeBackground}
-      <div className="hidden md:block">
-        <PrismicNextImage field={imageDesktop} alt=""/>
+      <div className="content-side-by-side">
+        <div className="side-left">
+          <div className="hidden md:block">
+            <PrismicNextImage field={imageDesktop} alt=""/>
+          </div>
+          <div className="block md:hidden">
+            <PrismicNextImage field={imageMobile} alt=""/>
+          </div>
+        </div>
+        <div className="content-right color-white">
+          <PrismicRichText field={content} />
+        </div>
       </div>
-      <div className="block md:hidden">
-        <PrismicNextImage field={imageMobile} alt=""/>
-      </div>
-      <div><PrismicRichText field={content} /></div>
-    </section>
+    </div>
   );
 };
 

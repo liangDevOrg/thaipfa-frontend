@@ -61,6 +61,14 @@ body {
     border-top: 2px solid #dddddd;
 }
 
+/* content title */
+.content-title h3 {
+    font-size: 38px;
+    font-weight: bold;
+    line-height: 44px;
+    text-align: center;
+}
+
 /* content bannner */
 .content-banner {
     position: relative;
@@ -186,6 +194,26 @@ body {
 /* content image */
 .content-image img {
     width: 100%;
+}
+
+/* content side by side */
+.content-side-by-side {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.content-side-by-side .side-left {
+    width: 40%;
+}
+.content-side-by-side .side-left img {
+    width: 100%;
+}
+.content-side-by-side .content-right {
+    flex: 1;
+    padding: 20px 40px;
+    font-size: 38px;
+    font-weight: 500;
+    line-height: 58px;
 }
 
 /* content timeline */

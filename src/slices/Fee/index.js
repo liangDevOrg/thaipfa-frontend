@@ -1,4 +1,5 @@
 import { PrismicRichText } from "@/components/PrismicRichText";
+// import { color } from "@prismicio/client/dist/helpers/isFilled";
 import PropTypes from "prop-types";
 /**
  * @typedef {import("@prismicio/client").Content.FeeSlice} FeeSlice
@@ -15,18 +16,20 @@ const Fee = ({ slice }) => {
   const smallCoursePrice = data.small_course_price;
   const smallCourseCondition = data.small_course_condition;
   return (
-    <section
+    <div className="container-content full py-[50px] color-white text-center" style={{backgroundColor: themeBackground}}
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <hr />
-      <h1>{title}</h1>
-      <PrismicRichText field={subtitle} />
-      <p> use theme color {themeBackground}</p>
-      <h6>{smallCourseName}</h6>
-      <h6>{smallCoursePrice}</h6>
-      <h6>{smallCourseCondition}</h6>
-    </section>
+      <h2>{title}</h2>
+      <h3>
+        <PrismicRichText field={subtitle} />
+      </h3>
+      <div className="mt-[70px]">
+        <p className="font-bold text-[26px]">{smallCourseName}</p>
+        <p className="font-bold text-[50px]">{smallCoursePrice}</p>
+        <p className="font-bold text-[26px]">{smallCourseCondition}</p>
+      </div>
+    </div>
   );
 };
 
