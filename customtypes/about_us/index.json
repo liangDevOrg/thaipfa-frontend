@@ -1,0 +1,103 @@
+{
+  "id": "about_us",
+  "label": "About us",
+  "format": "page",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "hero": {
+              "type": "SharedSlice"
+            },
+            "fee": {
+              "type": "SharedSlice"
+            },
+            "experience": {
+              "type": "SharedSlice"
+            },
+            "traning_course_list": {
+              "type": "SharedSlice"
+            },
+            "traning_course": {
+              "type": "SharedSlice"
+            },
+            "portfolio": {
+              "type": "SharedSlice"
+            },
+            "promotion_and_privilege": {
+              "type": "SharedSlice"
+            },
+            "training_award": {
+              "type": "SharedSlice"
+            },
+            "speaker_with_content": {
+              "type": "SharedSlice"
+            },
+            "opportunity_list": {
+              "type": "SharedSlice"
+            },
+            "introduction": {
+              "type": "SharedSlice"
+            },
+            "image_icon_with_content_bottom": {
+              "type": "SharedSlice"
+            },
+            "image_content": {
+              "type": "SharedSlice"
+            },
+            "image_and_content_side_by_side": {
+              "type": "SharedSlice"
+            },
+            "call_to_action_with_banner": {
+              "type": "SharedSlice"
+            },
+            "banner_section": {
+              "type": "SharedSlice"
+            },
+            "background_color_with_button_link": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    },
+    "SEO & Metadata": {
+      "meta_description": {
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "A brief summary of the page"
+        },
+        "type": "Text"
+      },
+      "meta_image": {
+        "config": {
+          "constraint": {
+            "height": 1260,
+            "width": 2400
+          },
+          "label": "Meta Image",
+          "thumbnails": []
+        },
+        "type": "Image"
+      },
+      "meta_title": {
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "A title of the page used for social media and search engines"
+        },
+        "type": "Text"
+      }
+    }
+  }
+}

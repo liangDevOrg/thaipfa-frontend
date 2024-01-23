@@ -15,19 +15,19 @@ import { components } from "@/slices";
  */
 export async function generateMetadata({ params }) {
   const client = createClient();
-  const page = await client
-    .getByUID("page", params.uid)
+  const aboutUs = await client
+    .getByUID("about_us", params.uid)
     .catch(() => notFound());
   const settings = await client.getSingle("settings");
 
   return {
-    title: `${asText(page.data.title)} | ${asText(settings.data.siteTitle)}`,
-    description: page.data.meta_description,
+    title: `${asText(aboutUs.data.title)} | ${asText(settings.data.siteTitle)}`,
+    description: aboutUs.data.meta_description,
     openGraph: {
-      title: page.data.meta_title,
+      title: aboutUs.data.meta_title,
       images: [
         {
-          url: page.data.meta_image.url,
+          url: aboutUs.data.meta_image.url,
         },
       ],
     },
@@ -37,21 +37,21 @@ export async function generateMetadata({ params }) {
 /**
  * @param {{ params: Params }}
  */
-export default async function Page({ params }) {
+export default async function AboutUs({ params }) {
   const client = createClient();
-  const page = await client
-    .getByUID("page", params.uid)
+  const aboutUs = await client
+    .getByUID("about_us", params.uid)
     .catch(() => notFound());
 
-  return <SliceZone slices={page.data.slices} components={components} />;
+  return <SliceZone slices={aboutUs.data.slices} components={components} />;
 }
 
 export async function generateStaticParams() {
   const client = createClient();
 
-  const pages = await client.getAllByType("page");
+  const allAboutUs = await client.getAllByType("about_us");
 
-  return pages.map((page) => {
+  return allAboutUs.map((page) => {
     return { uid: page.uid };
   });
 }
