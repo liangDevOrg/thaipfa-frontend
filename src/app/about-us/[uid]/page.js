@@ -21,7 +21,7 @@ export async function generateMetadata({ params }) {
   const settings = await client.getSingle("settings");
 
   return {
-    title: `${asText(aboutUs.data.title)} | ${asText(settings.data.siteTitle)}`,
+    title: `${aboutUs.data.meta_title} | ${aboutUs.data.siteTitle}`,
     description: aboutUs.data.meta_description,
     openGraph: {
       title: aboutUs.data.meta_title,
