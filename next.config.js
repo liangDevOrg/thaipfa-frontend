@@ -19,10 +19,6 @@ const nextConfig = async () => {
       // a non-locale prefixed path e.g. `/hello`
       defaultLocale: locales[1],
     },
-    publicRuntimeConfig: {
-      // Your public configurations here
-      faviconPath: "./public/favicon.ico",
-    },
   };
 };
 

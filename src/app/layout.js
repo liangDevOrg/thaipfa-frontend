@@ -4,10 +4,6 @@ import { PrismicPreview } from "@prismicio/next";
 import { createClient, repositoryName } from "@/prismicio";
 import { Header } from "@Components/Header";
 import { Footer } from "@/components/Footer";
-import Head from "next/head";
-import getConfig from "next/config";
-
-const { publicRuntimeConfig } = getConfig();
 
 const inter = Inter({
   subsets: ["latin"],
@@ -15,7 +11,6 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-console.log(publicRuntimeConfig.faviconPath);
 /**
  * @param {{ children: React.ReactNode }}
  */
