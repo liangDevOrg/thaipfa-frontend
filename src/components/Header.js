@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { PrismicText } from "@prismicio/react";
-import { PrismicNextLink } from "@prismicio/next";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import PropTypes from "prop-types";
 import { Bounded } from "./Bounded";
 import {
@@ -186,8 +185,8 @@ export function Header({ menu, settings }) {
       <Bounded as="header">
         <div className="container-content full header">
           <div className="content">
-            <PrismicNextLink href="/" className="logo-text">
-              <PrismicText field={settings.data.siteTitle} />
+            <PrismicNextLink href="/th" className="logo-text">
+              <PrismicNextImage field={settings.data.image_logo} alt="" width={100} />
             </PrismicNextLink>
             <div>
               <button className="menu-hamburger" onClick={handleOpenMobileMenu}>

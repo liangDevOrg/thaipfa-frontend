@@ -244,6 +244,17 @@ export interface FooterDocumentDataSocialMediaListItem {
  */
 interface FooterDocumentData {
   /**
+   * image_logo field in *Footer*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.image_logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_logo: prismic.ImageField<never>;
+
+  /**
    * contact_title field in *Footer*
    *
    * - **Field Type**: Text

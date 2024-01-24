@@ -13,6 +13,14 @@
           "placeholder": ""
         }
       },
+      "image_logo": {
+        "type": "Image",
+        "config": {
+          "label": "image_logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
       "contact_title": {
         "type": "Text",
         "config": {
