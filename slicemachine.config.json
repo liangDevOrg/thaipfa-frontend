@@ -2,5 +2,7 @@
   "libraries": ["./src/slices"],
   "adapter": "@slicemachine/adapter-next",
   "repositoryName": "thaipfa-frontend",
-  "localSliceSimulatorURL": "http://localhost:3000/slice-simulator"
+  "localSliceSimulatorURL": "http://localhost:3000/slice-simulator",
+  "accessToken": "MC5aYkRyVHhBQUFDRUFNOFRm.chbvv71577-977-977-977-977-9UktGPi4B77-9ImwKX--_ve-_ve-_vQDvv71I77-9CEPvv73vv70-"
+
 }
