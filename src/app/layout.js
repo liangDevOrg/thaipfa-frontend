@@ -4,6 +4,10 @@ import { PrismicPreview } from "@prismicio/next";
 import { createClient, repositoryName } from "@/prismicio";
 import { Header } from "@Components/Header";
 import { Footer } from "@/components/Footer";
+import Head from "next/head";
+import getConfig from "next/config";
+
+const { publicRuntimeConfig } = getConfig();
 
 const inter = Inter({
   subsets: ["latin"],
@@ -11,12 +15,20 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+console.log(publicRuntimeConfig.faviconPath);
 /**
  * @param {{ children: React.ReactNode }}
  */
 export default async function RootLayout({ children }) {
   return (
     <html lang="en" className={inter.variable}>
+      <link rel="icon" href="/favicon.ico" type="image/ico" />
+      <link
+        rel="apple-touch-icon"
+        href="apple-touch-icon.png"
+        type="image/png"
+        sizes="144x144"
+      />
       <body className="overflow-x-hidden antialiased">
         {/* @ts-expect-error Async Server Component */}
         <HeaderLayout />

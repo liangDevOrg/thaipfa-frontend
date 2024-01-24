@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import { SliceZone } from "@prismicio/react";
-
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 
@@ -12,7 +11,7 @@ export async function generateMetadata() {
   const page = await client.getByUID("home", "home");
 
   return {
-    title: page.data.title,
+    title: page.data.meta_title,
     description: page.data.meta_description,
     openGraph: {
       title: page.data.meta_title,
@@ -25,7 +24,7 @@ export async function generateMetadata() {
   };
 }
 
-export default async function Page() {
+export default async function Homepage() {
   const client = createClient();
   const page = await client.getByUID("home", "home").catch(() => notFound());
 

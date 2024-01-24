@@ -777,6 +777,90 @@ interface MenuDocumentData {
 export type MenuDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<MenuDocumentData>, "menu", Lang>;
 
+type MockExamDocumentDataSlicesSlice =
+  | TraningCourseListSlice
+  | SpeakerSlice
+  | TraningCourseSlice
+  | TrainingAwardSlice
+  | PortfolioSlice
+  | IntroductionSlice
+  | OpportunityListSlice
+  | HeroSlice
+  | ImageIconWithContentBottomSlice
+  | ImageAndContentSideBySideSlice
+  | HaveAProblemSlice
+  | ExperienceSlice
+  | BannerSectionSlice
+  | CallToActionWithBannerSlice
+  | BackgroundColorWithButtonLinkSlice
+  | SpeakerWithContentSlice
+  | PromotionAndPrivilegeSlice
+  | ImageContentSlice
+  | FeeSlice;
+
+/**
+ * Content for Mock Exam documents
+ */
+interface MockExamDocumentData {
+  /**
+   * Slice Zone field in *Mock Exam*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: mock_exam.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<MockExamDocumentDataSlicesSlice> /**
+   * Meta Description field in *Mock Exam*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: mock_exam.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Mock Exam*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: mock_exam.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Mock Exam*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: mock_exam.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Mock Exam document from Prismic
+ *
+ * - **API ID**: `mock_exam`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type MockExamDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<MockExamDocumentData>,
+    "mock_exam",
+    Lang
+  >;
+
 /**
  * Item in *Navigation → Links*
  */
@@ -966,6 +1050,7 @@ export type AllDocumentTypes =
   | FooterDocument
   | HomeDocument
   | MenuDocument
+  | MockExamDocument
   | NavigationDocument
   | PageDocument
   | SettingsDocument;
@@ -2911,6 +2996,9 @@ declare module "@prismicio/client" {
       MenuDocumentDataGroupMenu4Item,
       MenuDocumentDataGroupMenu5Item,
       MenuDocumentDataGroupMenu6Item,
+      MockExamDocument,
+      MockExamDocumentData,
+      MockExamDocumentDataSlicesSlice,
       NavigationDocument,
       NavigationDocumentData,
       NavigationDocumentDataLinksItem,

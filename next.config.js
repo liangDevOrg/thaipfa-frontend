@@ -17,7 +17,11 @@ const nextConfig = async () => {
       locales: ["th", "en-us"],
       // This is the default locale you want to be used when visiting
       // a non-locale prefixed path e.g. `/hello`
-      defaultLocale: locales[0],
+      defaultLocale: locales[1],
+    },
+    publicRuntimeConfig: {
+      // Your public configurations here
+      faviconPath: "./public/favicon.ico",
     },
   };
 };

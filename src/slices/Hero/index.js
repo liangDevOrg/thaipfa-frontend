@@ -6,7 +6,7 @@ import { PrismicRichText } from "@/components/PrismicRichText";
 
 const Hero = ({ slice }) => {
   const items = slice.items;
-  console.log(items);
+
   return (
     <div className="hero-slider">
       <Carousel>

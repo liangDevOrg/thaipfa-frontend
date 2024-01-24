@@ -15,22 +15,18 @@ export const repositoryName =
  */
 const routes = [
   {
-    type: "page",
-    path: "/:uid",
-  },
-  {
-    type: "page",
-    uid: "home",
+    type: "home",
     path: "/",
   },
   {
-    type: "settings",
-    path: "/",
+    type: "curriculum",
+    path: "/curriculum/:uid",
   },
   {
-    type: "navigation",
-    path: "/",
+    type: "about_us",
+    path: "/about-us/:uid",
   },
+
 ];
 
 /**

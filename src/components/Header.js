@@ -14,9 +14,6 @@ import {
   AccordionBody,
 } from "@material-tailwind/react";
 
-import { hrefResolver } from "@Prismic-configuration";
-import Link from "next/link";
-
 export function Header({ menu, settings }) {
   const [openMobileMenu, setOpenMobileMenu] = useState(false);
   const [screenSize, setScreenSize] = useState(getCurrentDimension());
@@ -73,14 +70,9 @@ export function Header({ menu, settings }) {
           <AccordionBody className="menu-body">
             {menu.data.group_menu.map((item, index) => (
               <div className="menu-item" key={index}>
-                <Link
-                  href={hrefResolver(item.submenu_link)}
-                  passHref
-                  scroll={false}
-                  onClick={handleCloseMobileMenu}
-                >
+                <PrismicNextLink field={item.submenu_link}>
                   {item.submenu_name}
-                </Link>
+                </PrismicNextLink>
               </div>
             ))}
           </AccordionBody>
@@ -92,14 +84,9 @@ export function Header({ menu, settings }) {
           <AccordionBody className="menu-body">
             {menu.data.group_menu2.map((item, index) => (
               <div className="menu-item" key={index}>
-                <Link
-                  href={hrefResolver(item.submenu_link)}
-                  passHref
-                  scroll={false}
-                  onClick={handleCloseMobileMenu}
-                >
+                <PrismicNextLink field={item.submenu_link}>
                   {item.submenu_name}
-                </Link>
+                </PrismicNextLink>
               </div>
             ))}
           </AccordionBody>
@@ -111,14 +98,9 @@ export function Header({ menu, settings }) {
           <AccordionBody className="menu-body">
             {menu.data.group_menu3.map((item, index) => (
               <div className="menu-item" key={index}>
-                <Link
-                  href={hrefResolver(item.submenu_link)}
-                  passHref
-                  scroll={false}
-                  onClick={handleCloseMobileMenu}
-                >
+                <PrismicNextLink field={item.submenu_link}>
                   {item.submenu_name}
-                </Link>
+                </PrismicNextLink>
               </div>
             ))}
           </AccordionBody>
@@ -130,14 +112,9 @@ export function Header({ menu, settings }) {
           <AccordionBody className="menu-body">
             {menu.data.group_menu4.map((item, index) => (
               <div className="menu-item" key={index}>
-                <Link
-                  href={hrefResolver(item.submenu_link)}
-                  passHref
-                  scroll={false}
-                  onClick={handleCloseMobileMenu}
-                >
+                <PrismicNextLink field={item.submenu_link}>
                   {item.submenu_name}
-                </Link>
+                </PrismicNextLink>
               </div>
             ))}
           </AccordionBody>
@@ -149,14 +126,9 @@ export function Header({ menu, settings }) {
           <AccordionBody className="menu-body">
             {menu.data.group_menu5.map((item, index) => (
               <div className="menu-item" key={index}>
-                <Link
-                  href={hrefResolver(item.submenu_link)}
-                  passHref
-                  scroll={false}
-                  onClick={handleCloseMobileMenu}
-                >
+                <PrismicNextLink field={item.submenu_link}>
                   {item.submenu_name}
-                </Link>
+                </PrismicNextLink>
               </div>
             ))}
           </AccordionBody>
@@ -168,14 +140,9 @@ export function Header({ menu, settings }) {
           <AccordionBody className="menu-body">
             {menu.data.group_menu6.map((item, index) => (
               <div className="menu-item" key={index}>
-                <Link
-                  href={hrefResolver(item.submenu_link)}
-                  passHref
-                  scroll={false}
-                  onClick={handleCloseMobileMenu}
-                >
+                <PrismicNextLink field={item.submenu_link}>
                   {item.submenu_name}
-                </Link>
+                </PrismicNextLink>
               </div>
             ))}
           </AccordionBody>
@@ -185,8 +152,12 @@ export function Header({ menu, settings }) {
       <Bounded as="header">
         <div className="container-content full header">
           <div className="content">
-            <PrismicNextLink href="/th" className="logo-text">
-              <PrismicNextImage field={settings.data.image_logo} alt="" width={100} />
+            <PrismicNextLink href="/" className="logo-text">
+              <PrismicNextImage
+                field={settings.data.image_logo}
+                alt=""
+                width={100}
+              />
             </PrismicNextLink>
             <div>
               <button className="menu-hamburger" onClick={handleOpenMobileMenu}>
@@ -202,13 +173,9 @@ export function Header({ menu, settings }) {
                   <MenuList className="menu-list">
                     {menu.data.group_menu.map((item, index) => (
                       <MenuItem className="menu-item" key={index}>
-                        <Link
-                          href={hrefResolver(item.submenu_link)}
-                          passHref
-                          scroll={false}
-                        >
+                        <PrismicNextLink field={item.submenu_link}>
                           {item.submenu_name}
-                        </Link>
+                        </PrismicNextLink>
                       </MenuItem>
                     ))}
                   </MenuList>
@@ -224,13 +191,9 @@ export function Header({ menu, settings }) {
                     {menu.data.group_menu2.map((item, index) => {
                       return (
                         <MenuItem className="menu-item" key={index}>
-                          <Link
-                            href={hrefResolver(item.submenu_link)}
-                            passHref
-                            scroll={false}
-                          >
+                          <PrismicNextLink field={item.submenu_link}>
                             {item.submenu_name}
-                          </Link>
+                          </PrismicNextLink>
                         </MenuItem>
                       );
                     })}
@@ -247,13 +210,9 @@ export function Header({ menu, settings }) {
                     {menu.data.group_menu3.map((item, index) => {
                       return (
                         <MenuItem className="menu-item" key={index}>
-                          <Link
-                            href={hrefResolver(item.submenu_link)}
-                            passHref
-                            scroll={false}
-                          >
+                          <PrismicNextLink field={item.submenu_link}>
                             {item.submenu_name}
-                          </Link>
+                          </PrismicNextLink>
                         </MenuItem>
                       );
                     })}
@@ -270,13 +229,9 @@ export function Header({ menu, settings }) {
                     {menu.data.group_menu4.map((item, index) => {
                       return (
                         <MenuItem className="menu-item" key={index}>
-                          <Link
-                            href={hrefResolver(item.submenu_link)}
-                            passHref
-                            scroll={false}
-                          >
+                          <PrismicNextLink field={item.submenu_link}>
                             {item.submenu_name}
-                          </Link>
+                          </PrismicNextLink>
                         </MenuItem>
                       );
                     })}
@@ -293,13 +248,9 @@ export function Header({ menu, settings }) {
                     {menu.data.group_menu5.map((item, index) => {
                       return (
                         <MenuItem className="menu-item" key={index}>
-                          <Link
-                            href={hrefResolver(item.submenu_link)}
-                            passHref
-                            scroll={false}
-                          >
+                          <PrismicNextLink field={item.submenu_link}>
                             {item.submenu_name}
-                          </Link>
+                          </PrismicNextLink>
                         </MenuItem>
                       );
                     })}
@@ -316,13 +267,9 @@ export function Header({ menu, settings }) {
                     {menu.data.group_menu6.map((item, index) => {
                       return (
                         <MenuItem className="menu-item" key={index}>
-                          <Link
-                            href={hrefResolver(item.submenu_link)}
-                            passHref
-                            scroll={false}
-                          >
+                          <PrismicNextLink field={item.submenu_link}>
                             {item.submenu_name}
-                          </Link>
+                          </PrismicNextLink>
                         </MenuItem>
                       );
                     })}
