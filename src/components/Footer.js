@@ -24,7 +24,7 @@ export function Footer({ data }) {
         <div className="container-content py-[35px]">
           <div className="content">
             <div className="content-left">
-              <PrismicNextImage field={imageLogo} alt=""/>
+              <PrismicNextImage field={imageLogo} alt="" className="footer-logo" />
               <p>
                 {contactTitle}
                 <br />
@@ -43,7 +43,6 @@ export function Footer({ data }) {
                 {fax}
               </p>
             </div>
-
             <div className="content-center">
               <h3>Our Services</h3>
               <ul className="link-service">
@@ -60,7 +59,6 @@ export function Footer({ data }) {
                 ))}
               </ul>
             </div>
-
             <div className="content-right">
               <h3>{subscribeName}</h3>
               <input

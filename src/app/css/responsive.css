@@ -108,10 +108,14 @@
     .content-timeline .timeline .card {
         margin: 0 0 30px 40px;
     }
+    .content-speaker .top-image {
+        margin: 0 auto 30px;
+        height: 60px;
+    }
     .hero-slider {
         height: 400px;
     }
-    .hero-slider .hero-caption h2,
+    .hero-slider .hero-caption h2 p,
     .content-banner .banner-content p {
         font-size: 40px;
         line-height: 60px;

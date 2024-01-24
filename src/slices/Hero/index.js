@@ -18,7 +18,9 @@ const Hero = ({ slice }) => {
               className="hero-image"
             />
             <div className="hero-caption">
-              <PrismicRichText field={item.title} />
+              <h2>
+                <PrismicRichText field={item.title} />
+              </h2>
               <PrismicNextLink
                 field={item.button_link}
                 className="btn-primary m-auto"

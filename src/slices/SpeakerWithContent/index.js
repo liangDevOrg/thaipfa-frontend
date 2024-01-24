@@ -15,33 +15,35 @@ const SpeakerWithContent = ({ slice }) => {
   const items = slice.items;
 
   return (
-    <section
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-    >
-      <hr />
-      <PrismicNextImage field={imageLogo} alt=""/>
-      <h1>{title}</h1>
-      <PrismicRichText field={subtitle} />
-
-      <div className="content-with-image speaker mt-[50px]">
-        <div className="content">
-          {items.map((item, index) => (
-            <div className="box-item" key={index}>
-              {/* <img alt="" src="../assets/images/icon-check.png"> */}
-              <div className="hidden md:block">
-                <PrismicNextImage field={item.speaker_image_desktop} alt="" />
-              </div>
-              <div className="block md:hidden">
-                <PrismicNextImage field={item.speaker_image_mobile} alt="" />
-              </div>
-              <h3>{item.speaker_name}</h3>
-              <PrismicRichText field={item.speaker_detail} />
+    <>
+      <div className="container-content py-[50px] lg:py-[100px]"
+        data-slice-type={slice.slice_type}
+        data-slice-variation={slice.variation}
+      >
+        <div className="content-speaker">
+          <PrismicNextImage field={imageLogo} alt="" className="top-image"/>
+          <h2 style={{marginBottom: 50}}>{title}</h2>
+          <h3><PrismicRichText field={subtitle} /></h3>
+          <div className="content-with-image speaker mt-[50px]">
+            <div className="content">
+              {items.map((item, index) => (
+                <div className="box-item" key={index}>
+                  {/* <img alt="" src="../assets/images/icon-check.png"> */}
+                  <div className="hidden md:block">
+                    <PrismicNextImage field={item.speaker_image_desktop} alt="" />
+                  </div>
+                  <div className="block md:hidden">
+                    <PrismicNextImage field={item.speaker_image_mobile} alt="" />
+                  </div>
+                  <h3>{item.speaker_name}</h3>
+                  <PrismicRichText field={item.speaker_detail} />
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
-    </section>
+    </>
   );
 };
 

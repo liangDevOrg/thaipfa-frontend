@@ -16,6 +16,10 @@ header .logo-text {
     font-size: 30px;
     font-weight: bold;
 }
+header .logo-text img {
+    width: auto;
+    height: 36px;
+}
 header .menu-hamburger {
     display: none;
 }
@@ -147,11 +151,11 @@ header .menu-button i {
     font-weight: 500;
     line-height: 22px;
 }
-/* .footer .content-left .photo {
+.footer .content-left .footer-logo {
     display: block;
     margin-bottom: 15px;
     width: 130px;
-} */
+}
 .footer .content-center {
     flex: 1;
 }
