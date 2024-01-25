@@ -26,7 +26,6 @@ const routes = [
     type: "about_us",
     path: "/about-us/:uid",
   },
-
 ];
 
 /**
@@ -39,7 +38,8 @@ export const createClient = (config) => {
   const client = prismic.createClient(repositoryName, {
     routes,
     fetchOptions:
-      process.env.NODE_ENV === "Production"
+      process.env.NODE_ENV === "Production" ||
+      process.env.NODE_ENV === "production"
         ? { next: { tags: ["prismic"] }, cache: "force-cache" }
         : { next: { revalidate: 5 } },
     ...config,
