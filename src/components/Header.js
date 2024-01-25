@@ -70,7 +70,7 @@ export function Header({ menu, settings }) {
           <AccordionBody className="menu-body">
             {menu.data.group_menu.map((item, index) => (
               <div className="menu-item" key={index}>
-                <PrismicNextLink field={item.submenu_link}>
+                <PrismicNextLink field={item.submenu_link} onClick={handleCloseMobileMenu}>
                   {item.submenu_name}
                 </PrismicNextLink>
               </div>
@@ -84,7 +84,7 @@ export function Header({ menu, settings }) {
           <AccordionBody className="menu-body">
             {menu.data.group_menu2.map((item, index) => (
               <div className="menu-item" key={index}>
-                <PrismicNextLink field={item.submenu_link}>
+                <PrismicNextLink field={item.submenu_link} onClick={handleCloseMobileMenu}>
                   {item.submenu_name}
                 </PrismicNextLink>
               </div>
@@ -98,7 +98,7 @@ export function Header({ menu, settings }) {
           <AccordionBody className="menu-body">
             {menu.data.group_menu3.map((item, index) => (
               <div className="menu-item" key={index}>
-                <PrismicNextLink field={item.submenu_link}>
+                <PrismicNextLink field={item.submenu_link} onClick={handleCloseMobileMenu}>
                   {item.submenu_name}
                 </PrismicNextLink>
               </div>
@@ -112,7 +112,7 @@ export function Header({ menu, settings }) {
           <AccordionBody className="menu-body">
             {menu.data.group_menu4.map((item, index) => (
               <div className="menu-item" key={index}>
-                <PrismicNextLink field={item.submenu_link}>
+                <PrismicNextLink field={item.submenu_link} onClick={handleCloseMobileMenu}>
                   {item.submenu_name}
                 </PrismicNextLink>
               </div>
@@ -126,7 +126,7 @@ export function Header({ menu, settings }) {
           <AccordionBody className="menu-body">
             {menu.data.group_menu5.map((item, index) => (
               <div className="menu-item" key={index}>
-                <PrismicNextLink field={item.submenu_link}>
+                <PrismicNextLink field={item.submenu_link} onClick={handleCloseMobileMenu}>
                   {item.submenu_name}
                 </PrismicNextLink>
               </div>
@@ -140,7 +140,7 @@ export function Header({ menu, settings }) {
           <AccordionBody className="menu-body">
             {menu.data.group_menu6.map((item, index) => (
               <div className="menu-item" key={index}>
-                <PrismicNextLink field={item.submenu_link}>
+                <PrismicNextLink field={item.submenu_link} onClick={handleCloseMobileMenu}>
                   {item.submenu_name}
                 </PrismicNextLink>
               </div>
