@@ -26,6 +26,21 @@
             "placeholder": ""
           }
         },
+        "button_all_name_course": {
+          "type": "Text",
+          "config": {
+            "label": "button_all_name_course",
+            "placeholder": ""
+          }
+        },
+        "button_all_name_link": {
+          "type": "Link",
+          "config": {
+            "label": "button_all_name_link",
+            "placeholder": "",
+            "select": null
+          }
+        },
         "is_active": {
           "type": "Boolean",
           "config": {

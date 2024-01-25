@@ -2869,6 +2869,26 @@ export interface TraningCourseListSliceDefaultPrimary {
   subtitle_course: prismic.KeyTextField;
 
   /**
+   * button_all_name_course field in *TraningCourseList → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: traning_course_list.primary.button_all_name_course
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_all_name_course: prismic.KeyTextField;
+
+  /**
+   * button_all_name_link field in *TraningCourseList → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: traning_course_list.primary.button_all_name_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_all_name_link: prismic.LinkField;
+
+  /**
    * is_active field in *TraningCourseList → Primary*
    *
    * - **Field Type**: Boolean

@@ -16,6 +16,18 @@
 			"is_active": {
 				"__TYPE__": "BooleanContent",
 				"value": true
+			},
+			"button_all_name_course": {
+				"__TYPE__": "FieldContent",
+				"value": "chance",
+				"type": "Text"
+			},
+			"button_all_name_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com"
+				}
 			}
 		},
 		"items": [

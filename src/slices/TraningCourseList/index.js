@@ -11,10 +11,14 @@ const TraningCourseList = ({ slice }) => {
   const title = data.title_course;
   const subtitle = data.subtitle_course;
 
+  const buttonAllNameCourse = data.button_all_name_course;
+  const buttonAllNameLink = data.button_all_name_link;
+
   return (
     <>
       <div className="container-divider"></div>
-      <div className="container-content py-[50px] lg:py-[100px]"
+      <div
+        className="container-content py-[50px] lg:py-[100px]"
         data-slice-type={slice.slice_type}
         data-slice-variation={slice.variation}
       >
@@ -34,6 +38,14 @@ const TraningCourseList = ({ slice }) => {
               <p>{item.course_name}</p>
             </div>
           ))}
+        </div>
+        <div className="link-more text-center mt-[80px]">
+          <PrismicNextLink field={buttonAllNameLink}>
+            <span className="font-medium text-[20px]">
+              {buttonAllNameCourse}
+            </span>
+          </PrismicNextLink>
+          <i className="fa fa-play ml-[10px]" aria-hidden="true"></i>
         </div>
       </div>
     </>
