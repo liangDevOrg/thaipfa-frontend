@@ -27,12 +27,16 @@ export async function generateMetadata() {
 async function getData() {
   const client = createClient();
   const page = await client.getByUID("home", "home").catch(() => notFound());
-
   return page;
 }
 
 export default async function Homepage() {
-  const homePage = await getData();
-
-  return <SliceZone slices={homePage.data.slices} components={components} />;
+  try {
+    const homePage = await getData();
+    return <SliceZone slices={homePage.data.slices} components={components} />;
+  } catch (err) {
+    const errorMessage = err.response?.data?.message || "Could not fetch item.";
+    console.error("Error fetching item:", errorMessage);
+    throw new Error(errorMessage);
+  }
 }

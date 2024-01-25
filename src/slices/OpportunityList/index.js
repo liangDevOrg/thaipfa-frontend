@@ -29,6 +29,7 @@ const OpportunityList = ({ slice }) => {
       </h2>
       <ul className="point-list">
         {items.map((item, index) => {
+          console.log(item.opportunity_list_name);
           return (
             <li key={index}>
               <PrismicNextImage field={imageIcon} alt="" />
