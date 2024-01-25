@@ -19,18 +19,23 @@ const OpportunityList = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <PrismicNextImage field={imageDesktop} className="opportunity-logo" alt=""/>
+      <PrismicNextImage
+        field={imageDesktop}
+        className="opportunity-logo"
+        alt=""
+      />
       <h2>
         <PrismicRichText field={title} />
       </h2>
       <ul className="point-list">
-        {items.map((item, index) => (
-          <li key={index}>
-            {/* <img alt="" src="../assets/images/icon-check.png"> */}
-            <PrismicNextImage field={imageIcon} alt=""/>
-            <p>{item.opportunity_list_name}</p>
-          </li>
-        ))}
+        {items.map((item, index) => {
+          return (
+            <li key={index}>
+              <PrismicNextImage field={imageIcon} alt="" />
+              <p>{item.opportunity_list_name}</p>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

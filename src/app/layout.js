@@ -21,7 +21,7 @@ export default async function RootLayout({ children }) {
       <link rel="icon" href="/favicon.ico" type="image/ico" />
       <link
         rel="apple-touch-icon"
-        href="apple-touch-icon.png"
+        href="/apple-touch-icon.png"
         type="image/png"
         sizes="144x144"
       />
