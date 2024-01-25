@@ -24,9 +24,15 @@ export async function generateMetadata() {
   };
 }
 
-export default async function Homepage() {
+async function getData() {
   const client = createClient();
   const page = await client.getByUID("home", "home").catch(() => notFound());
 
-  return <SliceZone slices={page.data.slices} components={components} />;
+  return page;
+}
+
+export default async function Homepage() {
+  const homePage = await getData();
+
+  return <SliceZone slices={homePage.data.slices} components={components} />;
 }
