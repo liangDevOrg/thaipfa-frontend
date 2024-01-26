@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import { asText } from "@prismicio/client";
 import { SliceZone } from "@prismicio/react";
 
 import { createClient } from "@/prismicio";
@@ -34,16 +33,26 @@ export async function generateMetadata({ params }) {
   };
 }
 
+async function getData(params) {
+  const client = createClient();
+  const page = await client
+    .getByUID("about_us", params.uid)
+    .catch(() => notFound());
+  return page;
+}
+
 /**
  * @param {{ params: Params }}
  */
 export default async function AboutUs({ params }) {
-  const client = createClient();
-  const aboutUs = await client
-    .getByUID("about_us", params.uid)
-    .catch(() => notFound());
-
-  return <SliceZone slices={aboutUs.data.slices} components={components} />;
+  try {
+    const aboutUs = await getData(params);
+    return <SliceZone slices={aboutUs.data.slices} components={components} />;
+  } catch (err) {
+    const errorMessage = err.response?.data?.message || "Could not fetch item.";
+    console.error("Error fetching item:", errorMessage);
+    throw new Error(errorMessage);
+  }
 }
 
 export async function generateStaticParams() {
