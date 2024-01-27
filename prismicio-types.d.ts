@@ -189,6 +189,91 @@ export type CurriculumDocument<Lang extends string = string> =
     Lang
   >;
 
+type ELearningDocumentDataSlicesSlice =
+  | TraningCourseListSlice
+  | PromotionAndPrivilegeSlice
+  | SpeakerSlice
+  | SpeakerWithContentSlice
+  | TrainingAwardSlice
+  | HeroSlice
+  | IntroductionSlice
+  | TraningCourseSlice
+  | ImageAndContentSideBySideSlice
+  | ExperienceSlice
+  | PortfolioSlice
+  | OpportunityListSlice
+  | BannerSectionSlice
+  | ImageIconWithContentBottomSlice
+  | HaveAProblemSlice
+  | FeeSlice
+  | FaqSlice
+  | BackgroundColorWithButtonLinkSlice
+  | CallToActionWithBannerSlice
+  | ImageContentSlice;
+
+/**
+ * Content for E-Learning documents
+ */
+interface ELearningDocumentData {
+  /**
+   * Slice Zone field in *E-Learning*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: e_learning.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<ELearningDocumentDataSlicesSlice> /**
+   * Meta Description field in *E-Learning*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: e_learning.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *E-Learning*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: e_learning.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *E-Learning*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: e_learning.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * E-Learning document from Prismic
+ *
+ * - **API ID**: `e_learning`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ELearningDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<ELearningDocumentData>,
+    "e_learning",
+    Lang
+  >;
+
 /**
  * Item in *Footer → our_services*
  */
@@ -1001,6 +1086,91 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
+type PrepareExamDocumentDataSlicesSlice =
+  | ImageContentSlice
+  | TraningCourseListSlice
+  | PromotionAndPrivilegeSlice
+  | TraningCourseSlice
+  | IntroductionSlice
+  | SpeakerWithContentSlice
+  | SpeakerSlice
+  | TrainingAwardSlice
+  | ImageIconWithContentBottomSlice
+  | OpportunityListSlice
+  | PortfolioSlice
+  | HeroSlice
+  | HaveAProblemSlice
+  | ImageAndContentSideBySideSlice
+  | CallToActionWithBannerSlice
+  | FeeSlice
+  | BannerSectionSlice
+  | FaqSlice
+  | ExperienceSlice
+  | BackgroundColorWithButtonLinkSlice;
+
+/**
+ * Content for Prepare Exam documents
+ */
+interface PrepareExamDocumentData {
+  /**
+   * Slice Zone field in *Prepare Exam*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: prepare_exam.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<PrepareExamDocumentDataSlicesSlice> /**
+   * Meta Description field in *Prepare Exam*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: prepare_exam.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Prepare Exam*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: prepare_exam.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Prepare Exam*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: prepare_exam.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Prepare Exam document from Prismic
+ *
+ * - **API ID**: `prepare_exam`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PrepareExamDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<PrepareExamDocumentData>,
+    "prepare_exam",
+    Lang
+  >;
+
 /**
  * Content for Settings documents
  */
@@ -1047,12 +1217,14 @@ export type SettingsDocument<Lang extends string = string> =
 export type AllDocumentTypes =
   | AboutUsDocument
   | CurriculumDocument
+  | ELearningDocument
   | FooterDocument
   | HomeDocument
   | MenuDocument
   | MockExamDocument
   | NavigationDocument
   | PageDocument
+  | PrepareExamDocument
   | SettingsDocument;
 
 /**
@@ -3001,6 +3173,9 @@ declare module "@prismicio/client" {
       CurriculumDocument,
       CurriculumDocumentData,
       CurriculumDocumentDataSlicesSlice,
+      ELearningDocument,
+      ELearningDocumentData,
+      ELearningDocumentDataSlicesSlice,
       FooterDocument,
       FooterDocumentData,
       FooterDocumentDataOurServicesItem,
@@ -3025,6 +3200,9 @@ declare module "@prismicio/client" {
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
+      PrepareExamDocument,
+      PrepareExamDocumentData,
+      PrepareExamDocumentDataSlicesSlice,
       SettingsDocument,
       SettingsDocumentData,
       AllDocumentTypes,
