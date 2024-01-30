@@ -18,10 +18,7 @@ const routes = [
     type: "home",
     path: "/",
   },
-  {
-    type: "home",
-    path: "/home",
-  },
+
   {
     type: "curriculum",
     path: "/curriculum/:uid",
