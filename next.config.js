@@ -7,18 +7,10 @@ const nextConfig = async () => {
   const client = prismic.createClient(sm.repositoryName);
 
   const repository = await client.getRepository();
-  const locales = repository.languages.map((lang) => lang.id);
+  // const locales = repository.languages.map((lang) => lang.id);
 
   return {
     reactStrictMode: true,
-    i18n: {
-      // These are all the locales you want to support in
-      // your application
-      locales: ["th", "en-us"],
-      // This is the default locale you want to be used when visiting
-      // a non-locale prefixed path e.g. `/hello`
-      defaultLocale: locales[1],
-    },
   };
 };
 
