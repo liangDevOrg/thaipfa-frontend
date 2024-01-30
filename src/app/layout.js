@@ -17,7 +17,7 @@ const inter = Inter({
  */
 export default async function RootLayout({ children }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="th" className={inter.variable}>
       <link rel="icon" href="/favicon.ico" type="image/ico" />
       <link
         rel="apple-touch-icon"
