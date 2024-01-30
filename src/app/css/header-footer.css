@@ -120,6 +120,7 @@ header .menu-button i {
     padding: 10px 20px 10px 30px;
     width: 100%;
     color: #ffffff;
+    font-family: 'Kanit', sans-serif !important;
     font-size: 14px;
     line-height: 22px;
     background-color: #222222;
