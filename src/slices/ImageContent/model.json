@@ -28,6 +28,15 @@
             "thumbnails": []
           }
         },
+        "is_image_container": {
+          "type": "Boolean",
+          "config": {
+            "label": "is_image_container",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        },
         "is_active": {
           "type": "Boolean",
           "config": {

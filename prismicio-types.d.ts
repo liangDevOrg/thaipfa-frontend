@@ -2044,6 +2044,17 @@ export interface ImageContentSliceDefaultPrimary {
   image_mobile: prismic.ImageField<never>;
 
   /**
+   * is_image_container field in *ImageContent → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: image_content.primary.is_image_container
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  is_image_container: prismic.BooleanField;
+
+  /**
    * is_active field in *ImageContent → Primary*
    *
    * - **Field Type**: Boolean
