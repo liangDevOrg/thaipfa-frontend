@@ -87,6 +87,20 @@ export type AboutUsDocument<Lang extends string = string> =
   >;
 
 type CurriculumDocumentDataSlicesSlice =
+  | TraningCourseListSlice
+  | TrainingAwardSlice
+  | PromotionAndPrivilegeSlice
+  | SpeakerWithContentSlice
+  | FaqSlice
+  | TraningCourseSlice
+  | PortfolioSlice
+  | ImageIconWithContentBottomSlice
+  | OpportunityListSlice
+  | HeroSlice
+  | ExperienceSlice
+  | CallToActionWithBannerSlice
+  | BannerSectionSlice
+  | BackgroundColorWithButtonLinkSlice
   | FeeSlice
   | ImageContentSlice
   | IntroductionSlice

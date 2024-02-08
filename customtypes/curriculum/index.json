@@ -38,6 +38,48 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "traning_course_list": {
+              "type": "SharedSlice"
+            },
+            "training_award": {
+              "type": "SharedSlice"
+            },
+            "promotion_and_privilege": {
+              "type": "SharedSlice"
+            },
+            "speaker_with_content": {
+              "type": "SharedSlice"
+            },
+            "faq": {
+              "type": "SharedSlice"
+            },
+            "traning_course": {
+              "type": "SharedSlice"
+            },
+            "portfolio": {
+              "type": "SharedSlice"
+            },
+            "image_icon_with_content_bottom": {
+              "type": "SharedSlice"
+            },
+            "opportunity_list": {
+              "type": "SharedSlice"
+            },
+            "hero": {
+              "type": "SharedSlice"
+            },
+            "experience": {
+              "type": "SharedSlice"
+            },
+            "call_to_action_with_banner": {
+              "type": "SharedSlice"
+            },
+            "banner_section": {
+              "type": "SharedSlice"
+            },
+            "background_color_with_button_link": {
+              "type": "SharedSlice"
+            },
             "fee": {
               "type": "SharedSlice"
             },

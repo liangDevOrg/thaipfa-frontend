@@ -9,8 +9,10 @@ const ImageContent = ({ slice }) => {
   const data = slice.primary;
   const imageDesktop = data.image_desktop;
   const imageMobile = data.image_mobile;
+  const isImageContainer = data.is_image_container;
   return (
-    <div className="content-image"
+    <div
+      className="content-image"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
