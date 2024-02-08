@@ -11,18 +11,21 @@ const ImageContent = ({ slice }) => {
   const imageMobile = data.image_mobile;
   const isImageContainer = data.is_image_container;
   return (
-    <div
-      className="content-image"
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-    >
-      <div className="hidden md:block">
-        <PrismicNextImage field={imageDesktop} alt="" />
+    <>
+      <div
+        className={`content-image ${isImageContainer ? "fixed-width" : ""}`}
+        data-slice-type={slice.slice_type}
+        data-slice-variation={slice.variation}
+      >
+        <div className="hidden md:block">
+          <PrismicNextImage field={imageDesktop} alt="" />
+        </div>
+        <div className="block md:hidden">
+          <PrismicNextImage field={imageMobile} alt="" />
+        </div>
       </div>
-      <div className="block md:hidden">
-        <PrismicNextImage field={imageMobile} alt="" />
-      </div>
-    </div>
+    </>
+    
   );
 };
 
