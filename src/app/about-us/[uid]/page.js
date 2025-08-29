@@ -13,14 +13,16 @@ import { components } from "@/slices";
  * @returns {Promise<import("next").Metadata>}
  */
 export async function generateMetadata({ params }) {
+  const { uid } = await params;
   const client = createClient();
   const aboutUs = await client
-    .getByUID("about_us", params.uid)
+    .getByUID("about_us", uid)
     .catch(() => notFound());
   const settings = await client.getSingle("settings");
+  console.log("Setting >> ", settings.data.siteTitle);
 
   return {
-    title: `${aboutUs.data.meta_title} | ${aboutUs.data.siteTitle}`,
+    title: `${aboutUs.data.meta_title} | ${settings.data.siteTitle[0].text}`,
     description: aboutUs.data.meta_description,
     openGraph: {
       title: aboutUs.data.meta_title,
@@ -34,10 +36,9 @@ export async function generateMetadata({ params }) {
 }
 
 async function getData(params) {
+  const { uid } = await params;
   const client = createClient();
-  const page = await client
-    .getByUID("about_us", params.uid)
-    .catch(() => notFound());
+  const page = await client.getByUID("about_us", uid).catch(() => notFound());
   return page;
 }
 

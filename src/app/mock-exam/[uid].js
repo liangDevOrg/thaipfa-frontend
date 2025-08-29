@@ -14,14 +14,15 @@ import { components } from "@/slices";
  * @returns {Promise<import("next").Metadata>}
  */
 export async function generateMetadata({ params }) {
+  const { uid } = await params;
   const client = createClient();
   const mockExam = await client
-    .getByUID("mock_exam", params.uid)
+    .getByUID("mock_exam", uid)
     .catch(() => notFound());
   const settings = await client.getSingle("settings");
 
   return {
-    title: `${asText(mockExam.data.title)} | ${asText(settings.data.siteTitle)}`,
+    title: `${asText(mockExam.data.title)} | ${asText(settings.data.siteTitle[0].text)}`,
     description: mockExam.data.meta_description,
     openGraph: {
       title: mockExam.data.meta_title,
@@ -38,9 +39,10 @@ export async function generateMetadata({ params }) {
  * @param {{ params: Params }}
  */
 export default async function mockExam({ params }) {
+  const { uid } = await params;
   const client = createClient();
   const mockExam = await client
-    .getByUID("mock_exam", params.uid)
+    .getByUID("mock_exam", uid)
     .catch(() => notFound());
 
   return <SliceZone slices={mockExam.data.slices} components={components} />;

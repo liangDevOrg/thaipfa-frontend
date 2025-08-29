@@ -13,14 +13,15 @@ import { components } from "@/slices";
  * @returns {Promise<import("next").Metadata>}
  */
 export async function generateMetadata({ params }) {
+  const { uid } = await params;
   const client = createClient();
   const curriculum = await client
-    .getByUID("curriculum", params.uid)
+    .getByUID("curriculum", uid)
     .catch(() => notFound());
   const settings = await client.getSingle("settings");
 
   return {
-    title: `${curriculum.data.meta_title} | ${curriculum.data.siteTitle}`,
+    title: `${curriculum.data.meta_title} | ${settings.data.siteTitle[0].text}`,
     description: curriculum.data.meta_description,
     openGraph: {
       title: curriculum.data.meta_title,
@@ -34,10 +35,9 @@ export async function generateMetadata({ params }) {
 }
 
 async function getData(params) {
+  const { uid } = await params;
   const client = createClient();
-  const page = await client
-    .getByUID("curriculum", params.uid)
-    .catch(() => notFound());
+  const page = await client.getByUID("curriculum", uid).catch(() => notFound());
   return page;
 }
 

@@ -4,7 +4,8 @@ import { PrismicPreview } from "@prismicio/next";
 import { createClient, repositoryName } from "@/prismicio";
 import { Header } from "@Components/Header";
 import { Footer } from "@/components/Footer";
-import { GoogleTagManager } from "@next/third-parties/google";
+import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google";
+
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,7 +27,8 @@ export default async function RootLayout({ children }) {
         sizes="144x144"
       />
       <body className="overflow-x-hidden antialiased">
-        <GoogleTagManager gtmId="GTM-5X75PF2J" />
+        <GoogleTagManager gtmId="GTM-MJ64GMF6" />
+        <GoogleAnalytics gaId="G-4EY93MJ22G" />
         {/* @ts-expect-error Async Server Component */}
         <HeaderLayout />
         {children}
