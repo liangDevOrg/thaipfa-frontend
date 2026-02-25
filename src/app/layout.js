@@ -27,7 +27,7 @@ export default async function RootLayout({ children }) {
         sizes="144x144"
       />
       <body className="overflow-x-hidden antialiased">
-        <GoogleTagManager gtmId="GTM-MJ64GMF6" />
+        <GoogleTagManager gtmId="GTM-5X75PF2J" />
         <GoogleAnalytics gaId="G-4EY93MJ22G" />
         {/* @ts-expect-error Async Server Component */}
         <HeaderLayout />
